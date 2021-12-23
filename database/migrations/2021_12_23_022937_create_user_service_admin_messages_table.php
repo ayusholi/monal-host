@@ -16,7 +16,7 @@ class CreateUserServiceAdminMessagesTable extends Migration
         Schema::create('user_service_admin_messages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_service_id')->constrained('user_services')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreginId('admin_id')->constrained('admins')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('admin_id')->constrained('admins')->onDelete('cascade')->onUpdate('cascade');
             $table->text('admin_message');
             $table->timestamps();
         });

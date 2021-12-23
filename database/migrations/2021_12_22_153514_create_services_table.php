@@ -15,13 +15,13 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $able->string('name');
-            $able->integer('ram');
-            $able->string('ram_type');
-            $able->integer('cpu_cores');
-            $able->tinyInteger('interval');
-            $able->string('interval_type');
-            $able->decimal('base_price', 8, 2);
+            $table->string('name');
+            $table->integer('ram');
+            $table->string('ram_type');
+            $table->integer('cpu_cores');
+            $table->tinyInteger('interval');
+            $table->string('interval_type');
+            $table->decimal('base_price', 8, 2);
             $table->timestamps();
         });
     }
