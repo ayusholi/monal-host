@@ -10,6 +10,18 @@ class Storage extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'total_storage',
+        'storage_type',
+        'price'
+    ];
+
     /**
      * Get all of the userServices for the Storage
      *

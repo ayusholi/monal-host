@@ -11,6 +11,27 @@ class Payment extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'user_id',
+        'transaction_method',
+        'payment_amount',
+        'admin_id',
+        'tax_percent',
+        'tax_amount',
+        'total_amount',
+        'transaction_id',
+        'transaction_currency',
+        'transaction_date',
+        'remarks',
+        'transaction_reference',
+        'status'
+    ];
+
     /**
      * Get the user that owns the Payment
      *

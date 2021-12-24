@@ -10,6 +10,17 @@ class OperatingSystem extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'remarks',
+        'version',
+    ];
+
     /**
      * Get all of the userServices for the OperatingSystem
      *

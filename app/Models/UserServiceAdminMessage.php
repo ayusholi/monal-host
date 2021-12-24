@@ -11,6 +11,17 @@ class UserServiceAdminMessage extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'user_service_id',
+        'admin_id',
+        'admin_message',
+    ];
+
     /**
      * Get the admin that owns the UserServiceAdminMessage
      *

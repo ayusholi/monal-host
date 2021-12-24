@@ -11,6 +11,19 @@ class Admin extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'full_name',
+        'email',
+        'password',
+        'admin_type',
+        'remember_token',
+    ];
+
     /**
      * Get all of the payments for the Admin
      *

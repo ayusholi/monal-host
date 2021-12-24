@@ -10,6 +10,18 @@ class Region extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'latitude',
+        'longitude',
+        'price',
+    ];
+
     /**
      * Get all of the userServices for the Region
      *

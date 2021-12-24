@@ -17,7 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->integer('transaction_id');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('admin_id')->constrained('admins')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('admin_id')->constrained('admins')->onUpdate('cascade')->nullable();
             $table->string('transaction_method');
             $table->decimal('payment_account', 8, 2);
             $table->decimal('tax_percent', 8, 2);
@@ -25,9 +25,9 @@ class CreatePaymentsTable extends Migration
             $table->decimal('total_account', 8, 2);
             $table->string('transaction_currency');
             $table->timestamp('transaction_date');
-            $table->string('remarks');
-            $table->string('transaction_reference');
-            $table->string('status');
+            $table->string('remarks')->nullable();
+            $table->string('transaction_reference')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

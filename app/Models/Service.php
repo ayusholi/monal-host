@@ -10,6 +10,20 @@ class Service extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'ram',
+        'ram_type',
+        'cpu_cores',
+        'interval',
+        'interval_type',
+        'base_price'
+    ];
     /**
      * Get all of the userServices for the Service
      *

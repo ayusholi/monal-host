@@ -15,6 +15,22 @@ class UserService extends Model
 {
     use HasFactory;
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'user_id',
+        'service_id',
+        'region_id',
+        'storage_id',
+        'operating_system_id',
+        'payment_id',
+        'start_from',
+        'expires_at'
+    ];
+
     /**
      * Get the user that owns the service
      *
