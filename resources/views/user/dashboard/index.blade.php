@@ -1,4 +1,4 @@
-@extends('admin.dashboard.admin-master')
+@extends('user.dashboard.user-master')
 
 @section('content')
 
@@ -781,7 +781,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <!-- ./ Content -->
 

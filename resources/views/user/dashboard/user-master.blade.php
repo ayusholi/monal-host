@@ -40,24 +40,24 @@
         <div class="preloader-icon"></div>
     </div>
 
-    @include('admin.dashboard.body.sidebar-group')
+    @include('user.dashboard.body.sidebar-group')
 
     <!-- Layout wrapper -->
     <div class="layout-wrapper">
 
-        @include('admin.dashboard.body.header')
+        @include('user.dashboard.body.header')
 
             <!-- Content wrapper -->
             <div class="content-wrapper">
 
-                @include('admin.dashboard.body.navigation')
+                @include('user.dashboard.body.navigation')
 
                 <!-- Content body -->
                 <div class="content-body">
 
                     @yield('content')
 
-                    @include('admin.dashboard.body.footer')
+                    @include('user.dashboard.body.footer')
 
                 </div>
                 <!-- ./ Content body -->

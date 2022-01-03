@@ -317,7 +317,7 @@
                         <div class="list-group list-group-flush">
                             <a href="profile.html" class="list-group-item">Profile</a>
                             <a href="#" class="list-group-item" data-sidebar-target="#settings">Settings</a>
-                            <a href="login.html" class="list-group-item text-danger">Sign Out!</a>
+                            <a href="{{ route('admin.logout') }}" class="list-group-item text-danger">Sign Out!</a>
                         </div>
                         <div class="pb-0 p-4">
                             <div class="mb-4">
@@ -354,7 +354,7 @@
                 </a>
             </li>
         </ul>
-        
+
     </div>
 
 </div>

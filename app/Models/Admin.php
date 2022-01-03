@@ -6,8 +6,9 @@ use App\Models\Payment;
 use App\Models\UserServiceAdminMessage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
     use HasFactory;
 
@@ -23,6 +24,14 @@ class Admin extends Model
         'admin_type',
         'remember_token',
     ];
+
+     /**
+     * Specify guard for model
+     *
+     * @var <string>
+     */
+
+    protected $guard = 'admin';
 
     /**
      * Get all of the payments for the Admin
