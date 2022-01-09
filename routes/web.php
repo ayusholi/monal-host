@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\Admin\RegionController;
+use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\UserServiceController;
+use App\Http\Controllers\Admin\OperatingSystemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +22,7 @@ use App\Http\Controllers\Auth\AdminController;
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard.index');
+    return view('welcome');
 });
 
 /* admin auth routes */
@@ -31,6 +37,18 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('/admin/dashboard', function(){
         return view('admin.dashboard.index');
     })->name('admin.dashboard');
+
+    Route::resource('services', ServiceController::class);
+
+    Route::resource('storages', StorageController::class);
+
+    Route::resource('payments', PaymentController::class);
+
+    Route::resource('operating-systems', OperatingSystemController::class);
+
+    Route::resource('regions', RegionController::class);
+
+    Route::resource('user-services', UserServiceController::class);
 
 });
 

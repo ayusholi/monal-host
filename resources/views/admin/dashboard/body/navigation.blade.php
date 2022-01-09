@@ -132,11 +132,11 @@
                 </li>
             </ul>
             <ul id="apps">
-                <li class="navigation-divider">Apps</li>
+                <li class="navigation-divider">Services</li>
                 <li>
                     <a  href="chat.html">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
-                        <span>Chat</span>
+                        <span>All Services</span>
                         <span class="badge badge-danger">5</span>
                     </a>
                 </li>
