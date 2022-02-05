@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AdminFactory extends Factory
@@ -15,8 +16,8 @@ class AdminFactory extends Factory
     {
         return [
             'full_name' => $this->faker->name(),
-            'email' => 'admin@gmail.com',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'email' => 'admin@monalhost.com',
+            'password' => Hash::make("password"), // password
         ];
     }
 }

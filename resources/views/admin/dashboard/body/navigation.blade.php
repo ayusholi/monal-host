@@ -3,7 +3,7 @@
 
     <!-- Logo -->
     <div class="navigation-header">
-        <a class="navigation-logo" href=index.html>
+        <a class="navigation-logo" href="{{ route('home') }}">
             <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
             <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="dark logo">
             <img class="small-logo" src="https://baston.laborasyon.com/assets/media/image/logo/small-logo.png" alt="small logo">
@@ -26,39 +26,39 @@
                         <span class="menu-tab-icon">
                             <i data-feather="pie-chart"></i>
                         </span>
-                        <span>Dashboards</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-menu-target="#apps">
+                    <a href="#" data-menu-target="#customer">
                         <span class="menu-tab-icon">
                             <i data-feather="globe"></i>
                         </span>
-                        <span>Apps</span>
+                        <span>Customer</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-menu-target="#components">
+                    <a href="#" data-menu-target="#services">
                         <span class="menu-tab-icon">
                             <i data-feather="layers"></i>
                         </span>
-                        <span>Components</span>
+                        <span>Services</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-menu-target="#forms">
+                    <a href="#" data-menu-target="#cms">
                         <span class="menu-tab-icon">
                             <i data-feather="mouse-pointer"></i>
                         </span>
-                        <span>Forms</span>
+                        <span>CMS</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-menu-target="#plugins">
+                    <a href="#" data-menu-target="#settings">
                         <span class="menu-tab-icon">
                             <i data-feather="gift"></i>
                         </span>
-                        <span>Plugins</span>
+                        <span>Settings</span>
                     </a>
                 </li>
                 <li>
@@ -84,141 +84,52 @@
         <!-- Menu body -->
         <div class="navigation-menu-body">
             <ul id="dashboards">
-                <li class="navigation-divider">Dashboards</li>
+                <li class="navigation-divider">Dashboard</li>
                 <li>
                     <a  class="active"
-                        href="ecommerce-dashboard.html">
+                        href="#">
                         <span class="nav-link-icon" data-feather="shopping-cart"></span>
-                        <span>E-commerce</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="analytics-dashboard.html">
-                        <span class="nav-link-icon" data-feather="bar-chart-2"></span>
-                        <span>Analytics</span>
-                        <span class="badge badge-success">New</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="helpdesk-dashboard.html">
-                        <span class="nav-link-icon" data-feather="life-buoy"></span>
-                        <span>Helpdesk</span>
-                    </a>
-                </li>
-                <li class="navigation-divider">E-commerce Pages</li>
-                <li>
-                    <a  href="orders.html">
-                        <span class="nav-link-icon" data-feather="box"></span>
                         <span>Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a  href="product-list.html">
-                        <span class="nav-link-icon" data-feather="list"></span>
-                        <span>Product List</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="product-grid.html">
-                        <span class="nav-link-icon" data-feather="grid"></span>
-                        <span>Product Grid</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="product-detail.html">
-                        <span class="nav-link-icon" data-feather="file-text"></span>
-                        <span>Product Detail</span>
+                    <a  href="#">
+                        <span class="nav-link-icon" data-feather="bar-chart-2"></span>
+                        <span>Updates</span>
+                        <span class="badge badge-success">New</span>
                     </a>
                 </li>
             </ul>
-            <ul id="apps">
-                <li class="navigation-divider">Apps</li>
+            <ul id="customer">
+                <li class="navigation-divider">Customer</li>
                 <li>
                     <a  href="chat.html">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
-                        <span>Chat</span>
+                        <span>New Customers</span>
                         <span class="badge badge-danger">5</span>
                     </a>
                 </li>
                 <li>
                     <a  href="mail.html">
                         <span class="nav-link-icon" data-feather="mail"></span>
-                        <span>Mail</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="todo-list.html">
-                        <span class="nav-link-icon" data-feather="check-circle"></span>
-                        <span>Todo List</span>
-                        <span class="badge badge-warning small-badge">2</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="file-manager.html">
-                        <span class="nav-link-icon" data-feather="file"></span>
-                        <span>File Manager</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="calendar.html">
-                        <span class="nav-link-icon" data-feather="calendar"></span>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="gallery.html">
-                        <span class="nav-link-icon" data-feather="image"></span>
-                        <span>Gallery</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="invoice.html">
-                        <span class="nav-link-icon" data-feather="book"></span>
-                        <span>Invoice</span>
+                        <span>Support</span>
                     </a>
                 </li>
             </ul>
-            <ul id="components">
-                <li class="navigation-divider">Components</li>
+            <ul id="services">
+                <li class="navigation-divider">Services</li>
                 <li>
                     <a href="#">
                         <span class="nav-link-icon">
-                            <i data-feather="layers"></i>
+                            <i data-feather="square"></i>
                         </span>
-                        <span>Basic Components</span>
+                        <span>Services</span>
                     </a>
                     <ul>
                         <li>
-                            <a  href="alert.html">Alerts</a></li>
+                            <a  href="{{ route('admin.services.index') }}">List Services </a></li>
                         <li>
-                            <a  href="accordion.html">Accordion</a></li>
-                        <li>
-                            <a  href="buttons.html">Buttons</a></li>
-                        <li>
-                            <a  href="dropdown.html">Dropdown</a></li>
-                        <li>
-                            <a  href="list-group.html">List Group</a></li>
-                        <li>
-                            <a  href="pagination.html">Pagination</a></li>
-                        <li>
-                            <a  href="typography.html">Typography</a></li>
-                        <li>
-                            <a  href="media-object.html">Media Object</a>
-                        </li>
-                        <li>
-                            <a  href="progress.html">Progress</a></li>
-                        <li>
-                            <a  href="modal.html">Modal</a></li>
-                        <li>
-                            <a  href="spinners.html">Spinners</a></li>
-                        <li>
-                            <a  href="navs.html">Navs</a></li>
-                        <li>
-                            <a  href="tab.html">Tab</a></li>
-                        <li>
-                            <a  href="tooltip.html">Tooltip</a></li>
-                        <li>
-                            <a  href="popovers.html">Popovers</a></li>
+                            <a  href="{{ route('admin.services.create') }}">Create Service </a></li>
                     </ul>
                 </li>
                 <li>
@@ -226,70 +137,45 @@
                         <span class="nav-link-icon">
                             <i data-feather="square"></i>
                         </span>
-                        <span>Cards</span>
+                        <span>Storages</span>
                     </a>
                     <ul>
                         <li>
-                            <a  href="basic-cards.html">Basic Cards </a></li>
+                            <a  href="{{ route('admin.storages.index') }}">List Storages </a></li>
                         <li>
-                            <a  href="image-cards.html">Image Cards </a></li>
-                        <li>
-                            <a  href="scrollable-cards.html">Scrollable Cards</a></li>
-                        <li>
-                            <a  href="other-cards.html">Others Cards</a></li>
+                            <a  href="{{ route('admin.storages.create') }}">Create Storage </a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">
                         <span class="nav-link-icon">
-                            <i data-feather="grid"></i>
+                            <i data-feather="square"></i>
                         </span>
-                        <span>Tables</span>
+                        <span>Regions</span>
                     </a>
                     <ul>
                         <li>
-                            <a  href="basic-tables.html">Basic Tables</a></li>
+                            <a  href="{{ route('admin.regions.index') }}">List Regions </a></li>
                         <li>
-                            <a  href="dataTable.html">Datatable</a></li>
-                        <li>
-                            <a  href="responsive-tables.html">Responsive Tables</a>
-                        </li>
+                            <a  href="{{ route('admin.regions.index') }}">Create Region </a></li>
                     </ul>
                 </li>
                 <li>
-                    <a  href="avatar.html">
+                    <a href="#">
                         <span class="nav-link-icon">
-                            <i data-feather="aperture"></i>
+                            <i data-feather="square"></i>
                         </span>
-                        <span>Avatar</span>
+                        <span>Operating System</span>
                     </a>
-                </li>
-                <li>
-                    <a  href="icons.html">
-                        <span class="nav-link-icon">
-                            <i data-feather="anchor"></i>
-                        </span>
-                        <span>Icons</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="colors.html">
-                        <span class="nav-link-icon">
-                            <i data-feather="droplet"></i>
-                        </span>
-                        <span>Colors</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="divider.html">
-                        <span class="nav-link-icon">
-                            <i data-feather="git-commit"></i>
-                        </span>
-                        <span>Divider</span>
-                    </a>
+                    <ul>
+                        <li>
+                            <a  href="{{ route('admin.operating-systems.index') }}">List Operating Systems </a></li>
+                        <li>
+                            <a  href="{{ route('admin.operating-systems.create') }}">Create Operaging System </a></li>
+                    </ul>
                 </li>
             </ul>
-            <ul id="forms">
+            <ul id="cms">
                 <li class="navigation-divider">Forms</li>
                 <li>
                     <a  href="basic-forms.html">
@@ -328,7 +214,7 @@
                     </a>
                 </li>
             </ul>
-            <ul id="plugins">
+            <ul id="settings">
                 <li class="navigation-divider">Plugins</li>
                 <li>
                     <a  href="sweet-alert.html">

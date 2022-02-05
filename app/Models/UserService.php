@@ -9,6 +9,8 @@ use App\Models\Storage;
 use App\Models\OperatingSystem;
 use App\Models\UserServiceAdminMessage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserService extends Model

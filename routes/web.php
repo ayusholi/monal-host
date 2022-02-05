@@ -15,15 +15,18 @@ use App\Http\Controllers\Auth\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.dashboard.index');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* admin auth routes */
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/login',  [AdminController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminController::class, 'login'])->name('login');
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+
+    Route::resource("regions", \App\Http\Controllers\Admin\RegionController::class);
+    Route::resource("operating-systems", \App\Http\Controllers\Admin\OperatingSystemController::class);
+    Route::resource("storages", \App\Http\Controllers\Admin\StorageController::class);
+    Route::resource("services", \App\Http\Controllers\Admin\ServiceController::class);
 });
 
 Route::group(['middleware'=>'auth:admin'], function(){

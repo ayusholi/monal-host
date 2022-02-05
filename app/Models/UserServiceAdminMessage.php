@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Admin;
 use App\Models\UserService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserServiceAdminMessage extends Model

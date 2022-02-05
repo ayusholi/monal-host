@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\UserService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Service extends Model
@@ -18,7 +19,10 @@ class Service extends Model
     protected $fillable = [
         'name',
         'ram',
-        'ram_type',
+        'ram_unit',
+        'storage',
+        'storage_unit',
+        'storage_type',
         'cpu_cores',
         'interval',
         'interval_type',

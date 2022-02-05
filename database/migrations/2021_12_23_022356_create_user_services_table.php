@@ -21,8 +21,8 @@ class CreateUserServicesTable extends Migration
             $table->foreignId('storage_id')->constrained('storages')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('operating_system_id')->constrained('operating_systems')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('payment_id')->constrained('payments')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamp('start_form');
-            $table->timestamp('expires_at');
+            $table->dateTime('start_form');
+            $table->dateTime('expires_at');
             $table->timestamps();
         });
     }
