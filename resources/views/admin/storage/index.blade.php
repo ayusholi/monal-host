@@ -29,7 +29,7 @@
                         <th>Total Storage</th>
                         <th>Storage Type</th>
                         <th>Price</th>
-                        <th>Total Services</th>
+                        <th>Total Customers</th>
                         <th class="text-right">Action</th>
                     </tr>
                     </thead>
@@ -38,8 +38,9 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $storage->name }}</td>
-                                <td>{{ $storage->latitude }}</td>
-                                <td>{{ $storage->longitude }}</td>
+                                <td>{{ $storage->total_storage }}</td>
+                                <td>{{ $storage->storage_type }}</td>
+                                <td>{{ $storage->price }}</td>
                                 <td></td>
                                 <td class="text-right">
                                     <a href="{{ route('admin.storages.edit', ['storage' => $storage]) }}" class="btn btn-outline-primary btn-sm btn-floating" data-toggle="tooltip" title="Edit">

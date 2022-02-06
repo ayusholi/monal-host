@@ -42,7 +42,7 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
     Route::get('/register', [UserController::class, 'register'])->name('register');
     Route::post('/store', [UserController::class, 'store'])->name('store');
     Route::get('/login',  [UserController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [UserController::class, 'login'])->name('login');
+    Route::post('/login', [UserController::class, 'login'])->name('post.login');
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
 });
 

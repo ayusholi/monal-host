@@ -18,8 +18,8 @@ class OperatingSystem extends Model
      */
     protected $fillable = [
         'name',
-        'remarks',
         'version',
+        'remarks',
     ];
 
     /**

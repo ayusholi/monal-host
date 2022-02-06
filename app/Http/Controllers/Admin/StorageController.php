@@ -39,8 +39,8 @@ class StorageController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
+            'total_storage' => 'required',
+            'storage_type' => 'required',
             'price' => 'required'
         ]);
 
@@ -85,8 +85,8 @@ class StorageController extends Controller
         $storage = Storage::findOrFail($id);
         $this->validate($request, [
             'name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
+            'total_storage' => 'required',
+            'storage_type' => 'required',
             'price' => 'required'
         ]);
 

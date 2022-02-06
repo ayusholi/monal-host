@@ -43,7 +43,7 @@
     @enderror
 
     <!-- form -->
-    <form method="post" action="{{ route('auth.login') }}">
+    <form method="post" action="{{ route('auth.post.login') }}">
         @csrf
         <div class="form-group">
             <input type="text" class="form-control" name="email" placeholder="email" required autofocus>

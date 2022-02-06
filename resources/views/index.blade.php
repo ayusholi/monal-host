@@ -21,81 +21,33 @@
 <section class="pb-90 price-section">
     <div class="container">
         <div class="row gx-lg-0 justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-price style--two first-item">
-                    <div class="price-head">
-                        <h2>Personal <span>Plan</span></h2>
-                        <p>We take pride providing secure Platform customers.</p>
-                    </div>
-                    <div class="pricing-area">
-                        <div class="price-content">
-                            <p>Start on</p>
-                            <h2 class="price-amount"> <sup>$</sup> 2.75</h2>
+            @foreach($services as $service)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-price style--two first-item">
+                        <div class="price-head">
+                            <h2>{{ $service->name }}</h2>
+                            <p>We take pride providing secure Platform customers.</p>
                         </div>
-                        <div class="discount">
-                            <p>On Sale</p> <span>Save 49%</span>
+                        <div class="pricing-area">
+                            <div class="price-content">
+                                <p>Start on</p>
+                                <h2 class="price-amount"> <sup>Rs.</sup> {{ intval($service->base_price) }}</h2>
+                            </div>
+                            <div class="discount">
+                                <p>On Sale</p> <span>Save 49%</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="price-body">
-                        <ul class="price-feature-list">
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                        </ul><a href="price.html" class="btn btn-style3">Buy Now</a>
+                        <div class="price-body">
+                            <ul class="price-feature-list">
+                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> {{ $service->cpu_cores }} Cores</li>
+                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> {{ $service->ram }}{{ $service->ram_unit }}</li>
+                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> {{ $service->storage }}{{ $service->storage_unit }} {{ $service->storage_type }}</li>
+                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
+                            </ul><a href="price.html" class="btn btn-style3">Buy Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-price style--two">
-                    <div class="price-head">
-                        <h2>Baby <span>Plan</span></h2>
-                        <p>We take pride providing secure Platform customers.</p>
-                    </div>
-                    <div class="pricing-area">
-                        <div class="price-content">
-                            <p>Start on</p>
-                            <h2 class="price-amount"> <sup>$</sup> 3.95</h2>
-                        </div>
-                        <div class="discount">
-                            <p>On Sale</p> <span>Save 69%</span>
-                        </div>
-                    </div>
-                    <div class="price-body">
-                        <ul class="price-feature-list">
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 4 Cores</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 8GB</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (256GB + 500GB) SSD</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 2Gbps - 40TB</li>
-                        </ul><a href="price.html" class="btn btn-style3">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-price style--two last-item">
-                    <div class="price-head">
-                        <h2>Business <span>Plan</span></h2>
-                        <p>We take pride providing secure Platform customers.</p>
-                    </div>
-                    <div class="pricing-area">
-                        <div class="price-content">
-                            <p>Start on</p>
-                            <h2 class="price-amount"> <sup>$</sup> 5.95</h2>
-                        </div>
-                        <div class="discount">
-                            <p>On Sale</p> <span>Save 99%</span>
-                        </div>
-                    </div>
-                    <div class="price-body">
-                        <ul class="price-feature-list">
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 8 Cores</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 16GB</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (500GB + 1TB) SSD</li>
-                            <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 4Gbps - 80TB</li>
-                        </ul><a href="price.html" class="btn btn-style3">Buy Now</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
