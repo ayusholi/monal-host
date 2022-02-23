@@ -26,7 +26,7 @@
                     <tr>
                         <th>S.N.</th>
                         <th>Title</th>
-                        <th class="text-right">Actions</th>
+                        <th class="text-right">Action</th>
                     </tr>
                     </thead>
                     <tbody>
