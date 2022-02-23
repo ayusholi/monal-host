@@ -43,7 +43,7 @@
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> {{ $service->ram }}{{ $service->ram_unit }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> {{ $service->storage }}{{ $service->storage_unit }} {{ $service->storage_type }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
-                            </ul><a href="price.html" class="btn btn-style3">Buy Now</a>
+                            </ul><a href="{{ route('service.detail', ['slug' => $service->slug] ) }}" class="btn btn-style3">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
         </div>
     </div>
 </section>
-<section class="pt-120 pb-120 ovx-hidden">
+{{-- <section class="pt-120 pb-120 ovx-hidden">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -583,7 +583,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <section class="pt-120 ovx-hidden home3-section-bg gm-pb-style--two">
     <div class="container">
         <div class="row justify-content-center">
@@ -710,36 +710,14 @@
             <div class="col-lg-8">
                 <div class="faq-accordion">
                     <div class="accordion" id="accordionFaq">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne"> <span class="accordion-button pt-0" data-bs-toggle="collapse" data-bs-target="#collapseOne"> How to get the web hosting testing for 3 Hours? </span></h3>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body"> Since tissue paper is widely commodity quite a profitable small busines even developed very less organized company is in the its of this obvious that companie which are in this business are expanding is portfolio grab products busines are expanding their portfolio through different unique product.</div>
+                        @foreach($faqs as $faq)
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id='{{ "heading$loop->iteration" }}'> <span class="accordion-button pt-0" data-bs-toggle="collapse" data-bs-target='{{ "#collapse$loop->iteration" }}'> {{ $faq->title }} </span></h3>
+                                <div id='{{ "collapse$loop->iteration" }}' class='{{ $loop->iteration == 1 ? "accordion-collapse collapse show" : "accordion-collapse collapse" }}' aria-labelledby='{{ "heading$loop->iteration" }}' data-bs-parent="#accordionFaq">
+                                    <div class="accordion-body"> {{ $faq->body }} </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo"> <span class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"> How can I change the nameservers for my domain? </span></h3>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body"> Since tissue paper is widely commodity quite a profitable small busines even developed very less organized company is in the its of this obvious that companie which are in this business are expanding is portfolio grab products busines are expanding their portfolio through different unique product.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree"> <span class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"> How to transfer an existing hosting account? </span></h3>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body"> Since tissue paper is widely commodity quite a profitable small busines even developed very less organized company is in the its of this obvious that companie which are in this business are expanding is portfolio grab products busines are expanding their portfolio through different unique product.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingFour"> <span class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFour"> How to set up Free Email Forwarding? </span></h3>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body"> Since tissue paper is widely commodity quite a profitable small busines even developed very less organized company is in the its of this obvious that companie which are in this business are expanding is portfolio grab products busines are expanding their portfolio through different unique product.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingFive"> <span class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive"> How to set up Free Email Forwarding? </span></h3>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body"> Since tissue paper is widely commodity quite a profitable small busines even developed very less organized company is in the its of this obvious that companie which are in this business are expanding is portfolio grab products busines are expanding their portfolio through different unique product.</div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -786,7 +764,7 @@
         </div>
     </div>
 </section>
-<section class="pt-120 pb-90">
+{{-- <section class="pt-120 pb-90">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -826,5 +804,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

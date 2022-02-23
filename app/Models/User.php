@@ -44,6 +44,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $append = ['full_name'];
+
     /**
      * The attributes that should be cast.
      *
@@ -61,6 +63,15 @@ class User extends Authenticatable
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class, 'user_id', 'id');
+    }
+
+    /**
+     * Get full name of customer
+     */
+    public function getFullNameAttribute()
+    {
+        if($this->middle_name) return "$this->first_name $this->middle_name $this->last_name";
+        return "$this->first_name $this->last_name";
     }
 
     /**

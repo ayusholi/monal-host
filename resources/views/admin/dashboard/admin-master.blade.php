@@ -30,13 +30,14 @@
 <!-- App css -->
     <link rel="stylesheet" href="https://baston.laborasyon.com/assets/css/app.min.css" type="text/css">
 
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"  /></head>
 <body>
 
     <!-- Preloader -->
     <div class="preloader">
-        <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
-        <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark">
+    <h3>Monalhost</h3>
+        {{-- <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo"> --}}
+        {{-- <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark"> --}}
         <div class="preloader-icon"></div>
     </div>
 

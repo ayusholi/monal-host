@@ -297,7 +297,7 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" title="User menu" data-toggle="dropdown">
                         <span class="mr-2 d-sm-inline d-none">
-                            Hi! <strong>Bony Gidden</strong>
+                            Hi! <strong>{{ auth()->user()->full_name }}</strong>
                         </span>
                         <figure class="avatar avatar-sm">
                             <img src="https://baston.laborasyon.com/assets/media/image/user/man_avatar3.jpg"
@@ -312,7 +312,7 @@
                                 <img src="https://baston.laborasyon.com/assets/media/image/user/man_avatar3.jpg"
                                      class="rounded-circle" alt="image">
                             </figure>
-                            <h5 class="mb-0">Bony Gidden</h5>
+                            <h5 class="mb-0">{{ auth()->user()->full_name }}</h5>
                         </div>
                         <div class="list-group list-group-flush">
                             <a href="profile.html" class="list-group-item">Profile</a>

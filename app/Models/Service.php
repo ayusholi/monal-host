@@ -19,6 +19,7 @@ class Service extends Model
     protected $fillable = [
         'name',
         'ram',
+        'slug',
         'ram_unit',
         'storage',
         'storage_unit',

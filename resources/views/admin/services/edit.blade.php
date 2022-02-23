@@ -25,13 +25,22 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <form method="POST" action="{{ route('admin.services.update', 'service' => $service) }}">
+                                <form method="POST" action="{{ route('admin.services.update', ['service' => $service]) }}">
+                                    @method('PUT')
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Enter Service" value="{{ $service->name }}">
                                         <small class="form-text text-muted">Example: [VPS Server]</small>
                                         @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">Slug</label>
+                                        <input type="text" name="slug" class="form-control" id="slug" value="{{ $service->slug }}">
+                                        <small class="form-text text-muted">Example: [vps-server]</small>
+                                        @error('slug')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

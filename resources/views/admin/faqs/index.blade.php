@@ -7,10 +7,10 @@
 
         <div class="page-header">
             <div class="page-title">
-                <h3>Regions</h3>
+            <h3>FAQ</h3>
                 <div>
-                    <a href="{{ route('admin.regions.create') }}" class="btn btn-primary">
-                        Create Region
+                    <a href="{{ route('admin.faqs.create') }}" class="btn btn-primary">
+                        Create FAQ
                     </a>
                 </div>
             </div>
@@ -18,30 +18,24 @@
 
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title mb-0">All Regions</h6>
+                <h6 class="card-title mb-0">All FAQs</h6>
             </div>
             <div class="table-responsive">
                 <table id="recent-orders" class="table table-lg">
                     <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Total Services</th>
+                        <th>Title</th>
                         <th class="text-right">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @forelse ($regions as $region)
+                        @forelse ($faqs as $faq)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $region->name }}</td>
-                                <td>{{ $region->latitude }}</td>
-                                <td>{{ $region->longitude }}</td>
-                                <td></td>
+                                <td>{{ $faq->title }}</td>
                                 <td class="text-right">
-                                    <a href="{{ route('admin.regions.edit', ['region' => $region]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
+                                    <a href="{{ route('admin.faqs.edit', ['faq' => $faq]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
                                     <a href="#" class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" data-toggle="tooltip" title="Delete">

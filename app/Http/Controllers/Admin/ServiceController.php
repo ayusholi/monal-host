@@ -39,6 +39,7 @@ class ServiceController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'slug' => 'required',
             'ram' => 'required|integer',
             'ram_unit' => 'required|string',
             'cpu_cores' => 'required|integer',
@@ -91,6 +92,7 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $this->validate($request, [
             'name' => 'required',
+            'slug' => 'required',
             'ram' => 'required|integer',
             'ram_unit' => 'required|string',
             'cpu_cores' => 'required|integer',

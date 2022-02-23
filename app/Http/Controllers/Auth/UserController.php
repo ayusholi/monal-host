@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserLoginRequest;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\UserRegisterRequest;
+use App\Mail\AccountCreatedMail;
 
 class UserController extends Controller
 {
@@ -88,7 +91,71 @@ class UserController extends Controller
          return redirect()->route('auth.login');
      }
 
+      /**
+    * Handle Social login request
+    *
+    * @return response
+    */
+   public function socialLogin($social)
+   {
+       return Socialite::driver($social)->redirect();
+   }
+   /**
+    * Obtain the user information from Social Logged in.
+    * @param $social
+    * @return Response
+    */
+   public function handleProviderCallback($social)
+   {
 
+        $userSocial = Socialite::driver($social)->stateless()->user();
 
+       // Check if the User exists on our system
+       $user = User::where(['provider_id' => $userSocial->getId()])->first();
 
+        /**
+         * If the User exits already then proceed to login
+         * If the User does not exits then create the User and Login
+         */
+       if($user){
+           Auth::login($user);
+           return redirect()->route('user.dashboard');
+       } else {
+           $email = $userSocial->getEmail();
+           $user = User::where('email', $email)->first();
+           if($user) {
+               return redirect()->route('login')->withErrors(["email_exists" => "Email already exists. Please try to log in."]);
+           }
+           $username = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $userSocial->getName()));
+           $username_creator = User::where('username', $username)->first();
+           if($username_creator) {
+               $username = $username . "-" . mt_rand(10000, 99999);
+           }
+           $data = [
+               "email" => $email,
+               "username" => strtolower(preg_replace('/\s*/', '', $username)),
+               'provider_id' => $userSocial->getId(),
+               'provider' => $social,
+               'email_verified_at' => Carbon::now(),
+           ];
+
+           $full_name = $userSocial->getName();
+           $full_name_array = explode(" ", $full_name);
+           $data["first_name"] = $full_name_array[0];
+           $data["last_name"] = end($full_name_array);
+
+           if(count($full_name_array) > 2)
+           {
+               $data["middle_name"] = $full_name_array[1];
+           }
+
+           $user = User::create($data);
+
+            Auth::login($user);
+
+            // $user->notify(new AccountCreatedMail($user->first_name));
+
+           return redirect()->route('user.dashboard');
+       }
+   }
 }

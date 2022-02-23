@@ -1,4 +1,4 @@
-@extends('admin.dashboard.admin-master')
+@extends('user.dashboard.user-master')
 
 @section('content')
 
@@ -7,7 +7,7 @@
 
         <div class="page-header">
             <div class="page-title">
-                <h3>Regions</h3>
+                <h3>My Services</h3>
                 <div>
                     <a href="{{ route('admin.regions.create') }}" class="btn btn-primary">
                         Create Region
@@ -25,28 +25,27 @@
                     <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Total Services</th>
+                        <th>Service Name</th>
+                        <th>Region</th>
+                        <th>Storage</th>
+                        <th>Operating System</th>
+                        <th>Starts at</th>
+                        <th>Ends at</th>
                         <th class="text-right">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @forelse ($regions as $region)
+                        @forelse ($services as $service)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $region->name }}</td>
-                                <td>{{ $region->latitude }}</td>
-                                <td>{{ $region->longitude }}</td>
-                                <td></td>
+                                <td>{{ $service->service->name }}</td>
+                                <td>{{ $service->region->name }}</td>
+                                <td>{{ $service->storage->name }}</td>
+                                <td>{{ $service->operatingSytem->name }}</td>
+                                <td>{{ $service->starts_from }}</td>
+                                <td>{{ $service->expires_at }}</td>
+                                <td>{{  }}</td>
                                 <td class="text-right">
-                                    <a href="{{ route('admin.regions.edit', ['region' => $region]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
-                                        <i class="fa-solid fa-pencil"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" data-toggle="tooltip" title="Delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
                                 </td>
                             </tr>
                         @empty
