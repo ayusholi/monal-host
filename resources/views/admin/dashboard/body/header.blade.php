@@ -297,7 +297,7 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" title="User menu" data-toggle="dropdown">
                         <span class="mr-2 d-sm-inline d-none">
-                            Hi! <strong>Bony Gidden</strong>
+                            Hi! <strong>{{ auth()->guard('admin')->user()->full_name }}</strong>
                         </span>
                         <figure class="avatar avatar-sm">
                             <img src="https://baston.laborasyon.com/assets/media/image/user/man_avatar3.jpg"

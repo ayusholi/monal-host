@@ -36,6 +36,14 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label for="slug">Slug</label>
+                                        <input type="text" name="slug" class="form-control" id="slug" value="{{ old('slug') }}">
+                                        <small class="form-text text-muted">Example: [vps-server]</small>
+                                        @error('slug')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label for="ram">RAM</label>
                                         <input type="number" name="ram" class="form-control" id="ram" placeholder="Enter RAM" value="{{ old('ram') }}">
                                         @error('ram')

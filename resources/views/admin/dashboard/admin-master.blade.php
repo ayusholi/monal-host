@@ -35,8 +35,9 @@
 
     <!-- Preloader -->
     <div class="preloader">
-        <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
-        <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark">
+    <h3>Monalhost</h3>
+        {{-- <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo"> --}}
+        {{-- <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark"> --}}
         <div class="preloader-icon"></div>
     </div>
 

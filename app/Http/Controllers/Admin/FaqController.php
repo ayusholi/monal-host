@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Region;
+use App\Models\Faq;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class RegionController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RegionController extends Controller
      */
     public function index()
     {
-        $regions = Region::all();
-        return view('admin.region.index', compact('regions'));
+        $faqs = Faq::all();
+        return view('admin.faqs.index', compact('faqs'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RegionController extends Controller
      */
     public function create()
     {
-        return view('admin.region.create');
+        return view('admin.faqs.create');
     }
 
     /**
@@ -38,15 +38,13 @@ class RegionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'price' => 'required'
+            'title' => 'required|string|min:2|max:255',
+            'body' => 'required|min:2',
         ]);
 
-        Region::create($request->all());
+        Faq::create($request->all());
 
-        return redirect()->route('admin.regions.index');
+        return redirect()->route('admin.faqs.index');
     }
 
     /**
@@ -57,8 +55,8 @@ class RegionController extends Controller
      */
     public function show($id)
     {
-        $region = Region::findOrFail($id);
-        return view('admin.region.detail', compact('region'));
+        $faq = Faq::findOrFail($id);
+        return view('admin.faqs.detail', compact('faq'));
     }
 
     /**
@@ -69,8 +67,8 @@ class RegionController extends Controller
      */
     public function edit($id)
     {
-        $region = Region::findOrFail($id);
-        return view('admin.region.edit', compact('region'));
+        $faq = Faq::findOrFail($id);
+        return view('admin.faqs.edit', compact('faq'));
     }
 
     /**
@@ -82,16 +80,14 @@ class RegionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $region = Region::findOrFail($id);
+        $faq = Faq::findOrFail($id);
         $this->validate($request, [
-            'name' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'price' => 'required'
+            'title' => 'required|string|min:2|max:255',
+            'body' => 'required|min:2',
         ]);
 
-        $region->update($request->all());
-        return redirect()->route('admin.regions.index');
+        $faq->update($request->all());
+        return redirect()->route('admin.faqs.index');
     }
 
     /**
@@ -102,9 +98,9 @@ class RegionController extends Controller
      */
     public function destroy($id)
     {
-        $region = Region::findOrFail($id);
-        $region->delete();
+        $faq = Faq::findOrFail($id);
+        $faq->delete();
 
-        return redirect()->route('admin.regions.index');
+        return redirect()->route('admin.faqs.index');
     }
 }

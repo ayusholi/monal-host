@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Dashboard</title>
+    <title>Dashboard | Monalhost</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://baston.laborasyon.com/assets/media/image/favicon.png"/>
@@ -35,8 +35,9 @@
 
     <!-- Preloader -->
     <div class="preloader">
-        <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
-        <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark">
+        <h3>Monalhost</h3>
+        {{-- <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo"> --}}
+        {{-- <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark"> --}}
         <div class="preloader-icon"></div>
     </div>
 

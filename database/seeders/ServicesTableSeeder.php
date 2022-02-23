@@ -17,6 +17,7 @@ class ServicesTableSeeder extends Seeder
         $services = [
             [
                 'name' => 'Personal Plan',
+                'slug' => 'personal-plan',
                 'ram' => 2,
                 'ram_unit' => "GB",
                 'storage' => 50,
@@ -29,6 +30,7 @@ class ServicesTableSeeder extends Seeder
             ],
             [
                 'name' => 'Startup Plan',
+                'slug' => 'startup-plan',
                 'ram' => 4,
                 'ram_unit' => "GB",
                 'storage' => 100,
@@ -41,6 +43,7 @@ class ServicesTableSeeder extends Seeder
             ],
             [
                 'name' => 'Business Plan',
+                'slug' => 'business-plan',
                 'ram' => 8,
                 'ram_unit' => "GB",
                 'storage' => 200,

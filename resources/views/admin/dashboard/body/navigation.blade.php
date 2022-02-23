@@ -4,10 +4,11 @@
     <!-- Logo -->
     <div class="navigation-header">
         <a class="navigation-logo" href="{{ route('home') }}">
-            <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
-            <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="dark logo">
-            <img class="small-logo" src="https://baston.laborasyon.com/assets/media/image/logo/small-logo.png" alt="small logo">
-            <img class="small-dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/small-dark-logo.png" alt="small dark logo">
+            <h2>Monalhost</h2>
+            {{-- <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo"> --}}
+            {{-- <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="dark logo"> --}}
+            {{-- <img class="small-logo" src="https://baston.laborasyon.com/assets/media/image/logo/small-logo.png" alt="small logo"> --}}
+            {{-- <img class="small-dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/small-dark-logo.png" alt="small dark logo"> --}}
         </a>
         <a href="#" class="small-navigation-toggler"></a>
         <a href="#" class="btn btn-danger mobile-navigation-toggler">
@@ -103,7 +104,7 @@
             <ul id="customer">
                 <li class="navigation-divider">Customer</li>
                 <li>
-                    <a  href="chat.html">
+                    <a  href="{{ route('admin.customers.list') }}">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
                         <span>New Customers</span>
                         <span class="badge badge-danger">5</span>
@@ -176,42 +177,20 @@
                 </li>
             </ul>
             <ul id="cms">
-                <li class="navigation-divider">Forms</li>
+                <li class="navigation-divider">CMS</li>
                 <li>
-                    <a  href="basic-forms.html">
-                        <span class="nav-link-icon" data-feather="book"></span>
-                        <span>Basic Forms</span>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="square"></i>
+                        </span>
+                        <span>FAQs</span>
                     </a>
-                </li>
-                <li>
-                    <a  href="custom-forms.html">
-                        <span class="nav-link-icon" data-feather="disc"></span>
-                        <span>Custom Forms</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="advanced-forms.html">
-                        <span class="nav-link-icon" data-feather="framer"></span>
-                        <span>Advanced Forms</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="form-validation.html">
-                        <span class="nav-link-icon" data-feather="toggle-left"></span>
-                        <span>Form Validation</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="form-wizard.html">
-                        <span class="nav-link-icon" data-feather="sliders"></span>
-                        <span>Form Wizard</span>
-                    </a>
-                </li>
-                <li>
-                    <a  href="form-repeater.html">
-                        <span class="nav-link-icon" data-feather="repeat"></span>
-                        <span>Form Repeater</span>
-                    </a>
+                    <ul>
+                        <li>
+                            <a  href="{{ route('admin.faqs.index') }}">List Faqs</a></li>
+                        <li>
+                            <a  href="{{ route('admin.faqs.create') }}">Create Faq</a></li>
+                    </ul>
                 </li>
             </ul>
             <ul id="settings">

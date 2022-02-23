@@ -1,22 +1,24 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from baston.laborasyon.com/demos/default/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jan 2022 08:56:25 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Baston - Responsive Admin Dashboard Template</title>
+    <title>Login | MonalHost</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://baston.laborasyon.com/assets/media/image/favicon.png"/>
 
     <!-- Plugin styles -->
-    <link rel="stylesheet" href="https://baston.laborasyon.com/vendors/bundle.css" type="text/css">
+    {{-- <link rel="stylesheet" href="https://baston.laborasyon.com/vendors/bundle.css" type="text/css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bundle.css') }}" type="text/css">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="https://baston.laborasyon.com/assets/css/app.min.css" type="text/css">
+    {{-- <link rel="stylesheet" href="https://baston.laborasyon.com/assets/css/app.min.css" type="text/css"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/vendor/all.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
 </head>
 <body class="form-membership" style="background: url(https://baston.laborasyon.com/assets/media/image/image1.jpg)">
 <!-- Preloader -->
@@ -60,37 +62,15 @@
         </div>
         <button class="btn btn-primary btn-block">Sign in</button>
         <hr>
-        <p class="text-muted">Login with your social media account.</p>
+        <p class="text-muted">Login with Google.</p>
         <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#" class="btn btn-floating btn-facebook">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class="btn btn-floating btn-twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class="btn btn-floating btn-dribbble">
-                    <i class="fa fa-dribbble"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class="btn btn-floating btn-linkedin">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class="btn btn-floating btn-google">
-                    <i class="fa fa-google"></i>
-                </a>
-            </li>
+            <a href="{{ route('auth.socialite', ['social' => 'google']) }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+            </a>
         </ul>
         <hr>
         <p class="text-muted">Don't have an account?</p>
-        <a href="register.html" class="btn btn-outline-light">Register now!</a>
+        <a href="{{ route('auth.register') }}" class="btn btn-outline-light">Register now!</a>
     </form>
     <!-- ./ form -->
 
@@ -98,11 +78,10 @@
 </div>
 
 <!-- Plugin scripts -->
-<script src="https://baston.laborasyon.com/vendors/bundle.js"></script>
+<script src="{{ asset('assets/vendor/bundle.js') }}"></script>
 
 <!-- App scripts -->
-<script src="https://baston.laborasyon.com/assets/js/app.min.js"></script>
+<script src="{{ asset('assets/js/app.min.js') }}"></script>
 </body>
 
-<!-- Mirrored from baston.laborasyon.com/demos/default/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jan 2022 08:56:25 GMT -->
 </html>

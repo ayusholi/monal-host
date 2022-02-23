@@ -26,6 +26,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form method="POST" action="{{ route('admin.operating-systems.update', ['operating_system' => $operating_system]) }}">
+                                    @method('PUT')
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="name">Name</label>
