@@ -26,11 +26,10 @@ class UserService extends Model
         'user_id',
         'service_id',
         'region_id',
-        'storage_id',
         'operating_system_id',
-        'payment_id',
         'start_from',
-        'expires_at'
+        'expires_at',
+        'status'
     ];
 
     /**

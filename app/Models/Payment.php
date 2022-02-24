@@ -12,6 +12,20 @@ class Payment extends Model
 {
     use HasFactory;
 
+    static $TRANSACTION_METHOD = [
+        'CONNECT_IPS' => 'Connect IPS',
+        'IME_PAY' => 'Ime Pay',
+    ];
+
+    static $STATUS = [
+        'SUCCESSFUL' => 'successful',
+        'FAILED' => 'failed',
+        'CANCELLED' => 'cancelled',
+        'PENDING' => 'pending',
+        'PROCESSING' => 'processing',
+        'PAID' => 'paid',
+    ];
+
      /**
      * The attributes that are mass assignable.
      *
@@ -19,9 +33,10 @@ class Payment extends Model
      */
     protected $fillable = [
         'user_id',
+        'user_service_id',
+        'admin_id',
         'transaction_method',
         'payment_amount',
-        'admin_id',
         'tax_percent',
         'tax_amount',
         'total_amount',

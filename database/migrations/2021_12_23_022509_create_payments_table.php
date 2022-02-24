@@ -17,17 +17,18 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->integer('transaction_id');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('admin_id')->constrained('admins')->onUpdate('cascade')->nullable();
+            $table->foreignId('user_service_id')->constrained('user_services')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('admin_id')->nullable()->constrained('admins')->onDelete('set null')->onUpdate('cascade');
             $table->string('transaction_method');
             $table->decimal('payment_account', 8, 2);
             $table->decimal('tax_percent', 8, 2);
             $table->decimal('tax_account', 8, 2);
             $table->decimal('total_account', 8, 2);
             $table->string('transaction_currency');
-            $table->timestamp('transaction_date');
             $table->string('remarks')->nullable();
             $table->string('transaction_reference')->nullable();
             $table->string('status')->nullable();
+            $table->timestamp('transaction_date');
             $table->timestamps();
         });
     }

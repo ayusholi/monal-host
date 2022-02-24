@@ -18,11 +18,11 @@ class CreateUserServicesTable extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('region_id')->constrained('regions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('storage_id')->constrained('storages')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('storage_id')->nullable()->constrained('storages')->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('operating_system_id')->constrained('operating_systems')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('payment_id')->constrained('payments')->onDelete('cascade')->onUpdate('cascade');
-            $table->dateTime('start_form');
-            $table->dateTime('expires_at');
+            $table->dateTime('start_form')->nullable();
+            $table->dateTime('expires_at')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }
