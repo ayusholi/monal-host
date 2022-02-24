@@ -43,11 +43,11 @@
                                 <td>{{ $storage->price }}</td>
                                 <td></td>
                                 <td class="text-right">
-                                    <a href="{{ route('admin.storages.edit', ['storage' => $storage]) }}" class="btn btn-outline-primary btn-sm btn-floating" data-toggle="tooltip" title="Edit">
-                                        <i class="ti-pencil"></i>
+                                    <a href="{{ route('admin.storages.edit', ['storage' => $storage]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
+                                        <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm btn-floating ml-2" data-toggle="tooltip" title="Delete">
-                                        <i class="ti-trash"></i>
+                                    <a href="#" class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" data-toggle="tooltip" title="Delete">
+                                        <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
