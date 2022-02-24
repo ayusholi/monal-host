@@ -70,7 +70,13 @@
                     </div>
                     <div class="col-sm-5">
                         <ul class="info-list text-uppercase justify-content-center justify-content-sm-end">
-                            <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
+                            @auth
+                                <li> <a href="{{ route('user.dashboard') }}"> <img src="{{ asset('img/icon/login.svg') }}" alt="" class="svg"> Dashboard </a></li>
+                            @endauth
+
+                            @guest
+                                <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
+                            @endguest
                             <li> <a href="contact.html"> <img src="{{ asset('img/icon/support.svg') }}" alt="" class="svg"> Support </a></li>
                         </ul>
                     </div>

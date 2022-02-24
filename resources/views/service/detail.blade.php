@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Hostpack | Web Hosting and Domain HTML Template</title>
+    <title>Monalhost</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,15 +33,19 @@
                                 <a href="tel:8884014678"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@hostpack.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@hostpack.com </a>
+                                <a href="mailto:info@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@monalhost.com </a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-sm-5">
                         <ul class="info-list text-uppercase justify-content-center justify-content-sm-end">
-                            <li>
-                                <a href="login.html"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Login </a>
-                            </li>
+                            @auth
+                                <li> <a href="{{ route('user.dashboard') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Dashboard </a></li>
+                            @endauth
+
+                            @guest
+                                <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
+                            @endguest
                             <li>
                                 <a href="contact.html"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Support </a>
                             </li>
@@ -136,7 +140,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
-                        <h2>Meet Hostpack</h2>
+                        <h2>Meet Monalhost</h2>
                         <p>Save up to 60% compared to other cloud provider designer developers bloggers <br /> designers developers, bloggers and online businesses.</p>
                     </div>
                 </div>
@@ -144,72 +148,6 @@
             <div class="row">
                 <div class="col">
                     <div class="meet-hostpack-img text-center"> <img src="{{ asset('assets/img/media/meet-hostpack.png') }}" data-rjs="2" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="testimonial4-slider pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h2>Our Client Say</h2>
-                        <p>Save up to 60% compared to other cloud provider designer developers bloggers designers developers, bloggers and online businesses.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="testimonial-carousel style--three dot-style--two v2 owl-carousel" data-owl-autoplay="true" data-owl-margin="30" data-owl-items="3" data-owl-dots="true" data-owl-responsive='{"0": {"items": "1"}, "767": {"items": "2"}, "992": {"items": "3"}}'>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial5.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Huber aston</h4>
-                                        <p>Charman @Bluehost</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Nancy aston</h4>
-                                        <p>Co-founder @GoDaddy</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial7.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Smith aston</h4>
-                                        <p>Founder @Namechep</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Nancy aston</h4>
-                                        <p>Co-founder @GoDaddy</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -292,6 +230,72 @@
             </div>
         </div>
     </section>
+    <section class="testimonial4-slider pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h2>Our Client Say</h2>
+                        <p>Save up to 60% compared to other cloud provider designer developers bloggers designers developers, bloggers and online businesses.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="testimonial-carousel style--three dot-style--two v2 owl-carousel" data-owl-autoplay="true" data-owl-margin="30" data-owl-items="3" data-owl-dots="true" data-owl-responsive='{"0": {"items": "1"}, "767": {"items": "2"}, "992": {"items": "3"}}'>
+                        <div class="single-testimonial-wrap">
+                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
+                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial5.png') }}" data-rjs="2" alt=""></div>
+                                <div class="testimonial-content">
+                                    <div class="meta-info">
+                                        <h4>Huber aston</h4>
+                                        <p>Charman @Bluehost</p>
+                                    </div>
+                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-wrap">
+                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
+                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
+                                <div class="testimonial-content">
+                                    <div class="meta-info">
+                                        <h4>Nancy aston</h4>
+                                        <p>Co-founder @GoDaddy</p>
+                                    </div>
+                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-wrap">
+                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
+                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial7.png') }}" data-rjs="2" alt=""></div>
+                                <div class="testimonial-content">
+                                    <div class="meta-info">
+                                        <h4>Smith aston</h4>
+                                        <p>Founder @Namechep</p>
+                                    </div>
+                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-wrap">
+                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
+                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
+                                <div class="testimonial-content">
+                                    <div class="meta-info">
+                                        <h4>Nancy aston</h4>
+                                        <p>Co-founder @GoDaddy</p>
+                                    </div>
+                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer" data-bg-img="{{ asset('assets/img/bg/footer-bg.png') }}">
         <div class="footer-main">
             <div class="container">
@@ -300,7 +304,7 @@
                         <div class="widget widget_about text-white">
                             <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/img/logo.svg') }}" class="svg" alt=""> </a>
                             <div class="menu-container">
-                                <p>We are Hostpack 29 years of experience on this field with most talanted peoples and leaders.</p>
+                                <p>We are Monalhost 29 years of experience on this field with most talanted peoples and leaders.</p>
                                 <ul class="contact-list">
                                     <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">888-401-4678</a></li>
                                 </ul>
@@ -404,6 +408,4 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 </body>
-<!-- Mirrored from www.themelooks.biz/demo/hostpack/html/preview/service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Nov 2021 09:15:31 GMT -->
-
 </html>

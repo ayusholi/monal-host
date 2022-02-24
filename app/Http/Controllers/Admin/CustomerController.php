@@ -22,4 +22,9 @@ class CustomerController extends Controller
         $customer = User::findOrFail($customer_id);
         return view('admin.customers.detail', compact('customer'));
     }
+
+    public function getCustomerServices()
+    {
+
+    }
 }
