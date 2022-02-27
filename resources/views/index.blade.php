@@ -22,6 +22,7 @@
     <div class="container">
         <div class="row gx-lg-0 justify-content-center">
             @foreach($services as $service)
+            {{-- {{dd($service)}} --}}
                 <div class="col-lg-4 col-md-6">
                     <div class="single-price style--two first-item">
                         <div class="price-head">
@@ -43,7 +44,7 @@
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> {{ $service->ram }}{{ $service->ram_unit }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> {{ $service->storage }}{{ $service->storage_unit }} {{ $service->storage_type }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
-                            </ul><a href="{{ route('service.detail', ['slug' => $service->slug] ) }}" class="btn btn-style3">Buy Now</a>
+                            </ul><a href="{{ route('service.detail', ['slug' => $service->id] ) }}" class="btn btn-style3">Buy Now</a>
                         </div>
                     </div>
                 </div>
