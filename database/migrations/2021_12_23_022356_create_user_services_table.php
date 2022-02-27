@@ -22,6 +22,7 @@ class CreateUserServicesTable extends Migration
             $table->foreignId('operating_system_id')->constrained('operating_systems')->onDelete('cascade')->onUpdate('cascade');
             $table->dateTime('start_form')->nullable();
             $table->dateTime('expires_at')->nullable();
+            $table->longText('credentials');
             $table->string('status');
             $table->timestamps();
         });

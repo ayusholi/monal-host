@@ -124,7 +124,7 @@ class UserController extends Controller
            $email = $userSocial->getEmail();
            $user = User::where('email', $email)->first();
            if($user) {
-               return redirect()->route('login')->withErrors(["email_exists" => "Email already exists. Please try to log in."]);
+               return redirect()->route('auth.login')->withErrors(["email_exists" => "Email already exists. Please try to log in."]);
            }
            $username = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $userSocial->getName()));
            $username_creator = User::where('username', $username)->first();

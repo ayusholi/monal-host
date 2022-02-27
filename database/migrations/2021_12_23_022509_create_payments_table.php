@@ -15,15 +15,15 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('transaction_id');
+            $table->string('transaction_id');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_service_id')->constrained('user_services')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('admin_id')->nullable()->constrained('admins')->onDelete('set null')->onUpdate('cascade');
             $table->string('transaction_method');
-            $table->decimal('payment_account', 8, 2);
+            $table->decimal('payment_amount', 8, 2);
             $table->decimal('tax_percent', 8, 2);
-            $table->decimal('tax_account', 8, 2);
-            $table->decimal('total_account', 8, 2);
+            $table->decimal('tax_amount', 8, 2);
+            $table->decimal('total_amount', 8, 2);
             $table->string('transaction_currency');
             $table->string('remarks')->nullable();
             $table->string('transaction_reference')->nullable();

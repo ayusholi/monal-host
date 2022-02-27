@@ -12,6 +12,7 @@ use App\Service\ImePayService;
 use App\Models\OperatingSystem;
 use App\Service\ConnectIpsService;
 use App\Http\Controllers\Controller;
+use App\Models\Region;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -91,7 +92,6 @@ class PaymentController extends Controller
 
     public function imePayPayment(Request $request)
     {
-
         $request->validate([
             'amount' => 'required|numeric',
             'service_id' => 'required|exists:services,id',
@@ -99,15 +99,16 @@ class PaymentController extends Controller
         $user = Auth::user();
         $amount = $request->amount;
 
-        $payment_charge = 0;
-
         $service = Service::findOrFail($request->service_id);
-        $operating_system = OperatingSystem::findOrFail($request->operating_system_id);
+        $operating_system = OperatingSystem::findOrFail(1);
+        $region = Region::findOrFail(1);
 
         $user_service = UserService::create([
             'user_id' => $user->id,
             'service_id' => $service->id,
             'operating_system_id' => $operating_system->id,
+            'region_id' => $region->id,
+            'status' => UserService::$STATUS['PROCESSING']
         ]);
         $transaction_id = "IME-" . rand(1000000, 9999999);
         $transaction_currency = "NPR";
@@ -133,7 +134,7 @@ class PaymentController extends Controller
                 'transaction_id' => $transaction_id,
                 'status' => Payment::$STATUS['PENDING'],
             ]);
-
+            $checkout_url = env('IME_PAY_CHECKOUT_URL');
             $data = [
                 "url" => env('IME_PAY_CHECKOUT_URL'),
                 "merchant_code" => env('IME_PAY_MERCHANT_CODE'),
@@ -143,12 +144,19 @@ class PaymentController extends Controller
                 "amount" => number_format(str_pad($amount, 6, '0', STR_PAD_LEFT), 2),
                 "cancel_url" => route('imepay.failed'),
                 "token_id" => $token_id,
+                "service" => $service,
+                "amount" => $amount,
+                "request_method" => "GET",
+                "checkout_url" => $checkout_url,
             ];
+
+            return view('service.imepay_confirmation')->with($data);
         }
     }
 
     public function imePaySuccess(Request $request)
     {
+        dd($request->all());
         $response_code = $request->ResponseCode;
 
         if($response_code == 0) {
@@ -167,7 +175,7 @@ class PaymentController extends Controller
 
                 }
             }
-            return redirect()->route('home');
+            return redirect()->route('user.dashboard');
         } else {
             return redirect()->route('home');
         }
@@ -175,6 +183,8 @@ class PaymentController extends Controller
 
     public function imePayFailed(Request $request)
     {
+        dd($request->all());
+
         $response_code = $request->ResponseCode;
         $transaction_id = $request->RefId;
         $payment = Payment::where('transaction_id', $transaction_id)->first();

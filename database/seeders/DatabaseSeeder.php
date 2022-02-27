@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             AdminTableSeeder::class,
             ServicesTableSeeder::class,
             FaqSeeder::class,
+            OperatingSystemSeeder::class,
+            RegionSeeder::class,
         ]);
     }
 }
