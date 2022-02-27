@@ -75,9 +75,11 @@
                 </li>
             </ul>
             <ul id="services">
-                <li class="navigation-divider">Services</li>
+                <a  href="#" class="{{Request::is('/my-services') ? 'active' : ''}}">
+                <li class="navigation-divider" >Services</li>
+                </a>
                 <li>
-                    <a  href="{{ route('my.services') }}">
+                    <a  href="{{ route('my.services') }}" class="{{Request::is('/my-services') ? 'active' : ''}}">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
                         <span>My Services</span>
                         <span class="badge badge-danger">5</span>

@@ -30,7 +30,8 @@
 <!-- App css -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/all.min.css') }}" type="text/css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"  /></head>
+    <link rel="stylesheet" href="{{asset('assets/css/fontall.min.css')}}"  />
+</head>
 <body>
 
     <!-- Preloader -->

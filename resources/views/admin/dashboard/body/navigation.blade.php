@@ -18,9 +18,9 @@
     <!-- ./ Logo -->
 
     <!-- Menu wrapper -->
-    <div class="navigation-menu-wrapper">
+    <div class="navigation-menu-wrapper" >
         <!-- Menu tab -->
-        <div class="navigation-menu-tab">
+        <div class="navigation-menu-tab" style="background: #0d6efd">
             <ul>
                 <li>
                     <a href="#" data-menu-target="#dashboards" class="{{ Request::is('admin/dashboard') ? 'active' : '' }} ">
