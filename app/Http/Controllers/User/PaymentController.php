@@ -146,7 +146,7 @@ class PaymentController extends Controller
                 "token_id" => $token_id,
                 "service" => $service,
                 "amount" => $amount,
-                "request_method" => "GET",
+                "request_method" => "POST",
                 "checkout_url" => $checkout_url,
             ];
 
@@ -156,7 +156,6 @@ class PaymentController extends Controller
 
     public function imePaySuccess(Request $request)
     {
-        dd($request->all());
         $response_code = $request->ResponseCode;
 
         if($response_code == 0) {
@@ -183,8 +182,6 @@ class PaymentController extends Controller
 
     public function imePayFailed(Request $request)
     {
-        dd($request->all());
-
         $response_code = $request->ResponseCode;
         $transaction_id = $request->RefId;
         $payment = Payment::where('transaction_id', $transaction_id)->first();

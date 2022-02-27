@@ -29,6 +29,8 @@
                         <th>Region</th>
                         <th>Storage</th>
                         <th>Operating System</th>
+                        <th>Status</th>
+                        <th>Payment</th>
                         <th>Starts at</th>
                         <th>Ends at</th>
                         <th class="text-right">Action</th>
@@ -40,12 +42,16 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $service->service->name }}</td>
                                 <td>{{ $service->region->name }}</td>
-                                <td>{{ $service->storage->name }}</td>
+                                <td>{{ $service->storage }} {{ $service->storage_unit }} {{ $service->storage_type }}</td>
                                 <td>{{ $service->operatingSytem->name }}</td>
-                                <td>{{ $service->starts_from }}</td>
-                                <td>{{ $service->expires_at }}</td>
-                                <td>{{  }}</td>
+                                <td>{{ ucfirst($service->status) }}</td>
+                                <td>{{ $service->payment->transaction_method}}</td>
+                                <td>{{ $service->starts_from ?? "[Not Activated]" }}</td>
+                                <td>{{ $service->expires_at ?? "[Not Activated]" }}</td>
                                 <td class="text-right">
+                                    <a href="{{ route('my.service.detail', ['id' => $service->id]) }}" class="btn btn-primary text-white" data-toggle="tooltip" title="View">
+                                        View
+                                    </a>
                                 </td>
                             </tr>
                         @empty

@@ -32,4 +32,23 @@ class CustomerController extends Controller
         $services = UserService::where('user_id', $user->id)->get();
         return view('admin.customers.services', compact('services'));
     }
+
+
+    public function getProcessingServices()
+    {
+        $services = UserService::where('status', UserService::$STATUS['PROCESSING'])->get();
+
+        return view('admin.customers.processing_services', compact('services'));
+    }
+
+    public function getUserServiceDetail($customer_id, $user_service_id)
+    {
+        $customer = User::findOrFail($customer_id);
+        $user_service = UserService::findOrFail($user_service_id);
+
+        if($user_service->user_id != $customer_id) abort(404);
+
+        return view('admin.customers.service_detail'. compact('user_service', 'customer'));
+
+    }
 }

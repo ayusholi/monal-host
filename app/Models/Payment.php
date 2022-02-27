@@ -24,7 +24,6 @@ class Payment extends Model
         'CANCELLED' => 'cancelled',
         'PENDING' => 'pending',
         'PROCESSING' => 'processing',
-        'PAID' => 'paid',
     ];
 
      /**

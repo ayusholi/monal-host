@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Auth;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Mail\AccountCreatedMail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserLoginRequest;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\UserRegisterRequest;
-use App\Mail\AccountCreatedMail;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -42,11 +45,21 @@ class UserController extends Controller
      */
     public function store(UserRegisterRequest $request)
     {
-        $hashPassword = Hash::make($request->password);
+        // DB::beginTransaction();
+        // try {
+            $hashPassword = Hash::make($request->password);
 
-        User::create(array_merge($request->all(), ['password' => $hashPassword]));
+            $user = User::create(array_merge($request->all(), ['password' => $hashPassword]));
 
-        return redirect()->route('auth.login');
+            Mail::to($user)->send(new AccountCreatedMail($user->full_name));
+
+            // DB::commit();
+            return redirect()->route('auth.login');
+        // } catch (Exception $exception) {
+        //     DB::rollBack();
+        //     return back();
+        //     throw $exception;
+        // }
     }
 
     /**
@@ -153,7 +166,7 @@ class UserController extends Controller
 
             Auth::login($user);
 
-            // $user->notify(new AccountCreatedMail($user->first_name));
+            $user->notify(new AccountCreatedMail($user->full_name));
 
            return redirect()->route('user.dashboard');
        }

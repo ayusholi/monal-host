@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://baston.laborasyon.com/vendors/dataTable/datatables.min.css" type="text/css">
 
 <!-- App css -->
-    <link rel="stylesheet" href="https://baston.laborasyon.com/assets/css/app.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/all.min.css') }}" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"  /></head>
 <body>

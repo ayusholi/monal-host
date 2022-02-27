@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
+use App\Models\UserService;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -11,7 +13,16 @@ class UserController extends Controller
     public function getServices()
     {
         $user = Auth::user();
-        $services = $user->userServices;
+        $services = UserService::where('user_id', $user->id)->whereHas("payment", function($query) {
+            $query->where('status', Payment::$STATUS['SUCCESSFUL']);
+        })->get();
         return view('auth.user.my_services', compact('services'));
+    }
+
+    public function getServiceDetail($id)
+    {
+        $user = Auth::user();
+        $service = UserService::where('user_id', $user->id)->firstOrFail();
+        return view('auth.user.service_detail', compact($service));
     }
 }

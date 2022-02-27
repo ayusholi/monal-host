@@ -209,14 +209,22 @@
                                 <tr>
                                     <th></th>
                                     <td>
-                                        <a href="#" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
-                                        <a href="#"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
-                                        <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform">
-                                            {{ csrf_field() }}
-                                            <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                            <input type="hidden" value="{{ $service->id }}" name="service_id">
-                                        </form>
-                                        <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>Pay With</p>
+                                                <a href="#"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
+                                                <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform" style="display: inline;">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
+                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
+                                                </form>
+                                                <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Or Pay Manually</p>
+                                                <a href="#" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tfoot>

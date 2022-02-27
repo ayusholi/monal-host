@@ -20,7 +20,7 @@ class UserService extends Model
 
     static $STATUS = [
         'SUCCESSFUL' => 'successful',
-        'PROCESSING' => 'failed',
+        'PROCESSING' => 'processing',
         'CANCELLED' => 'cancelled',
     ];
      /**
@@ -75,7 +75,7 @@ class UserService extends Model
      */
     public function payment(): BelongsTo
     {
-        return $this->belongsTo(Payment::class, 'user_service_id', 'id');
+        return $this->belongsTo(Payment::class, 'id', 'user_service_id');
     }
 
     /**

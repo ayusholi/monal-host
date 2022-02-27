@@ -136,7 +136,7 @@
                             <li>Service Interval: {{ $service->interval }} {{ $service->interval_type }}</li>
                             <li>Amount: Rs. {{ $amount }}</li>
                         </ul>
-                        <form action="{{ $checkout_url }}"method="post">
+                        <form action="{{ $checkout_url }}" method="POST">
                             <input type="hidden" name="TokenId" value="{{ $token_id }}">
                             <input type="hidden" name="MerchantCode" value="{{ $merchant_code }}">
                             <input type="hidden" name="RefId" value="{{ $ref_id }}">
@@ -146,11 +146,6 @@
                             <input type="hidden" name="CancelUrl" value="{{ route('imepay.failed') }}">
                             <button type="submit" class="btn btn-style3">Confirm</a>
                         </form>
-                    </div>
-                </div>
-                <div class="section-title text-center">
-                    <div class="col">
-
                     </div>
                 </div>
             </div>

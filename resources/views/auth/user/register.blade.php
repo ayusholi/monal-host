@@ -42,37 +42,37 @@
     <form method="post" action="{{ route('auth.store') }}">
         @csrf
         <div class="form-group">
-            <input type="text" class="form-control" name="first_name" placeholder="Firstname" required autofocus>
+            <input type="text" class="form-control" name="first_name" placeholder="First Name" required autofocus value="{{ old('first_name') }}">
             @error('first_name')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="middle_name" placeholder="Firstname" required autofocus>
+            <input type="text" class="form-control" name="middle_name" placeholder="Middle Name" value="{{ old('middle_name') }}">
             @error('middle_name')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="last_name" placeholder="Lastname" required>
+            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required value="{{ old('last_name') }}">
             @error('last_name')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="Lastname" required>
+            <input type="text" class="form-control" name="username" placeholder="username" required value="{{ old('username') }}">
             @error('username')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" placeholder="Email" required value="{{ old('email') }}">
             @error('email')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="contact_number" placeholder="Contact Number" required>
+            <input type="text" class="form-control" name="contact_number" placeholder="Contact Number" required value="{{ old('contact_number') }}">
             @error('contact_number')
                 <span class="text-danger">{{ $message }}</span>
             @enderror

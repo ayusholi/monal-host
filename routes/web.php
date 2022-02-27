@@ -37,6 +37,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/customers', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomers'])->name('customers.list');
     Route::get('/customers/detail/{customer_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomerDetail'])->name('customer.detail');
     Route::get('/customers/detail/{customer_id}/services', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomerServices'])->name('customer.services');
+    Route::get('/customers/detail/{customer_id}/service/detail{user_service_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceDetail'])->name('service.detail');
+    Route::get("/user-services/processing", [\App\Http\Controllers\Admin\CustomerController::class, 'getProcessingServices'])->name('services.processing');
 });
 
 Route::group(['middleware'=>'auth:admin'], function(){
@@ -72,6 +74,8 @@ Route::group(['middleware'=>'auth'], function(){
 
     Route::post("/payment/ime-pay/confirmation", [App\Http\Controllers\User\PaymentController::class], 'imePayConfirmation')->name('imepay.confirmation');
     Route::get('/my-services', [\App\Http\Controllers\User\UserController::class, 'getServices'])->name('my.services');
+    Route::get('/my-services/detail/{id}', [\App\Http\Controllers\User\UserController::class, 'getServiceDetail'])->name('my.service.detail');
+
 });
 
 

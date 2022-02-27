@@ -11,16 +11,16 @@ class AccountCreatedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $first_name;
+    public $full_name;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($first_name)
+    public function __construct($full_name)
     {
-        $this->first_name = $first_name;
+        $this->full_name = $full_name;
     }
 
     /**
@@ -30,6 +30,7 @@ class AccountCreatedMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.account_created', compact('first_name'));
+        $full_name = $this->full_name;
+        return $this->view('emails.account_created', compact('full_name'));
     }
 }
