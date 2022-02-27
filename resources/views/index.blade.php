@@ -44,7 +44,7 @@
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> {{ $service->ram }}{{ $service->ram_unit }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> {{ $service->storage }}{{ $service->storage_unit }} {{ $service->storage_type }}</li>
                                 <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
-                            </ul><a href="{{ route('service.detail', ['slug' => $service->id] ) }}" class="btn btn-style3">Buy Now</a>
+                            </ul><a href="{{ route('service.detail', ['slug' => $service->slug] ) }}" class="btn btn-style3">Buy Now</a>
                         </div>
                     </div>
                 </div>
