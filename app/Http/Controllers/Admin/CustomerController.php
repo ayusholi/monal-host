@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use App\Models\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -23,8 +25,11 @@ class CustomerController extends Controller
         return view('admin.customers.detail', compact('customer'));
     }
 
-    public function getCustomerServices()
-    {
 
+    public function getCustomerServices($customer_id)
+    {
+        $user = Auth::user();
+        $services = UserService::where('user_id', $user->id)->get();
+        return view('admin.customers.services', compact('services'));
     }
 }

@@ -66,12 +66,12 @@ Route::group(['middleware'=>'auth'], function(){
         return view('user.dashboard.index');
     })->name('user.dashboard');
 
-    Route::post('/payments/connectips', [\App\Http\Controllers\User\PaymentController::class, 'connectIps']);
+    Route::post('/payments/connectips', [\App\Http\Controllers\User\PaymentController::class, 'connectIps'])->name('payment.connectips');
     // IME Payment
     Route::post('/payment/ime-pay', [\App\Http\Controllers\User\PaymentController::class, 'imePayPayment'])->name('payment.imepay');
 
+    Route::post("/payment/ime-pay/confirmation", [App\Http\Controllers\User\PaymentController::class], 'imePayConfirmation')->name('imepay.confirmation');
     Route::get('/my-services', [\App\Http\Controllers\User\UserController::class, 'getServices'])->name('my.services');
-
 });
 
 

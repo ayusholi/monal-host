@@ -17,6 +17,12 @@ class UserService extends Model
 {
     use HasFactory;
 
+
+    static $STATUS = [
+        'SUCCESSFUL' => 'successful',
+        'PROCESSING' => 'failed',
+        'CANCELLED' => 'cancelled',
+    ];
      /**
      * The attributes that are mass assignable.
      *
@@ -26,9 +32,11 @@ class UserService extends Model
         'user_id',
         'service_id',
         'region_id',
+        'storage_id',
         'operating_system_id',
         'start_from',
         'expires_at',
+        'credentials',
         'status'
     ];
 
@@ -60,6 +68,14 @@ class UserService extends Model
     public function adminMessages(): HasMany
     {
         return $this->hasMany(UserServiceAdminMessage::class, 'user_service_id', 'id');
+    }
+
+    /**
+     * Get Relation with UserService and Payment
+     */
+    public function payment(): BelongsTo
+    {
+        return $this->belongsTo(Payment::class, 'user_service_id', 'id');
     }
 
     /**

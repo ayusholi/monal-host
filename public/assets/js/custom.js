@@ -1,1 +1,5 @@
-/* It's the best idea to write your own JS in custom.js file. So if you want to write JS with your own use this file */
+function submitImePay(event) {
+    event.preventDefault();
+    console.log(123);
+    $("#imepayform").submit();
+}
