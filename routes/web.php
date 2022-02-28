@@ -57,14 +57,21 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
     Route::post('/store', [UserController::class, 'store'])->name('store');
     Route::get('/login',  [UserController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [UserController::class, 'login'])->name('post.login');
+    Route::get('account/verify/{token}', [UserController::class, 'verifyAccount'])->name('verify');
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+    // forgot password
+    Route::get('/forgotpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'forgotPassword'])->name('forgotpassword');
+    Route::post('/submitforgotpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'submitForgotPassword'])->name('submitforgotpassword');
+    Route::get('/forgotpasswordlink/{token}',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'forgotPasswordLink'])->name('forgotpasswordlink');
+    Route::post('resetpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'resetPassword'])->name('resetpassword');
 
     // Socialite OAuth Login and register
     Route::get('/{social}',[\App\Http\Controllers\Auth\UserController::class, 'socialLogin'])->where('social', 'google')->name('socialite');
     Route::get('/{social}/callback',[\App\Http\Controllers\Auth\UserController::class, 'handleProviderCallback'])->name('socialite.callback')->where('social', 'google');
 });
 
-Route::group(['middleware'=>'auth'], function(){
+Route::group(['middleware'=>'auth','is_verify_email'], function(){
 
     Route::get('/user/dashboard', function(){
         return view('user.dashboard.index');
@@ -78,6 +85,13 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/my-services', [\App\Http\Controllers\User\UserController::class, 'getServices'])->name('my.services');
     Route::get('/my-services/detail/{id}', [\App\Http\Controllers\User\UserController::class, 'getServiceDetail'])->name('my.service.detail');
 
+
+    // setting
+    Route::get('/user/setting',[\App\Http\Controllers\User\SettingController::class,'userSetting'])->name('user.setting');
+    Route::post('/update/user/{id}',[\App\Http\Controllers\User\SettingController::class,'updateSetting'])->name('user.update');
+
+    // change password
+    Route::post('/change/password',[\App\Http\Controllers\User\SettingController::class,'changePassword'])->name('user.changepassword');
 });
 
 
