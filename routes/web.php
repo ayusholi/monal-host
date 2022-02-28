@@ -37,7 +37,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/customers', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomers'])->name('customers.list');
     Route::get('/customers/detail/{customer_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomerDetail'])->name('customer.detail');
     Route::get('/customers/detail/{customer_id}/services', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomerServices'])->name('customer.services');
-    Route::get('/customers/detail/{customer_id}/service/detail{user_service_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceDetail'])->name('service.detail');
+    Route::get('/customers/detail/{customer_id}/service/detail/{user_service_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceDetail'])->name('service.detail');
+    Route::get('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceCredential'])->name('service.credential');
+    Route::post('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'postUserServiceCredential'])->name('update.service.credential');
     Route::get("/user-services/processing", [\App\Http\Controllers\Admin\CustomerController::class, 'getProcessingServices'])->name('services.processing');
 });
 

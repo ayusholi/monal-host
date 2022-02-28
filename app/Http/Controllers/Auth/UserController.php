@@ -165,8 +165,7 @@ class UserController extends Controller
            $user = User::create($data);
 
             Auth::login($user);
-
-            $user->notify(new AccountCreatedMail($user->full_name));
+            Mail::to($user)->send(new AccountCreatedMail($user->full_name));
 
            return redirect()->route('user.dashboard');
        }

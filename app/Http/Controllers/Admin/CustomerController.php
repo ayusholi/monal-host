@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\UserService;
 use Illuminate\Http\Request;
@@ -23,7 +24,6 @@ class CustomerController extends Controller
     {
         $customer = User::findOrFail($customer_id);
         $customerservices = UserService::where('user_id', $customer_id)->get();
-        // dd($customerservices);
         return view('admin.customers.detail', compact('customer', 'customerservices'));
     }
 
@@ -50,7 +50,41 @@ class CustomerController extends Controller
 
         if($user_service->user_id != $customer_id) abort(404);
 
-        return view('admin.customers.service_detail'. compact('user_service', 'customer'));
+        return view('admin.customers.service_detail', compact('user_service', 'customer'));
 
+    }
+
+    public function getUserServiceCredential($customer_id, $user_service_id)
+    {
+        $customer = User::findOrFail($customer_id);
+        $user_service = UserService::findOrFail($user_service_id);
+
+        if($user_service->user_id != $customer_id) abort(404);
+
+        return view('admin.customers.service_credential', compact('user_service', 'customer'));
+
+    }
+
+    public function postUserServiceCredential(Request $request, $customer_id, $user_service_id)
+    {
+        $customer = User::findOrFail($customer_id);
+        $user_service = UserService::findOrFail($user_service_id);
+
+        if($user_service->user_id != $customer->id) abort(404);
+
+        $credentials = $request->credentials;
+        $data = [
+            'credentials' => $credentials
+        ];
+        if($user_service->status == "on_process") {
+            $data['start_from'] = Carbon::now()->toDateTimeString();
+            if($user_service->service->interval_type == ("month" || "Month")) {
+                $data['expires_at'] = Carbon::now()->addMonths($user_service->service->interval)->toDateTimeString();
+            } else if($user_service->service->interval_type == ("year" || "Year")) {
+                $data['expires_at'] = Carbon::now()->addYears($user_service->service->interval)->toDateTimeString();
+            }
+        }
+        $user_service->update($data);
+        return redirect()->route('admin.service.detail', ['customer_id' => $customer->id, 'user_service_id' => $user_service->id]);
     }
 }

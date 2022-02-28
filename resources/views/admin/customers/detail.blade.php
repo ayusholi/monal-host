@@ -16,7 +16,7 @@
                 <h6 class="card-title mb-0 ml-4">{{ $customer->username}}</h6>
             </div>
             {{-- {{dd($customer)}} --}}
-     
+
             <div class="card-body">
                 <div class="card-header">
                 <h6 class="card-title mb-2">Full Name: {{ $customer->first_name}} {{ $customer->middle_name?$customer->middle_name:'' }} {{ $customer->last_name}}</h6>
@@ -68,6 +68,7 @@
                         <th>Service Interval</th>
                         <th>Operting System</th>
                         <th>Region</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -81,8 +82,11 @@
                                 <td>{{ $user_service->service->interval }} {{ $user_service->service->interval_type }}</td>
                                 <td>{{ $user_service->operatingSytem->name }} {{ $user_service->operatingSytem->version }}</td>
                                 <td>{{ $user_service->region->name }}</td>
-                                {{-- <td>{{ count($$user_service->userServices) }}</td> --}}
-                               
+                                <td class="text-right">
+                                    <a href="{{ route('admin.service.detail', ['customer_id' => $customer->id, 'user_service_id' => $user_service->id]) }}" class="btn btn-outline-primary" data-toggle="tooltip" title="View Detail">
+                                        View Detail
+                                    </a>
+                                </td>
                             </tr>
                         @empty
 

@@ -23,6 +23,6 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $service = UserService::where('user_id', $user->id)->firstOrFail();
-        return view('auth.user.service_detail', compact($service));
+        return view('auth.user.service_detail', compact('service'));
     }
 }

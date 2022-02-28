@@ -20,9 +20,9 @@ class CreateUserServicesTable extends Migration
             $table->foreignId('region_id')->constrained('regions')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('storage_id')->nullable()->constrained('storages')->onDelete('set null')->onUpdate('cascade');
             $table->foreignId('operating_system_id')->constrained('operating_systems')->onDelete('cascade')->onUpdate('cascade');
-            $table->dateTime('start_form')->nullable();
+            $table->dateTime('start_from')->nullable();
             $table->dateTime('expires_at')->nullable();
-            $table->longText('credentials');
+            $table->longText('credentials')->nullable();
             $table->string('status');
             $table->timestamps();
         });

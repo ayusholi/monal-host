@@ -20,7 +20,7 @@ class UserService extends Model
 
     static $STATUS = [
         'SUCCESSFUL' => 'successful',
-        'PROCESSING' => 'processing',
+        'PROCESSING' => 'on_process',
         'CANCELLED' => 'cancelled',
     ];
      /**

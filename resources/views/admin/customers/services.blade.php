@@ -42,9 +42,6 @@
                                 <td>{{ $user_service->region->name }}</td>
                                 <td>{{ $user_service->payment->total_amount }}</td>
                                 <td class="text-right">
-                                    <a href="{{ route('admin.customer.detail', ['customer_id' => $customer->id]) }}" class="btn btn-outline-primary" data-toggle="tooltip" title="View Detail">
-                                        View Detail
-                                    </a>
                                 </td>
                             </tr>
                         @empty
