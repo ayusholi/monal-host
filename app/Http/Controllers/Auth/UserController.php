@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\UserVerified;
 use Illuminate\Http\Request;
 use App\Mail\AccountCreatedMail;
@@ -14,10 +15,6 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserLoginRequest;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\UserRegisterRequest;
-use App\Mail\AccountCreatedMail;
-use DB;
-use Mail;
-use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -63,7 +60,7 @@ class UserController extends Controller
             'token' => $token,
             'user_id' => $user->id,
         ]);
-        \Mail::to($user->email)->send(new AccountCreatedMail($user));
+        Mail::to($user->email)->send(new AccountCreatedMail($user));
 
 
         return redirect()->route('auth.login')->with('success','Verify your account.Link send to your email');
