@@ -43,7 +43,12 @@
     @error('msg')
         <span class="text-danger">{{ $message }}</span>
     @enderror
-
+    @if(Session::has('error'))
+    <div class="alert alert-danger alert-with-border" role="alert">{{Session::get('error')}}</div>
+    @endif
+    @if(Session::has('success'))
+    <div class="alert alert-info alert-with-border" role="alert">{{Session::get('success')}}</div>
+    @endif
     <!-- form -->
     <form method="post" action="{{ route('auth.post.login') }}">
         @csrf
@@ -58,7 +63,7 @@
                 <input type="checkbox" class="custom-control-input" checked="" id="customCheck1" name="remember_me">
                 <label class="custom-control-label" for="customCheck1">Remember me</label>
             </div>
-            <a class="small" href="recovery-password.html">Reset password</a>
+            <a class="small" href="{{route('auth.forgotpassword')}}">Forgot Password</a>
         </div>
         <button class="btn btn-primary btn-block">Sign in</button>
         <hr>

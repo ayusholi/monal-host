@@ -38,14 +38,13 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link" title="Notifications" data-toggle="dropdown">
                         <span class="badge badge-danger nav-link-notify">1</span>
                         <i data-feather="bell"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
-                        <div
-                            class="bg-primary px-3 py-3 text-center d-flex justify-content-between align-items-center">
+                        <div class="bg-primary px-3 py-3 text-center d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">Notifications</h6>
                             <small class="opacity-7">1 unread notifications</small>
                         </div>
@@ -53,7 +52,7 @@
                             <ul class="list-group list-group-flush">
                                 <li>
                                     <a href="#"
-                                       class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
+                                        class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
                                         <div>
                                             <figure class="avatar mr-2">
                                                 <span
@@ -66,7 +65,7 @@
                                             <p class="mb-0 line-height-20 d-flex justify-content-between">
                                                 Your report is prepared
                                                 <i title="Mark as unread" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                                    class="hide-show-toggler-item fa fa-check font-size-11"></i>
                                             </p>
                                             <span class="text-muted small">20 min ago</span>
                                         </div>
@@ -74,20 +73,20 @@
                                 </li>
                                 <li>
                                     <a href="#"
-                                       class="list-group-item bg-primary-bright px-3 d-flex align-items-center hide-show-toggler">
+                                        class="list-group-item bg-primary-bright px-3 d-flex align-items-center hide-show-toggler">
                                         <div>
                                             <figure class="avatar mr-2">
-                                            <span
-                                                class="avatar-title bg-success-bright text-success rounded-circle">
-                                                <i class="ti-user"></i>
-                                            </span>
+                                                <span
+                                                    class="avatar-title bg-success-bright text-success rounded-circle">
+                                                    <i class="ti-user"></i>
+                                                </span>
                                             </figure>
                                         </div>
                                         <div class="flex-grow-1">
                                             <p class="mb-0 line-height-20 d-flex justify-content-between">
                                                 New customer registered
                                                 <i title="Mark as read" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-circle-o font-size-11"></i>
+                                                    class="hide-show-toggler-item fa fa-circle-o font-size-11"></i>
                                             </p>
                                             <span class="text-muted small">20 min ago</span>
                                         </div>
@@ -95,20 +94,20 @@
                                 </li>
                                 <li>
                                     <a href="#"
-                                       class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
+                                        class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
                                         <div>
                                             <figure class="avatar mr-2">
-                                            <span
-                                                class="avatar-title bg-warning-bright text-warning rounded-circle">
-                                                <i class="ti-package"></i>
-                                            </span>
+                                                <span
+                                                    class="avatar-title bg-warning-bright text-warning rounded-circle">
+                                                    <i class="ti-package"></i>
+                                                </span>
                                             </figure>
                                         </div>
                                         <div class="flex-grow-1">
                                             <p class="mb-0 line-height-20 d-flex justify-content-between">
                                                 New Order Recieved
                                                 <i title="Mark as unread" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                                    class="hide-show-toggler-item fa fa-check font-size-11"></i>
                                             </p>
                                             <span class="text-muted small">45 sec ago</span>
                                         </div>
@@ -116,19 +115,19 @@
                                 </li>
                                 <li>
                                     <a href="#"
-                                       class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
+                                        class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
                                         <div>
                                             <figure class="avatar mr-2">
-                                            <span class="avatar-title bg-danger-bright text-danger rounded-circle">
-                                                <i class="ti-server"></i>
-                                            </span>
+                                                <span class="avatar-title bg-danger-bright text-danger rounded-circle">
+                                                    <i class="ti-server"></i>
+                                                </span>
                                             </figure>
                                         </div>
                                         <div class="flex-grow-1">
                                             <p class="mb-0 line-height-20 d-flex justify-content-between">
                                                 Server Limit Reached!
                                                 <i title="Mark as unread" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-11"></i>
+                                                    class="hide-show-toggler-item fa fa-check font-size-11"></i>
                                             </p>
                                             <span class="text-muted small">55 sec ago</span>
                                         </div>
@@ -136,20 +135,20 @@
                                 </li>
                                 <li>
                                     <a href="#"
-                                       class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
+                                        class="list-group-item px-3 d-flex align-items-center hide-show-toggler">
                                         <div>
                                             <figure class="avatar mr-2">
-                                            <span class="avatar-title bg-info-bright text-info rounded-circle">
-                                                <i class="ti-layers"></i>
-                                            </span>
+                                                <span class="avatar-title bg-info-bright text-info rounded-circle">
+                                                    <i class="ti-layers"></i>
+                                                </span>
                                             </figure>
                                         </div>
                                         <div class="flex-grow-1">
                                             <p class="mb-0 line-height-20 d-flex justify-content-between">
                                                 Apps are ready for update
                                                 <i title="" data-toggle="tooltip"
-                                                   class="hide-show-toggler-item fa fa-check font-size-11"
-                                                   data-original-title="Mark as unread"></i>
+                                                    class="hide-show-toggler-item fa fa-check font-size-11"
+                                                    data-original-title="Mark as unread"></i>
                                             </p>
                                             <span class="text-muted small">Yesterday</span>
                                         </div>
@@ -179,8 +178,7 @@
                         <i data-feather="shopping-bag"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
-                        <div
-                            class="bg-primary px-3 py-3 text-center d-flex justify-content-between align-items-center">
+                        <div class="bg-primary px-3 py-3 text-center d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">Cart</h6>
                             <small class="opacity-7">4 products</small>
                         </div>
@@ -189,15 +187,15 @@
                                 <a href="#" class="list-group-item px-3 d-flex">
                                     <div>
                                         <figure class="avatar mr-3">
-                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product6.png" class="rounded"
-                                                 alt="Flowerpot">
+                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product6.png"
+                                                class="rounded" alt="Flowerpot">
                                         </figure>
                                     </div>
                                     <div class="flex-grow-1">
                                         <p class="mb-0 line-height-20 d-flex justify-content-between">
                                             Flowerpot
                                             <i title="Close" data-toggle="tooltip"
-                                               class="hide-show-toggler-item ti-close"></i>
+                                                class="hide-show-toggler-item ti-close"></i>
                                         </p>
                                         <span class="text-muted small">X $1,200</span>
                                     </div>
@@ -205,15 +203,15 @@
                                 <a href="#" class="list-group-item px-3 d-flex">
                                     <div>
                                         <figure class="avatar mr-3">
-                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product3.png" class="rounded"
-                                                 alt="Plate">
+                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product3.png"
+                                                class="rounded" alt="Plate">
                                         </figure>
                                     </div>
                                     <div class="flex-grow-1">
                                         <p class="mb-0 line-height-20 d-flex justify-content-between">
                                             Plate
                                             <i title="Close" data-toggle="tooltip"
-                                               class="hide-show-toggler-item ti-close"></i>
+                                                class="hide-show-toggler-item ti-close"></i>
                                         </p>
                                         <span class="text-muted small">X $250</span>
                                     </div>
@@ -222,14 +220,14 @@
                                     <div>
                                         <figure class="avatar mr-3">
                                             <img src="https://baston.laborasyon.com/assets/media/image/products/product7.png"
-                                                 class="rounded" alt="Wall Clock">
+                                                class="rounded" alt="Wall Clock">
                                         </figure>
                                     </div>
                                     <div class="flex-grow-1">
                                         <p class="mb-0 line-height-20 d-flex justify-content-between">
                                             Wall Clock
                                             <i title="Close" data-toggle="tooltip"
-                                               class="hide-show-toggler-item ti-close"></i>
+                                                class="hide-show-toggler-item ti-close"></i>
                                         </p>
                                         <span class="text-muted small">X $100</span>
                                     </div>
@@ -237,15 +235,15 @@
                                 <a href="#" class="list-group-item px-3 d-flex">
                                     <div>
                                         <figure class="avatar mr-3">
-                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product1.png" class="rounded"
-                                                 alt="Vase">
+                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product1.png"
+                                                class="rounded" alt="Vase">
                                         </figure>
                                     </div>
                                     <div class="flex-grow-1">
                                         <p class="mb-0 line-height-20 d-flex justify-content-between">
                                             Vase
                                             <i title="Close" data-toggle="tooltip"
-                                               class="hide-show-toggler-item ti-close"></i>
+                                                class="hide-show-toggler-item ti-close"></i>
                                         </p>
                                         <span class="text-muted small">X $1,200</span>
                                     </div>
@@ -253,15 +251,15 @@
                                 <a href="#" class="list-group-item px-3 d-flex">
                                     <div>
                                         <figure class="avatar mr-3">
-                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product2.png" class="rounded"
-                                                 alt="Glasses">
+                                            <img src="https://baston.laborasyon.com/assets/media/image/products/product2.png"
+                                                class="rounded" alt="Glasses">
                                         </figure>
                                     </div>
                                     <div class="flex-grow-1">
                                         <p class="mb-0 line-height-20 d-flex justify-content-between">
                                             Glasses
                                             <i title="Close" data-toggle="tooltip"
-                                               class="hide-show-toggler-item ti-close"></i>
+                                                class="hide-show-toggler-item ti-close"></i>
                                         </p>
                                         <span class="text-muted small">X $200</span>
                                     </div>
@@ -286,62 +284,32 @@
                             </button>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link" title="Settings" data-sidebar-target="#settings">
                         <i data-feather="settings"></i>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" title="User menu" data-toggle="dropdown">
                         <span class="mr-2 d-sm-inline d-none">
                             Hi! <strong>{{ auth()->user()->full_name }}</strong>
                         </span>
-                        <figure class="avatar avatar-sm">
-                            <img src="https://baston.laborasyon.com/assets/media/image/user/man_avatar3.jpg"
-                                 class="rounded-circle"
-                                 alt="avatar">
-                        </figure>
+                        
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
-                        <div class="text-center py-4"
-                             data-background-image="https://baston.laborasyon.com/assets/media/image/image1.jpg">
-                            <figure class="avatar avatar-lg mb-3 border-0">
-                                <img src="https://baston.laborasyon.com/assets/media/image/user/man_avatar3.jpg"
-                                     class="rounded-circle" alt="image">
-                            </figure>
+                        <div class="text-center py-4">
+                            
                             <h5 class="mb-0">{{ auth()->user()->full_name }}</h5>
                         </div>
                         <div class="list-group list-group-flush">
-                            <a href="profile.html" class="list-group-item">Profile</a>
-                            <a href="#" class="list-group-item" data-sidebar-target="#settings">Settings</a>
+                            
+                            <a href="{{route('user.setting')}}" class="list-group-item">Settings</a>
                             <a href="{{ route('auth.logout') }}" class="list-group-item text-danger">Sign Out!</a>
                         </div>
-                        <div class="pb-0 p-4">
-                            <div class="mb-4">
-                                <h6 class="d-flex justify-content-between">
-                                    Completed Tasks
-                                    <span class="float-right">%68</span>
-                                </h6>
-                                <div class="progress" style="height:5px;">
-                                    <div class="progress-bar bg-secondary" role="progressbar"
-                                         style="width: 68%;" aria-valuenow="68" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <h6 class="d-flex justify-content-between">
-                                    Storage
-                                    <span>%25</span>
-                                </h6>
-                                <div class="progress" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%;"
-                                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </li>
             </ul>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Payment;
 use App\Models\UserService;
+use App\Models\UserVerified;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
@@ -55,11 +56,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+   
+
     /**
      * Get all of the payments for the User
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+
+    public function verifyUser()
+    {
+    return $this->hasOne(UserVerified::class);
+    }
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class, 'user_id', 'id');
