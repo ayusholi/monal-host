@@ -1,5 +1,9 @@
 function submitImePay(event) {
     event.preventDefault();
-    console.log(123);
     $("#imepayform").submit();
+}
+
+function submitConnectIps(event) {
+    event.preventDefault();
+    $("#connectipsForm").submit();
 }

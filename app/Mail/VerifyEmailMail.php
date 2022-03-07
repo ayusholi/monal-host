@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class AccountCreatedMail extends Mailable
+class VerifyEmailMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,9 +18,10 @@ class AccountCreatedMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($user, $token)
     {
         $this->user = $user;
+        $this->token = $token;
     }
 
     /**
@@ -32,6 +33,6 @@ class AccountCreatedMail extends Mailable
     {
         $user = $this->user;
         $token = $this->token;
-        return $this->view('emails.account_created')->with(["user" => $user]);
+        return $this->view('emails.verify_email', compact($user, $token));
     }
 }

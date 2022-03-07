@@ -121,199 +121,41 @@
         </div>
     </header>
     <div class="page-title-wrap ovx-hidden" data-bg-img="{{ asset('assets/img/bg/page-title-bg.png') }}">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <div class="page-title text-center">
-                        <h2>{{ $service->name }}</h2>
-                        <ul class="nav justify-content-center">
-                            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                            <li class="active">{{ $service->name }}</li>
+        <section class="pb-120 ov-hidden" data-bg-img="assets/img/bg/one_click_bg.png">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="single-price style--two first-item">
+                    <h2>Please Confirm Your Payment</h2>
+                    <div class="price-body">
+                        <ul class="price-feature-list">
+                            <li>Service Name: {{ $service->name }}</li>
+                            <li>RAM: {{ $service->ram }} {{ $service->ram_unit }}</li>
+                            <li>Storage: {{ $service->storage }} {{ $service->storage_unit }} {{ $service->storage_type }}</li>
+                            <li>CPU Cores: {{ $service->cpu_cores }} {{ $service->cpu_cores }}</li>
+                            <li>Service Interval: {{ $service->interval }} {{ $service->interval_type }}</li>
+                            <li>Amount: Rs. {{ $amount }}</li>
                         </ul>
+                        <form action="{{ env("CONNECT_IPS_GATEWAY_URL") }}" method="POST" id="connectips-form" ref="connectIpsForm">
+                            <input type="hidden" name="MERCHANTID" id="MERCHANTID" value="{{ $form_data['MERCHANTID'] }}"/>
+                            <input type="hidden" name="APPID" id="APPID" value="{{ $form_data['APPID'] }}"/>
+                            <input type="hidden" name="APPNAME" id="APPNAME" value="{{ $form_data['APPNAME'] }}"/>
+                            <input type="hidden" name="TXNID" id="TXNID" value="{{ $form_data['TXNID'] }}"/>
+                            <input type="hidden" name="TXNDATE" id="TXNDATE" value="{{ $form_data['TXNDATE'] }}"/>
+                            <input type="hidden" name="TXNCRNCY" id="TXNCRNCY" value="{{ $form_data['TXNCRNCY'] }}"/>
+                            <input type="hidden" name="TXNAMT" id="TXNAMT" value="{{ $form_data['TXNAMT'] }}"/>
+                            <input type="hidden" name="REFERENCEID" id="REFERENCEID" value="{{ $form_data['REFERENCEID'] }}"/>
+                            <input type="hidden" name="REMARKS" id="REMARKS" value="{{ $form_data['REMARKS'] }}"/>
+                            <input type="hidden" name="PARTICULARS" id="PARTICULARS" value="{{ $form_data['PARTICULARS'] }}"/>
+                            <input type="hidden" name="TOKEN" id="TOKEN" value="{{ $form_data['TOKEN'] }}"/>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section class="pt-120 pb-80">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h2>Meet Monalhost</h2>
-                        <p>Save up to 60% compared to other cloud provider designer developers bloggers <br /> designers developers, bloggers and online businesses.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="meet-hostpack-img text-center"> <img src="{{ asset('assets/img/media/meet-hostpack.png') }}" data-rjs="2" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="pricing-plan pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center text-white">
-                        <h2>Hosting Plans</h2>
-                        <p>With nearly 20 years of hosting experience, we focus on successful sites for web <br /> designers developers, bloggers and online businesses.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="table-responsive">
-                        <table class="pricing-table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>
-                                        <div class="price-head"> <span class="plan">{{ $service->name }}</span> <span class="price"> <sup>Rs</sup> {{ $service->base_price }} <span>/{{ $service->interval_type }}</span> </span>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>RAM</th>
-                                    <td>{{ $service->ram }} {{ $service->ram_unit }}</td>
-                                </tr>
-                                <tr>
-                                    <th>CPU Cores</th>
-                                    <td>{{ $service->cpu_cores }}</td>
-                                </tr>
-                                <tr>
-                                    <th>{{ $service->storage_type }} Storage</th>
-                                    <td>{{ $service->storage }} {{ $service->storage_unit }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Spam Protection</th>
-                                    <td><img src="{{ asset('assets/img/icon/check.svg') }}" alt="" class="svg"></td>
-                                </tr>
-                                <tr>
-                                    <th>Included Domain</th>
-                                    <td><img src="{{ asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
-                                </tr>
-                                <tr>
-                                    <th>Bandwidth</th>
-                                    <td>128bg</td>
-                                </tr>
-                                <tr>
-                                    <th>Site Backup</th>
-                                    <td><img src="{{ asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th></th>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>Pay With</p>
-                                                <form action="{{ route('payment.connectips') }}" method="POST" id="connectipsForm" style="display: inline;">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
-                                                </form>
-                                                <a onclick="submitConnectIps(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
-                                                <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform" style="display: inline;">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
-                                                </form>
-                                                <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Or Pay Manually</p>
-                                                <a href="#" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="price-bottom-content text-center">
-                        <p> 30-Day Money Back Guarantee For New Purchases​ <br /> For all hosting plan
-                            {{-- <a href="contact.html"><img src="{{ asset('assets/img/icon/chat.svg') }}" alt="" class="svg"> Live Chat</a> --}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="testimonial4-slider pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h2>Our Client Say</h2>
-                        <p>Save up to 60% compared to other cloud provider designer developers bloggers designers developers, bloggers and online businesses.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="testimonial-carousel style--three dot-style--two v2 owl-carousel" data-owl-autoplay="true" data-owl-margin="30" data-owl-items="3" data-owl-dots="true" data-owl-responsive='{"0": {"items": "1"}, "767": {"items": "2"}, "992": {"items": "3"}}'>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial5.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Huber aston</h4>
-                                        <p>Charman @Bluehost</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Nancy aston</h4>
-                                        <p>Co-founder @GoDaddy</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial7.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Smith aston</h4>
-                                        <p>Founder @Namechep</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-wrap">
-                            <div class="single-testimonial"> <img src="{{ asset('assets/img/icon/testimonial-quote2.svg') }}" alt="" class="svg testimonial-quote-icon">
-                                <div class="testimonial-img"> <img src="{{ asset('assets/img/media/testimonial6.png') }}" data-rjs="2" alt=""></div>
-                                <div class="testimonial-content">
-                                    <div class="meta-info">
-                                        <h4>Nancy aston</h4>
-                                        <p>Co-founder @GoDaddy</p>
-                                    </div>
-                                    <p>You submit the transfer through our web site. We send the confirmations your email specified.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
+    </div>
     <footer class="footer" data-bg-img="{{ asset('assets/img/bg/footer-bg.png') }}">
         <div class="footer-main">
             <div class="container">

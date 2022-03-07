@@ -3,15 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-sm-6">
-                    <div class="widget widget_about text-white"> <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/img/logo.svg') }}" class="svg" alt=""> </a>
+                    <div class="widget widget_about text-white"> <a href="{{ route('home') }}" class="footer-logo"> <h1 class="text-white">Monal Host</h1></a>
                         <div class="menu-container">
                             <p>We are Hostpack 29 years of experience on this field with most talanted peoples and leaders.</p>
                             <ul class="contact-list">
-                                <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">888-401-4678</a></li>
+                                <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">+977-9843386239</a></li>
                             </ul>
-                            <div class="accept-cards"> <img src="{{ asset('assets/img/media/cards.png') }}" data-rjs="2" alt=""></div>
+                            <div class="accept-cards"> <img src="{{ asset('assets/img/payments/ConnectIPSfull.png') }}" alt="" style="height: 100px; width: 150px;"><img src="{{ asset('assets/img/payments/IMEPay.jpg') }}" alt="" style="height: 100px; width: 120px;"></div>
                             <div class="socials"> <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a> <a href="https://www.twitter.com/"> <i class="fab fa-twitter"></i> </a> <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> </a> <a href="https://www.pinterest.com/"> <i class="fab fa-pinterest"></i> </a> <a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a></div>
-                            <p class="copyright">© 2002-2021 Hostpack inc. all rights reserved</p>
                         </div>
                     </div>
                 </div>
@@ -53,38 +52,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-sm-6">
-                    <div class="widget widget_recent_entries text-white style--three ps-xl-4 ps-0">
-                        <h3 class="widget-title">Latest News</h3>
-                        <div class="menu-container">
-                            <ul>
-                                <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                    <h4 class="post-title"> <a href="blog-details.html">An artistic Technology turning real here</a></h4>
-                                </li>
-                                <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                    <h4 class="post-title"> <a href="blog-details.html">better time for buying a web hosting is today</a></h4>
-                                </li>
-                                <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                    <h4 class="post-title"> <a href="blog-details.html">better time for buying a web hosting is today</a></h4>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="footer-bottom-content text-white text-center text-lg-start justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-                        <p>Offers valid for a limited time only hostpack reflect multi annual discounts. Other terms and conditions may apply. <a href="terms-service.html">Click Here</a></p>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="certificate text-center text-lg-end"> <img src="{{ asset('assets/img/media/certificate3.png') }}" data-rjs="2" alt=""></div>
-                </div>
+            <div class="align-items-center">
+                <p class="copyright text-white">© {{ date('Y') }} Monal Host all rights reserved</p>
             </div>
         </div>
     </div>

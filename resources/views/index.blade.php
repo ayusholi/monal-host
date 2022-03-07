@@ -8,7 +8,7 @@
                 <div class="banner-content text-white mb-5 mb-lg-0">
                     <h1>Think beyond Share Host!</h1>
                     <p>Here is the infographic which gives some insights <br /> about the type of Web hosting.</p>
-                    <div class="banner-btn-group"> <a href="price.html" class="btn btn-style3">get Started</a> <a href="https://www.youtube.com/watch?v=ni5hRK1ehzk" class="mfp-iframe video-btn"> <span class="svg-wrap"><img src="assets/img/icon/play.svg" alt="" class="svg"></span> How it work </a></div>
+                    <div class="banner-btn-group"> <a href="#services" class="btn btn-style3">Get Started</a></div>
                 </div>
             </div>
             <div class="col-lg-5">
@@ -20,7 +20,7 @@
 </div>
 <section class="pb-90 price-section">
     <div class="container">
-        <div class="row gx-lg-0 justify-content-center">
+        <div class="row gx-lg-0 justify-content-center" id="services">
             @foreach($services as $service)
             {{-- {{dd($service)}} --}}
                 <div class="col-lg-4 col-md-6">

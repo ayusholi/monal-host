@@ -65,19 +65,19 @@
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
                             <li> <a href="tel:8884014678"> <img src="{{ asset('img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a></li>
-                            <li> <a href="mailto:info@hostpack.com"> <img src="{{ asset('img/icon/mail.svg') }}" alt="" class="svg"> info@hostpack.com </a></li>
+                            <li> <a href="mailto:support@monalhost.com"> <img src="{{ asset('img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a></li>
                         </ul>
                     </div>
                     <div class="col-sm-5">
                         <ul class="info-list text-uppercase justify-content-center justify-content-sm-end">
                             @auth
-                                <li> <a href="{{ route('user.dashboard') }}"> <img src="{{ asset('img/icon/login.svg') }}" alt="" class="svg"> Dashboard </a></li>
+                                <li> <a href="{{ route('user.dashboard') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Dashboard </a></li>
                             @endauth
 
                             @guest
-                                <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
+                                <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
                             @endguest
-                            <li> <a href="contact.html"> <img src="{{ asset('img/icon/support.svg') }}" alt="" class="svg"> Support </a></li>
+                            <li> <a href="{{ route('contact.us') }}"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Contact Us </a></li>
                         </ul>
                     </div>
                 </div>
@@ -96,42 +96,22 @@
                         <div class="nav-wrapper ms-auto ms-lg-0">
                             <div class="nav-wrap-inner">
                                 <ul class="nav">
-                                    <li> <a href="#" class="current-menu-parent">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home V1</a></li>
-                                            <li><a href="home-1.html">Home V2</a></li>
-                                            <li><a href="home-2.html" class="current-menu-children">Home V3</a></li>
-                                            <li><a href="home-3.html">Home V4</a></li>
-                                        </ul>
-                                    </li>
+                                    <li> <a href="{{ route('home') }}" >Home</a></li>
                                     <li> <a href="#">Pages</a>
                                         <ul class="sub-menu">
                                             <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
                                             <li><a href="faq.html">FAQ</a></li>
                                             <li><a href="terms.html">Terms of Service</a></li>
                                             <li><a href="privacy.html">Privacy Policy</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="http://billing.ywhmcs.com/?systpl=hostpack">WHMCS</a></li>
-                                    <li> <a href="#">Hosting</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="shared-hosting.html">Shared Hosting</a></li>
-                                            <li><a href="dedicated-hosting.html">dedicated hosting</a></li>
-                                            <li><a href="reseller-hosting.html">reseller hosting</a></li>
-                                            <li><a href="private-hosting.html">private hosting</a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="#">Services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="service.html">Service One</a></li>
-                                            <li><a href="service2.html">Service Two</a></li>
-                                            <li><a href="service3.html">Service Three</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
+                                            @foreach ($services as $service)
+                                                <li><a href="{{ route('service.detail', ['slug' => $service->slug]) }}">{{ $service->name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>

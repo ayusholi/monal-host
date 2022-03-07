@@ -1,4 +1,4 @@
-@include('layouts.header')
+@include('layouts.header', ["services" => \App\Models\Service::take(5)->get()])
 
 @yield('content')
 

@@ -18,6 +18,7 @@ use App\Http\Controllers\Auth\AdminController;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/service/{slug}", [\App\Http\Controllers\HomeController::class, 'serviceDetail'])->name('service.detail');
+Route::get("/contact-us", [\App\Http\Controllers\HomeController::class, 'contactUs'])->name('contact.us');
 
 /* admin auth routes */
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){

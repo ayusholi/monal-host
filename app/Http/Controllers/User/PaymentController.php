@@ -33,12 +33,15 @@ class PaymentController extends Controller
         $transaction_method = "connect_ips";
 
         $service = Service::findOrFail($request->service_id);
-        $operating_system = OperatingSystem::findOrFail($request->operating_system_id);
+        $operating_system = OperatingSystem::findOrFail(1);
+        $region = Region::findOrFail(1);
 
         $user_service = UserService::create([
             'user_id' => $user->id,
             'service_id' => $service->id,
             'operating_system_id' => $operating_system->id,
+            'region_id' => $region->id,
+            'status' => UserService::$STATUS['PROCESSING']
         ]);
 
         $merchant_id = env('CONNECT_IPS_MERCHANT_ID');
@@ -86,8 +89,7 @@ class PaymentController extends Controller
             'TOKEN' => $hash_token
         ];
 
-        $connect_ips_url = env('CONNECT_IPS_GATEWAY_URL');
-        $response = Http::post($connect_ips_url, $form_data);
+        return view('service.connect_ips_confirmation', compact($form_data));
     }
 
     public function imePayPayment(Request $request)
