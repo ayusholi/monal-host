@@ -5,9 +5,8 @@
                 <div class="col-xl-4 col-lg-6 col-sm-6">
                     <div class="widget widget_about text-white"> <a href="{{ route('home') }}" class="footer-logo"> <h1 class="text-white">Monal Host</h1></a>
                         <div class="menu-container">
-                            <p>We are Hostpack 29 years of experience on this field with most talanted peoples and leaders.</p>
                             <ul class="contact-list">
-                                <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">+977-9843386239</a></li>
+                                <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:+977-9843386239">+977-9843386239</a></li>
                             </ul>
                             <div class="accept-cards"> <img src="{{ asset('assets/img/payments/ConnectIPSfull.png') }}" alt="" style="height: 100px; width: 150px;"><img src="{{ asset('assets/img/payments/IMEPay.jpg') }}" alt="" style="height: 100px; width: 120px;"></div>
                             <div class="socials"> <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a> <a href="https://www.twitter.com/"> <i class="fab fa-twitter"></i> </a> <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> </a> <a href="https://www.pinterest.com/"> <i class="fab fa-pinterest"></i> </a> <a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a></div>
@@ -24,12 +23,6 @@
                                 <li><a href="price.html">Price <span class="style2">try me</span></a></li>
                                 <li><a href="service.html">Service</a></li>
                             </ul>
-                            <ul class="menu mt-5">
-                                <li class="title">Hosting</li>
-                                <li><a href="shared-hosting.html">Shared Hosting</a></li>
-                                <li><a href="dedicated-hosting.html">Dedicated Hosting </a></li>
-                                <li><a href="reseller-hosting.html">Reseller Hosting</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -42,12 +35,6 @@
                                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                                 <li><a href="faq.html">FAQ <span class="style2">Update</span></a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                            <ul class="menu mt-5">
-                                <li class="title">Support</li>
-                                <li><a href="contact.html">Support Center</a></li>
-                                <li><a href="faq.html">Status Updates</a></li>
-                                <li><a href="contact.html">Knowledgebase</a></li>
                             </ul>
                         </div>
                     </div>

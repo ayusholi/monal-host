@@ -1,4 +1,6 @@
-*, ::after, ::before {
+*,
+ ::after,
+ ::before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
@@ -14,7 +16,16 @@ html {
     -webkit-tap-highlight-color: transparent
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
     display: block
 }
 
@@ -42,7 +53,12 @@ hr {
     overflow: visible
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     padding: 0;
     margin: 0;
     font-weight: 700;
@@ -84,7 +100,8 @@ p:last-child {
     margin-bottom: 0
 }
 
-abbr[data-original-title], abbr[title] {
+abbr[data-original-title],
+abbr[title] {
     text-decoration: underline;
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
@@ -100,12 +117,17 @@ address {
     line-height: inherit
 }
 
-dl, ol, ul {
+dl,
+ol,
+ul {
     margin-top: 0;
     margin-bottom: 1rem
 }
 
-ol ol, ol ul, ul ol, ul ul {
+ol ol,
+ol ul,
+ul ol,
+ul ul {
     margin-bottom: 0
 }
 
@@ -118,7 +140,8 @@ dd {
     margin-left: 0
 }
 
-b, strong {
+b,
+strong {
     font-weight: bolder
 }
 
@@ -126,7 +149,8 @@ small {
     font-size: 80%
 }
 
-sub, sup {
+sub,
+sup {
     position: relative;
     font-size: 75%;
     line-height: 0;
@@ -156,7 +180,8 @@ a:not([href]):not([tabindex]) {
     text-decoration: none
 }
 
-a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
     color: inherit;
     text-decoration: none
 }
@@ -165,7 +190,10 @@ a:not([href]):not([tabindex]):focus {
     outline: 0
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     font-size: 1em;
     background-color: #e3e7e8
@@ -212,18 +240,24 @@ label {
     margin-bottom: .5rem
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit
 }
 
-button, input {
+button,
+input {
     overflow: visible
 }
 
-button, select {
+button,
+select {
     text-transform: none
 }
 
@@ -232,26 +266,39 @@ select {
     display: block
 }
 
-[type=button], [type=reset], [type=submit], button {
+[type=button],
+[type=reset],
+[type=submit],
+button {
     -webkit-appearance: button
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
     cursor: pointer
 }
 
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
     padding: 0;
     border-style: none
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0
 }
 
-input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
+input[type=date],
+input[type=datetime-local],
+input[type=month],
+input[type=time] {
     -webkit-appearance: listbox
 }
 
@@ -283,7 +330,8 @@ progress {
     vertical-align: baseline
 }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
     height: auto
 }
 
@@ -322,7 +370,8 @@ template {
     display: none!important
 }
 
-input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0
 }
@@ -331,7 +380,10 @@ input[type=number] {
     -moz-appearance: textfield
 }
 
-input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:focus, input:-webkit-autofill:hover {
+input:-webkit-autofill,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
     -webkit-transition: background-color 5000s ease-in-out 0s;
     transition: background-color 5000s ease-in-out 0s
 }
@@ -377,11 +429,15 @@ iframe {
     max-width: 100%
 }
 
-button:focus, input:focus, select:focus, textarea:focus {
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
     outline: 0!important
 }
 
-button, input[type=submit] {
+button,
+input[type=submit] {
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -404,7 +460,8 @@ table {
     text-align: center
 }
 
-table td, table th {
+table td,
+table th {
     padding: 20px 15px;
     border: 1px solid #eaeaea
 }
@@ -414,7 +471,8 @@ table thead th {
     color: #111
 }
 
-table tbody td, table tbody th {
+table tbody td,
+table tbody th {
     color: #666
 }
 
@@ -657,7 +715,8 @@ small {
     }
 }
 
-.full-page-search .input-wrapper .input-icon i, .text-color {
+.full-page-search .input-wrapper .input-icon i,
+.text-color {
     color: #666
 }
 
@@ -697,7 +756,9 @@ small {
     color: #fff
 }
 
-.header-main.sticky, .offcanvas-wrapper, .white-bg {
+.header-main.sticky,
+.offcanvas-wrapper,
+.white-bg {
     background-color: #fff
 }
 
@@ -717,11 +778,14 @@ small {
     border-color: #000!important
 }
 
-.c1, .header-main ul.nav ul li a.current-menu-children, .header-main ul.nav ul li a:hover {
+.c1,
+.header-main ul.nav ul li a.current-menu-children,
+.header-main ul.nav ul li a:hover {
     color: #4D56FF
 }
 
-.c1-bg, .header-main ul.nav ul li a:after {
+.c1-bg,
+.header-main ul.nav ul li a:after {
     background-color: #4D56FF
 }
 
@@ -741,25 +805,66 @@ small {
     border-color: #03a87c!important
 }
 
-.btn, .control-panel-accordion .accordion-button, .domain-price-list li, .faq-accordion .accordion-header .accordion-button, .full-page-search, .hosting-price>nav .nav>button .dot, .hosting-price>nav .nav>button .dot:after, .hosting-specification-nav button, .hosting-specification-nav button:after, .nav-pricing li button, .offcanvas-overlay, .owl-carousel .owl-nav button, .pagination li a svg path, .pagination li span svg path, .pricing-toogle .toggler, .single-post-item, .single-service.box-style, .single-service.style--five .service-content h4, .video-btn .svg-wrap, .video-btn .svg-wrap:after, a, i, svg, svg g, svg path {
+.btn,
+.control-panel-accordion .accordion-button,
+.domain-price-list li,
+.faq-accordion .accordion-header .accordion-button,
+.full-page-search,
+.hosting-price>nav .nav>button .dot,
+.hosting-price>nav .nav>button .dot:after,
+.hosting-specification-nav button,
+.hosting-specification-nav button:after,
+.nav-pricing li button,
+.offcanvas-overlay,
+.owl-carousel .owl-nav button,
+.pagination li a svg path,
+.pagination li span svg path,
+.pricing-toogle .toggler,
+.single-post-item,
+.single-service.box-style,
+.single-service.style--five .service-content h4,
+.video-btn .svg-wrap,
+.video-btn .svg-wrap:after,
+a,
+i,
+svg,
+svg g,
+svg path {
     -webkit-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out
 }
 
-.data_center_location-map .l_info .info-box, .single-price-wrap .single-price-bg-shape, .single-service:after {
+.data_center_location-map .l_info .info-box,
+.single-price-wrap .single-price-bg-shape,
+.single-service:after {
     -webkit-transition: .5s ease-in-out;
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out
 }
 
-.control-panel-content-wrap ul, .domain-price-list, .feature-list, .header-main ul, .hz-price-box ul, .info-list, .pagination ul, .single-post-item .post-content .post-meta, .single-post-item .post-content .post-meta-bottom, .single-price .price-body ul, .ts-list, .widget ul {
+.control-panel-content-wrap ul,
+.domain-price-list,
+.feature-list,
+.header-main ul,
+.hz-price-box ul,
+.info-list,
+.pagination ul,
+.single-post-item .post-content .post-meta,
+.single-post-item .post-content .post-meta-bottom,
+.single-price .price-body ul,
+.ts-list,
+.widget ul {
     padding: 0;
     margin: 0;
     list-style: none
 }
 
-.section-title.style--three h5, .single-funfact h3, .single-post-item.style--three .post-content .post-meta li a, .single-post-item.style--two .post-content .post-meta li a, .single-price .price-head h2 span {
+.section-title.style--three h5,
+.single-funfact h3,
+.single-post-item.style--three .post-content .post-meta li a,
+.single-post-item.style--two .post-content .post-meta li a,
+.single-price .price-head h2 span {
     font-weight: 400
 }
 
@@ -767,43 +872,292 @@ small {
     font-weight: 500
 }
 
-.btn, .comment-content a, .data_center_location-map .l_info .info-box h5, .header.style--five .header-main ul.nav>li>a, .header.style--three .header-main ul.nav>li>a, .header.style--two .header-main ul.nav>li>a, .hosting-price>nav .nav>button span:not(.dot), .hz-price-box ul li, .info-list li a, .nav-pricing li button, .newsletter-form .theme-input-group .btn, .price span, .price sup, .price-bottom-content a, .pricing-toogle .toggler, .private-server-table thead th, .provider-tab .nav button, .section-title h5, .single-post-item .post-content .post-meta li a, .single-post-item .post-content .post-meta-bottom li a, .single-post-item.style--three .btn-inline, .single-post-item.style--two .btn-inline, .single-price .pricing-area .discount p, .single-price .pricing-area .discount span, .single-price .pricing-area .price-content .price-amount sup, .single-price .pricing-area .price-content p, .single-price.style--two .price-body ul li, .single-team .team-content p, .testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info h4, .testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info p, .testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4, .testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info p, .testimonial-carousel.style--two .single-testimonial .testimonial-content h3, .video-btn, .widget.widget_about .contact-list li a, .widget.widget_nav_menu ul li a span, .widget.widget_recent_entries.style--two ul li .posted-on, table tbody th {
+.btn,
+.comment-content a,
+.data_center_location-map .l_info .info-box h5,
+.header.style--five .header-main ul.nav>li>a,
+.header.style--three .header-main ul.nav>li>a,
+.header.style--two .header-main ul.nav>li>a,
+.hosting-price>nav .nav>button span:not(.dot),
+.hz-price-box ul li,
+.info-list li a,
+.nav-pricing li button,
+.newsletter-form .theme-input-group .btn,
+.price span,
+.price sup,
+.price-bottom-content a,
+.pricing-toogle .toggler,
+.private-server-table thead th,
+.provider-tab .nav button,
+.section-title h5,
+.single-post-item .post-content .post-meta li a,
+.single-post-item .post-content .post-meta-bottom li a,
+.single-post-item.style--three .btn-inline,
+.single-post-item.style--two .btn-inline,
+.single-price .pricing-area .discount p,
+.single-price .pricing-area .discount span,
+.single-price .pricing-area .price-content .price-amount sup,
+.single-price .pricing-area .price-content p,
+.single-price.style--two .price-body ul li,
+.single-team .team-content p,
+.testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info h4,
+.testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info p,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info p,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content h3,
+.video-btn,
+.widget.widget_about .contact-list li a,
+.widget.widget_nav_menu ul li a span,
+.widget.widget_recent_entries.style--two ul li .posted-on,
+table tbody th {
     font-weight: 600
 }
 
-.hz-price-box .price, .pricing-table .price-head .plan, .pricing-table .price-head h3, .single-testimonial .quote-text:after, .single-testimonial .quote-text:before, .widget.widget_nav_menu ul li.title {
+.hz-price-box .price,
+.pricing-table .price-head .plan,
+.pricing-table .price-head h3,
+.single-testimonial .quote-text:after,
+.single-testimonial .quote-text:before,
+.widget.widget_nav_menu ul li.title {
     font-weight: 700
 }
 
-.control-panel-content .content h3, .hosting-banner-content h2, .page-title h2, .price, .price-left-content h2, .single-price .price-head h2, .single-testimonial .meta-info h5 {
+.control-panel-content .content h3,
+.hosting-banner-content h2,
+.page-title h2,
+.price,
+.price-left-content h2,
+.single-price .price-head h2,
+.single-testimonial .meta-info h5 {
     font-weight: 900
 }
 
-.banner-content h1 .typed-wrap, .blog-sidebar .widget.widget_recent_entries ul li .post-title a:hover, .btn.header-btn:hover, .btn:hover, .comment-content a:hover i, .footer-bottom-content p a, .header-main.sticky .btn.header-btn, .header-main.sticky ul.nav>li>a.current-menu-parent, .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after, .header-main.sticky ul.nav>li>a:hover, .header-main.sticky ul.nav>li>a:hover~.submenu-button:after, .hosting-specification-nav button.active, .page-title ul li a:hover, .pagination li a, .pagination li span, .post-details .entry-header .entry-meta li a:hover, .post-navigation .nav-link .nav-title:hover, .price, .price-bottom-content a, .section-title.style--three h5, .single-post-item .post-content .post-meta a, .single-post-item.style--two .btn-inline:hover, .single-post-item.style--two .post-content .post-meta li a:hover, .single-price .pricing-area .discount span, .single-price .pricing-area .price-content .price-amount, .single-price-wrap.style--three .btn.btn-border, .single-service.style--five .service-content h4:hover, .single-service.style--four a:hover, .single-team .team-content p, .social-links a, .socials a:hover i, .testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4, .widget.widget_about .contact-list li span, .widget.widget_about .contact-list li:hover a, .widget.widget_about .contact-list li:hover i, .widget.widget_categories ul li a:hover, .widget.widget_contact_info .contact-list li i, .widget.widget_nav_menu.text-white ul li a:hover, .widget.widget_recent_entries ul li .post-title a:hover, .widget.widget_recent_entries ul li .posted-on, .widget.widget_recent_entries.style--four ul li .posted-on:hover, .widget.widget_recent_entries.text-white ul li .post-title a:hover, .widget.widget_social_links .socials a:hover, .widget.widget_tag_cloud .tagcloud a:hover {
+.banner-content h1 .typed-wrap,
+.blog-sidebar .widget.widget_recent_entries ul li .post-title a:hover,
+.btn.header-btn:hover,
+.btn:hover,
+.comment-content a:hover i,
+.footer-bottom-content p a,
+.header-main.sticky .btn.header-btn,
+.header-main.sticky ul.nav>li>a.current-menu-parent,
+.header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after,
+.header-main.sticky ul.nav>li>a:hover,
+.header-main.sticky ul.nav>li>a:hover~.submenu-button:after,
+.hosting-specification-nav button.active,
+.page-title ul li a:hover,
+.pagination li a,
+.pagination li span,
+.post-details .entry-header .entry-meta li a:hover,
+.post-navigation .nav-link .nav-title:hover,
+.price,
+.price-bottom-content a,
+.section-title.style--three h5,
+.single-post-item .post-content .post-meta a,
+.single-post-item.style--two .btn-inline:hover,
+.single-post-item.style--two .post-content .post-meta li a:hover,
+.single-price .pricing-area .discount span,
+.single-price .pricing-area .price-content .price-amount,
+.single-price-wrap.style--three .btn.btn-border,
+.single-service.style--five .service-content h4:hover,
+.single-service.style--four a:hover,
+.single-team .team-content p,
+.social-links a,
+.socials a:hover i,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4,
+.widget.widget_about .contact-list li span,
+.widget.widget_about .contact-list li:hover a,
+.widget.widget_about .contact-list li:hover i,
+.widget.widget_categories ul li a:hover,
+.widget.widget_contact_info .contact-list li i,
+.widget.widget_nav_menu.text-white ul li a:hover,
+.widget.widget_recent_entries ul li .post-title a:hover,
+.widget.widget_recent_entries ul li .posted-on,
+.widget.widget_recent_entries.style--four ul li .posted-on:hover,
+.widget.widget_recent_entries.text-white ul li .post-title a:hover,
+.widget.widget_social_links .socials a:hover,
+.widget.widget_tag_cloud .tagcloud a:hover {
     color: #4D56FF
 }
 
-.back-to-top, .btn, .btn-circle:hover, .btn.btn-white:hover, .btn:hover svg, .data_center_location-map .l_info .circle-ball, .data_center_location-map .l_info .circle-ball:after, .header-main.sticky .btn.header-btn:hover, .hosting-specification-nav button:after, .pagination li a.active, .pagination li a.current, .pagination li a:hover, .pagination li span.active, .pagination li span.current, .pagination li span:hover, .preloader .spinner-grow, .pricing-toogle .switch, .provider-tab .nav button.active, .single-price-wrap.style--three .btn.btn-border:hover, .social-links a:hover, .testimonial-carousel.style--three.v2 .single-testimonial-wrap:after, .ts-content h3:after, .typed::after, .widget.widget_nav_menu ul li a span {
+.back-to-top,
+.btn,
+.btn-circle:hover,
+.btn.btn-white:hover,
+.btn:hover svg,
+.data_center_location-map .l_info .circle-ball,
+.data_center_location-map .l_info .circle-ball:after,
+.header-main.sticky .btn.header-btn:hover,
+.hosting-specification-nav button:after,
+.pagination li a.active,
+.pagination li a.current,
+.pagination li a:hover,
+.pagination li span.active,
+.pagination li span.current,
+.pagination li span:hover,
+.preloader .spinner-grow,
+.pricing-toogle .switch,
+.provider-tab .nav button.active,
+.single-price-wrap.style--three .btn.btn-border:hover,
+.social-links a:hover,
+.testimonial-carousel.style--three.v2 .single-testimonial-wrap:after,
+.ts-content h3:after,
+.typed::after,
+.widget.widget_nav_menu ul li a span {
     background-color: #4D56FF
 }
 
-.banner.style--two .banner-btn-group .btn-green:hover, .banner.style--two .banner-btn-group .btn-orange:hover, .banner.style--two .banner-content h1, .cta-content h2 span, .footer-bottom.style--two .footer-bottom-content p a, .section-title h2 span, .single-service.style--two a:hover, .socials.style--two a:hover i, .widget.widget_about.style--two .contact-list li a, .widget.widget_about.style--two .contact-list li i, .widget.widget_about.style--two .contact-list li span, .widget.widget_about.style--two .contact-list li:hover a, .widget.widget_about.style--two .contact-list li:hover i, .widget.widget_nav_menu.style--two ul li a:hover, .widget.widget_recent_entries.style--two ul li .post-title a:hover, .widget.widget_recent_entries.style--two ul li .posted-on {
+.banner.style--two .banner-btn-group .btn-green:hover,
+.banner.style--two .banner-btn-group .btn-orange:hover,
+.banner.style--two .banner-content h1,
+.cta-content h2 span,
+.footer-bottom.style--two .footer-bottom-content p a,
+.section-title h2 span,
+.single-service.style--two a:hover,
+.socials.style--two a:hover i,
+.widget.widget_about.style--two .contact-list li a,
+.widget.widget_about.style--two .contact-list li i,
+.widget.widget_about.style--two .contact-list li span,
+.widget.widget_about.style--two .contact-list li:hover a,
+.widget.widget_about.style--two .contact-list li:hover i,
+.widget.widget_nav_menu.style--two ul li a:hover,
+.widget.widget_recent_entries.style--two ul li .post-title a:hover,
+.widget.widget_recent_entries.style--two ul li .posted-on {
     color: #03a87c
 }
 
-.back-to-top.home2, .btn.btn-border:hover, .btn.btn-green, .btn.btn-orange:hover, .data_center_location-map.style--two .l_info .circle-ball, .data_center_location-map.style--two .l_info .circle-ball:after, .data_center_location-map.style--two .l_info .info-box, .header.style--two .header-main .btn.header-btn, .nav-pricing li button.active, .single-price-wrap .single-price-bg-shape, .widget.widget_nav_menu.style--two ul li a span {
+.back-to-top.home2,
+.btn.btn-border:hover,
+.btn.btn-green,
+.btn.btn-orange:hover,
+.data_center_location-map.style--two .l_info .circle-ball,
+.data_center_location-map.style--two .l_info .circle-ball:after,
+.data_center_location-map.style--two .l_info .info-box,
+.header.style--two .header-main .btn.header-btn,
+.nav-pricing li button.active,
+.single-price-wrap .single-price-bg-shape,
+.widget.widget_nav_menu.style--two ul li a span {
     background-color: #03a87c
 }
 
-.banner-content.text-white h1, .banner-content.text-white p, .banner.style--three .banner-btn-group .btn, .btn, .btn.btn-border:hover, .btn.btn-green, .btn.btn-green:hover, .btn.btn-orange, .btn.btn-orange.btn-border:hover, .btn.btn-orange:hover, .btn.btn-style3:hover, .btn.btn-style4, .btn.btn-style4.btn-border:hover, .btn.btn-white:hover, .btn.hover-style-two:hover, .content-404 h3, .cta-content.text-white h2, .data_center_location-map.style--four .l_info .info-box, .data_center_location-map.style--four .l_info .info-box h5, .data_center_location-map.style--three .l_info .info-box, .data_center_location-map.style--three .l_info .info-box h5, .data_center_location-map.style--two .l_info .info-box, .data_center_location-map.style--two .l_info .info-box h5, .header-main .submenu-button, .header-main ul.nav>li>a, .header-main.sticky .btn.header-btn:hover, .header.style--five .submenu-button, .header.style--three .header-main .btn.header-btn, .header.style--three .submenu-button, .header.style--two .header-main.sticky .btn.header-btn, .hosting-banner-content *, .info-list li a, .nav-pricing li button.active, .nav-pricing.style--two li button.active, .owl-carousel .owl-nav button:hover i, .owl-carousel.testimonial-carousel.style--two .owl-nav button:hover i, .page-title h2, .page-title ul li, .page-title ul li a, .page-title ul li:not(:last-child):after, .pagination li a.active, .pagination li a.current, .pagination li a:hover, .pagination li span.active, .pagination li span.current, .pagination li span:hover, .private-server-table thead th, .provider-tab .nav button.active, .section-title.text-white h2, .section-title.text-white h3, .section-title.text-white h4, .section-title.text-white h5, .section-title.text-white h6, .section-title.text-white p, .single-price .price, .single-price-wrap.style--three .btn.btn-border:hover, .single-service.text-white *, .single-service.text-white h4, .social-links a:hover i, .testimonial-title.text-white h2, .video-btn, .widget.text-white .widget-title, .widget.widget_about.text-white a, .widget.widget_about.text-white p, .widget.widget_nav_menu ul li a span, .widget.widget_nav_menu.text-white ul li a, .widget.widget_newsletter .newsletter-content input:focus, .widget.widget_newsletter .newsletter-content label, .widget.widget_recent_entries.style--four ul li .posted-on, .widget.widget_recent_entries.text-white ul li .post-title a {
+.banner-content.text-white h1,
+.banner-content.text-white p,
+.banner.style--three .banner-btn-group .btn,
+.btn,
+.btn.btn-border:hover,
+.btn.btn-green,
+.btn.btn-green:hover,
+.btn.btn-orange,
+.btn.btn-orange.btn-border:hover,
+.btn.btn-orange:hover,
+.btn.btn-style3:hover,
+.btn.btn-style4,
+.btn.btn-style4.btn-border:hover,
+.btn.btn-white:hover,
+.btn.hover-style-two:hover,
+.content-404 h3,
+.cta-content.text-white h2,
+.data_center_location-map.style--four .l_info .info-box,
+.data_center_location-map.style--four .l_info .info-box h5,
+.data_center_location-map.style--three .l_info .info-box,
+.data_center_location-map.style--three .l_info .info-box h5,
+.data_center_location-map.style--two .l_info .info-box,
+.data_center_location-map.style--two .l_info .info-box h5,
+.header-main .submenu-button,
+.header-main ul.nav>li>a,
+.header-main.sticky .btn.header-btn:hover,
+.header.style--five .submenu-button,
+.header.style--three .header-main .btn.header-btn,
+.header.style--three .submenu-button,
+.header.style--two .header-main.sticky .btn.header-btn,
+.hosting-banner-content *,
+.info-list li a,
+.nav-pricing li button.active,
+.nav-pricing.style--two li button.active,
+.owl-carousel .owl-nav button:hover i,
+.owl-carousel.testimonial-carousel.style--two .owl-nav button:hover i,
+.page-title h2,
+.page-title ul li,
+.page-title ul li a,
+.page-title ul li:not(:last-child):after,
+.pagination li a.active,
+.pagination li a.current,
+.pagination li a:hover,
+.pagination li span.active,
+.pagination li span.current,
+.pagination li span:hover,
+.private-server-table thead th,
+.provider-tab .nav button.active,
+.section-title.text-white h2,
+.section-title.text-white h3,
+.section-title.text-white h4,
+.section-title.text-white h5,
+.section-title.text-white h6,
+.section-title.text-white p,
+.single-price .price,
+.single-price-wrap.style--three .btn.btn-border:hover,
+.single-service.text-white *,
+.single-service.text-white h4,
+.social-links a:hover i,
+.testimonial-title.text-white h2,
+.video-btn,
+.widget.text-white .widget-title,
+.widget.widget_about.text-white a,
+.widget.widget_about.text-white p,
+.widget.widget_nav_menu ul li a span,
+.widget.widget_nav_menu.text-white ul li a,
+.widget.widget_newsletter .newsletter-content input:focus,
+.widget.widget_newsletter .newsletter-content label,
+.widget.widget_recent_entries.style--four ul li .posted-on,
+.widget.widget_recent_entries.text-white ul li .post-title a {
     color: #fff
 }
 
-#menu-button span, #menu-button span:after, #menu-button span:before, .banner.style--four .banner-btn-group .btn.btn-style4:hover, .banner.style--three .banner-btn-group .btn:hover, .banner.style--two .banner-btn-group .btn-green:hover, .banner.style--two .banner-btn-group .btn-orange:hover, .btn svg, .btn.btn-white, .btn.header-btn:hover, .btn.hover-style-two:hover svg, .btn:hover, .contact-form-wrap, .data_center_location-map .l_info .info-box, .domain-price-list li, .domain-search-form .input-group, .domain-search-wrap, .featured-item, .footer-bottom .container:after, .funfact, .header-main ul.nav>li>a.current-menu-parent:after, .header-main ul.nav>li>a:hover:after, .header.style--three .header-main .btn.header-btn:hover, .hosting-price>nav .nav>button .dot, .hosting-specification-nav button, .nav-pricing, .newsletter-form .input-group, .owl-carousel button.owl-dot, .pricing-table td, .pricing-table th, .single-choose-us.style--three, .single-choose-us.style--two, .single-post-item, .single-price, .single-team .team-content, .single-testimonial, .testimonial-carousel.style--three .single-testimonial-wrap:after, .video-btn .svg-wrap, .video-btn .svg-wrap:after {
+#menu-button span,
+#menu-button span:after,
+#menu-button span:before,
+.banner.style--four .banner-btn-group .btn.btn-style4:hover,
+.banner.style--three .banner-btn-group .btn:hover,
+.banner.style--two .banner-btn-group .btn-green:hover,
+.banner.style--two .banner-btn-group .btn-orange:hover,
+.btn svg,
+.btn.btn-white,
+.btn.header-btn:hover,
+.btn.hover-style-two:hover svg,
+.btn:hover,
+.contact-form-wrap,
+.data_center_location-map .l_info .info-box,
+.domain-price-list li,
+.domain-search-form .input-group,
+.domain-search-wrap,
+.featured-item,
+.footer-bottom .container:after,
+.funfact,
+.header-main ul.nav>li>a.current-menu-parent:after,
+.header-main ul.nav>li>a:hover:after,
+.header.style--three .header-main .btn.header-btn:hover,
+.hosting-price>nav .nav>button .dot,
+.hosting-specification-nav button,
+.nav-pricing,
+.newsletter-form .input-group,
+.owl-carousel button.owl-dot,
+.pricing-table td,
+.pricing-table th,
+.single-choose-us.style--three,
+.single-choose-us.style--two,
+.single-post-item,
+.single-price,
+.single-team .team-content,
+.single-testimonial,
+.testimonial-carousel.style--three .single-testimonial-wrap:after,
+.video-btn .svg-wrap,
+.video-btn .svg-wrap:after {
     background-color: #fff
 }
 
-.post-details .entry-header .entry-meta li a, .post-navigation .nav-link .nav-title, .section-title h4, .widget.widget_categories ul li a {
+.post-details .entry-header .entry-meta li a,
+.post-navigation .nav-link .nav-title,
+.section-title h4,
+.widget.widget_categories ul li a {
     color: #666
 }
 
@@ -811,49 +1165,143 @@ blockquote cite:after {
     background-color: #666
 }
 
-.banner.style--two .banner-content p, .btn.btn-border, .btn.btn-white, .entry-footer .social-share p strong, .faq-accordion .accordion-header .accordion-button:not(.collapsed), .form-control, .header-main.sticky ul.nav>li>a, .header.style--two .header-main ul.nav>li>a, .header.style--two .submenu-button, .hz-price-box .price, .post-details .entry-categories ul li:first-child, .post-details .entry-header .entry-meta li span, .post-details .entry-tags ul li:first-child, .pricing-table .price-head .plan, .pricing-table .price-head h3, .pricing-toogle .toggler, .provider-tab .nav button, .single-price.style--two .price-body ul li span, .single-specification .specification-content p, .testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info p, .testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info p, .ts-content p, .ts-list li, .widget.widget_nav_menu.style--two ul li.title, .widget.widget_tag_cloud .tagcloud a {
+.banner.style--two .banner-content p,
+.btn.btn-border,
+.btn.btn-white,
+.entry-footer .social-share p strong,
+.faq-accordion .accordion-header .accordion-button:not(.collapsed),
+.form-control,
+.header-main.sticky ul.nav>li>a,
+.header.style--two .header-main ul.nav>li>a,
+.header.style--two .submenu-button,
+.hz-price-box .price,
+.post-details .entry-categories ul li:first-child,
+.post-details .entry-header .entry-meta li span,
+.post-details .entry-tags ul li:first-child,
+.pricing-table .price-head .plan,
+.pricing-table .price-head h3,
+.pricing-toogle .toggler,
+.provider-tab .nav button,
+.single-price.style--two .price-body ul li span,
+.single-specification .specification-content p,
+.testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info p,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info p,
+.ts-content p,
+.ts-list li,
+.widget.widget_nav_menu.style--two ul li.title,
+.widget.widget_tag_cloud .tagcloud a {
     color: #111
 }
 
-.btn-circle, .btn.hover-style-two:hover, .header-main.sticky .offcanvas-trigger span, .offcanvas-overlay, .preloader {
+.btn-circle,
+.btn.hover-style-two:hover,
+.header-main.sticky .offcanvas-trigger span,
+.offcanvas-overlay,
+.preloader {
     background-color: #111
 }
 
-.domain-price-list li, .hosting-specification-nav button, .pagination li a, .pagination li span, .post-details .entry-header .entry-meta li span, .price, .pricing-table .price-head .plan, .pricing-table .price-head h3, .section-title.style--three h5, .widget.widget_newsletter .newsletter-content label, table {
+.domain-price-list li,
+.hosting-specification-nav button,
+.pagination li a,
+.pagination li span,
+.post-details .entry-header .entry-meta li span,
+.price,
+.pricing-table .price-head .plan,
+.pricing-table .price-head h3,
+.section-title.style--three h5,
+.widget.widget_newsletter .newsletter-content label,
+table {
     font-family: Lato, sans-serif
 }
 
-.data_center_location-map .l_info .info-box h5, .price span, .price sup, .private-server-table td, .private-server-table th, .section-title h5, .single-funfact h2, .testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info h4, .testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4, .testimonial-carousel.style--two .single-testimonial .testimonial-content h3 {
+.data_center_location-map .l_info .info-box h5,
+.price span,
+.price sup,
+.private-server-table td,
+.private-server-table th,
+.section-title h5,
+.single-funfact h2,
+.testimonial-carousel.style--three .single-testimonial .testimonial-content .meta-info h4,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content .meta-info h4,
+.testimonial-carousel.style--two .single-testimonial .testimonial-content h3 {
     font-family: "Open Sans", sans-serif
 }
 
-.btn svg, .btn-circle, .hosting-price>nav .nav>button .dot, .hosting-price>nav .nav>button .dot:after, .owl-carousel .owl-nav button, .pagination li a, .pagination li span, .pricing-toogle .switch, .single-funfact:after, .social-links a, .testimonial-carousel.style--three .single-testimonial .testimonial-img img, .video-btn .svg-wrap:after {
+.btn svg,
+.btn-circle,
+.hosting-price>nav .nav>button .dot,
+.hosting-price>nav .nav>button .dot:after,
+.owl-carousel .owl-nav button,
+.pagination li a,
+.pagination li span,
+.pricing-toogle .switch,
+.single-funfact:after,
+.social-links a,
+.testimonial-carousel.style--three .single-testimonial .testimonial-img img,
+.video-btn .svg-wrap:after {
     border-radius: 50%
 }
 
-.btn.btn-style3, .control-panel-accordion.style--two .accordion-button, .data_center_location-map .l_info .info-box, .hz-price-box .hz-price-box-inner, .provider-tab .nav button, .question-form .form-control, .single-team .team-content {
+.btn.btn-style3,
+.control-panel-accordion.style--two .accordion-button,
+.data_center_location-map .l_info .info-box,
+.hz-price-box .hz-price-box-inner,
+.provider-tab .nav button,
+.question-form .form-control,
+.single-team .team-content {
     border-radius: 5px
 }
 
-.contact-box, .contact-form-wrap, .domain-search-wrap, .funfact, .map-wrap .map, .single-choose-us, .single-service.box-style, .single-team .team-img img, .testimonial-carousel.style--three .single-testimonial, .testimonial-carousel.style--three .single-testimonial-wrap:after, .testimonial-carousel.style--two .single-testimonial {
+.contact-box,
+.contact-form-wrap,
+.domain-search-wrap,
+.funfact,
+.map-wrap .map,
+.single-choose-us,
+.single-service.box-style,
+.single-team .team-img img,
+.testimonial-carousel.style--three .single-testimonial,
+.testimonial-carousel.style--three .single-testimonial-wrap:after,
+.testimonial-carousel.style--two .single-testimonial {
     border-radius: 10px
 }
 
-.btn, .btn.btn-style4, .domain-search-form .input-group, .nav-pricing, .nav-pricing li button, .newsletter-form .input-group, .newsletter-form .theme-input-group, .widget.widget_nav_menu ul li a span {
+.btn,
+.btn.btn-style4,
+.domain-search-form .input-group,
+.nav-pricing,
+.nav-pricing li button,
+.newsletter-form .input-group,
+.newsletter-form .theme-input-group,
+.widget.widget_nav_menu ul li a span {
     border-radius: 50px
 }
 
-.banner.style--three .banner-btn-group .btn:hover, .banner.style--two .banner-btn-group .btn-green:hover, .banner.style--two .banner-btn-group .btn-orange:hover, .data_center_location-map .l_info .info-box, .domain-search-wrap, .funfact, .header-main.sticky, .single-post-item, .single-price, .testimonial-carousel {
+.banner.style--three .banner-btn-group .btn:hover,
+.banner.style--two .banner-btn-group .btn-green:hover,
+.banner.style--two .banner-btn-group .btn-orange:hover,
+.data_center_location-map .l_info .info-box,
+.domain-search-wrap,
+.funfact,
+.header-main.sticky,
+.single-post-item,
+.single-price,
+.testimonial-carousel {
     -webkit-box-shadow: 0 0 30px rgba(24, 104, 222, .1);
     box-shadow: 0 0 30px rgba(24, 104, 222, .1)
 }
 
-.featured-item, .hosting-specification-nav button, .single-team .team-content {
+.featured-item,
+.hosting-specification-nav button,
+.single-team .team-content {
     -webkit-box-shadow: 5px 5px 60px rgba(0, 0, 0, .05);
     box-shadow: 5px 5px 60px rgba(0, 0, 0, .05)
 }
 
-.single-choose-us.style--three, .single-choose-us.style--two, .single-price.style--two {
+.single-choose-us.style--three,
+.single-choose-us.style--two,
+.single-price.style--two {
     -webkit-box-shadow: 0 0 90px rgba(0, 0, 0, .05);
     box-shadow: 0 0 90px rgba(0, 0, 0, .05)
 }
@@ -1209,7 +1657,8 @@ blockquote cite:after {
     font-size: 13px
 }
 
-.info-list li a i, .info-list li a svg {
+.info-list li a i,
+.info-list li a svg {
     margin-right: 5px
 }
 
@@ -2009,51 +2458,61 @@ textarea.form-control {
     color: #4D56FF
 }
 
-.domain-search-form .input-group, .newsletter-form .input-group {
+.domain-search-form .input-group,
+.newsletter-form .input-group {
     border: 1px solid #e8e8e8;
     padding: 7px;
     max-width: 570px;
     margin: 0 auto
 }
 
-.domain-search-form .input-group .form-control, .newsletter-form .input-group .form-control {
+.domain-search-form .input-group .form-control,
+.newsletter-form .input-group .form-control {
     margin-bottom: 0;
     border: 0;
     border-radius: 50px!important
 }
 
 @media only screen and (max-width:479px) {
-    .domain-search-form .input-group .form-control, .newsletter-form .input-group .form-control {
+    .domain-search-form .input-group .form-control,
+    .newsletter-form .input-group .form-control {
         height: 40px
     }
 }
 
-.domain-search-form .input-group .btn, .newsletter-form .input-group .btn {
+.domain-search-form .input-group .btn,
+.newsletter-form .input-group .btn {
     border-radius: 50px!important
 }
 
 @media only screen and (max-width:479px) {
-    .domain-search-form .input-group .btn, .newsletter-form .input-group .btn {
+    .domain-search-form .input-group .btn,
+    .newsletter-form .input-group .btn {
         padding: 0!important;
         background-color: transparent
     }
-    .domain-search-form .input-group .btn span, .newsletter-form .input-group .btn span {
+    .domain-search-form .input-group .btn span,
+    .newsletter-form .input-group .btn span {
         display: none
     }
-    .domain-search-form .input-group .btn svg, .newsletter-form .input-group .btn svg {
+    .domain-search-form .input-group .btn svg,
+    .newsletter-form .input-group .btn svg {
         background-color: #4D56FF
     }
-    .domain-search-form .input-group .btn svg path, .newsletter-form .input-group .btn svg path {
+    .domain-search-form .input-group .btn svg path,
+    .newsletter-form .input-group .btn svg path {
         fill: #fff
     }
 }
 
-.domain-search-form .input-group .btn.btn-style4 span, .newsletter-form .input-group .btn.btn-style4 span {
+.domain-search-form .input-group .btn.btn-style4 span,
+.newsletter-form .input-group .btn.btn-style4 span {
     margin-left: 4px
 }
 
 @media only screen and (max-width:479px) {
-    .domain-search-form .input-group .btn.btn-style4, .newsletter-form .input-group .btn.btn-style4 {
+    .domain-search-form .input-group .btn.btn-style4,
+    .newsletter-form .input-group .btn.btn-style4 {
         background-color: #0364ff;
         padding: 12px 24px!important
     }
@@ -2101,7 +2560,9 @@ textarea.form-control {
     white-space: nowrap
 }
 
-.btn i, .btn img, .btn svg {
+.btn i,
+.btn img,
+.btn svg {
     margin-left: 15px
 }
 
@@ -2282,7 +2743,8 @@ textarea.form-control {
     color: #818181
 }
 
-.btn-inline i, .btn-inline svg {
+.btn-inline i,
+.btn-inline svg {
     margin-left: 5px
 }
 
@@ -2290,7 +2752,8 @@ textarea.form-control {
     fill: #4D56FF
 }
 
-.btn-inline.icon-left i, .btn-inline.icon-left svg {
+.btn-inline.icon-left i,
+.btn-inline.icon-left svg {
     margin-left: 0;
     margin-right: 5px
 }
@@ -2699,13 +3162,15 @@ textarea.form-control {
     margin-right: 15px
 }
 
-.pagination li:first-child a, .pagination li:first-child span {
+.pagination li:first-child a,
+.pagination li:first-child span {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg)
 }
 
-.pagination li a, .pagination li span {
+.pagination li a,
+.pagination li span {
     width: 45px;
     height: 45px;
     line-height: 1;
@@ -2723,11 +3188,15 @@ textarea.form-control {
     border: 1px solid #4D56FF
 }
 
-.pagination li a svg path, .pagination li span svg path {
+.pagination li a svg path,
+.pagination li span svg path {
     fill: #4D56FF
 }
 
-.pagination li a.active svg path, .pagination li a:hover svg path, .pagination li span.active svg path, .pagination li span:hover svg path {
+.pagination li a.active svg path,
+.pagination li a:hover svg path,
+.pagination li span.active svg path,
+.pagination li span:hover svg path {
     fill: #fff
 }
 
@@ -2917,7 +3386,8 @@ textarea.form-control {
     margin-top: 0
 }
 
-.header-main.sticky ul.nav>li>a.current-menu-parent:after, .header-main.sticky ul.nav>li>a:hover:after {
+.header-main.sticky ul.nav>li>a.current-menu-parent:after,
+.header-main.sticky ul.nav>li>a:hover:after {
     display: none
 }
 
@@ -2933,7 +3403,8 @@ textarea.form-control {
     background-color: #111
 }
 
-.header-main.sticky #menu-button span:after, .header-main.sticky #menu-button span:before {
+.header-main.sticky #menu-button span:after,
+.header-main.sticky #menu-button span:before {
     background-color: #111
 }
 
@@ -3048,7 +3519,8 @@ textarea.form-control {
     }
 }
 
-.header-main ul.nav>li>a.current-menu-parent:after, .header-main ul.nav>li>a:hover:after {
+.header-main ul.nav>li>a.current-menu-parent:after,
+.header-main ul.nav>li>a:hover:after {
     width: 20px;
     height: 2px;
     left: 50%;
@@ -3102,7 +3574,8 @@ textarea.form-control {
     .header-main ul.nav ul li {
         margin-left: 20px
     }
-    .header-main ul.nav ul li a:after, .header-main ul.nav ul li a:before {
+    .header-main ul.nav ul li a:after,
+    .header-main ul.nav ul li a:before {
         display: none
     }
 }
@@ -3389,7 +3862,8 @@ textarea.form-control {
     height: 2px
 }
 
-#menu-button span:after, #menu-button span:before {
+#menu-button span:after,
+#menu-button span:before {
     position: absolute;
     content: "";
     display: block;
@@ -3434,11 +3908,13 @@ textarea.form-control {
     display: none
 }
 
-.header.style--two .header-main ul.nav>li>a.current-menu-parent, .header.style--two .header-main ul.nav>li>a:hover {
+.header.style--two .header-main ul.nav>li>a.current-menu-parent,
+.header.style--two .header-main ul.nav>li>a:hover {
     color: #03a87c
 }
 
-.header.style--two .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--two .header-main ul.nav>li>a:hover~.submenu-button {
+.header.style--two .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--two .header-main ul.nav>li>a:hover~.submenu-button {
     color: #03a87c
 }
 
@@ -3456,11 +3932,13 @@ textarea.form-control {
     text-transform: uppercase
 }
 
-.header.style--two .header-main ul.nav li a.current-menu-children, .header.style--two .header-main ul.nav li a:hover {
+.header.style--two .header-main ul.nav li a.current-menu-children,
+.header.style--two .header-main ul.nav li a:hover {
     color: #03a87c
 }
 
-.header.style--two .header-main ul.nav li a.current-menu-children~.submenu-button, .header.style--two .header-main ul.nav li a:hover~.submenu-button {
+.header.style--two .header-main ul.nav li a.current-menu-children~.submenu-button,
+.header.style--two .header-main ul.nav li a:hover~.submenu-button {
     color: #03a87c
 }
 
@@ -3487,7 +3965,8 @@ textarea.form-control {
     background-color: #f76d00
 }
 
-.header.style--two .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after, .header.style--two .header-main.sticky ul.nav>li>a:hover~.submenu-button:after {
+.header.style--two .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after,
+.header.style--two .header-main.sticky ul.nav>li>a:hover~.submenu-button:after {
     color: #03a87c
 }
 
@@ -3541,7 +4020,8 @@ textarea.form-control {
     background-color: #111
 }
 
-.header.style--two #menu-button span:after, .header.style--two #menu-button span:before {
+.header.style--two #menu-button span:after,
+.header.style--two #menu-button span:before {
     background-color: #111
 }
 
@@ -3566,29 +4046,35 @@ textarea.form-control {
     }
 }
 
-.header.style--three .header-main ul.nav>li>a.current-menu-parent, .header.style--three .header-main ul.nav>li>a:hover {
+.header.style--three .header-main ul.nav>li>a.current-menu-parent,
+.header.style--three .header-main ul.nav>li>a:hover {
     color: #fff!important
 }
 
-.header.style--three .header-main ul.nav>li>a.current-menu-parent:after, .header.style--three .header-main ul.nav>li>a:hover:after {
+.header.style--three .header-main ul.nav>li>a.current-menu-parent:after,
+.header.style--three .header-main ul.nav>li>a:hover:after {
     background-color: #4D56FF
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--three .header-main ul.nav>li>a.current-menu-parent:after, .header.style--three .header-main ul.nav>li>a:hover:after {
+    .header.style--three .header-main ul.nav>li>a.current-menu-parent:after,
+    .header.style--three .header-main ul.nav>li>a:hover:after {
         display: none
     }
 }
 
-.header.style--three .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--three .header-main ul.nav>li>a:hover~.submenu-button {
+.header.style--three .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--three .header-main ul.nav>li>a:hover~.submenu-button {
     color: #fff!important
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--three .header-main ul.nav>li>a.current-menu-parent, .header.style--three .header-main ul.nav>li>a:hover {
+    .header.style--three .header-main ul.nav>li>a.current-menu-parent,
+    .header.style--three .header-main ul.nav>li>a:hover {
         color: #4D56FF!important
     }
-    .header.style--three .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--three .header-main ul.nav>li>a:hover~.submenu-button {
+    .header.style--three .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+    .header.style--three .header-main ul.nav>li>a:hover~.submenu-button {
         color: #4D56FF!important
     }
 }
@@ -3607,11 +4093,13 @@ textarea.form-control {
     text-transform: uppercase
 }
 
-.header.style--three .header-main ul.nav li a.current-menu-children, .header.style--three .header-main ul.nav li a:hover {
+.header.style--three .header-main ul.nav li a.current-menu-children,
+.header.style--three .header-main ul.nav li a:hover {
     color: #4D56FF
 }
 
-.header.style--three .header-main ul.nav li a.current-menu-children~.submenu-button, .header.style--three .header-main ul.nav li a:hover~.submenu-button {
+.header.style--three .header-main ul.nav li a.current-menu-children~.submenu-button,
+.header.style--three .header-main ul.nav li a:hover~.submenu-button {
     color: #4D56FF
 }
 
@@ -3643,11 +4131,13 @@ textarea.form-control {
     color: #4D56FF
 }
 
-.header.style--three .header-main.sticky ul.nav>li>a.current-menu-parent, .header.style--three .header-main.sticky ul.nav>li>a:hover {
+.header.style--three .header-main.sticky ul.nav>li>a.current-menu-parent,
+.header.style--three .header-main.sticky ul.nav>li>a:hover {
     color: #4D56FF!important
 }
 
-.header.style--three .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--three .header-main.sticky ul.nav>li>a:hover~.submenu-button {
+.header.style--three .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--three .header-main.sticky ul.nav>li>a:hover~.submenu-button {
     color: #4D56FF!important
 }
 
@@ -3667,7 +4157,8 @@ textarea.form-control {
     background-color: #4D56FF
 }
 
-.header.style--three .header-main.sticky #menu-button span:after, .header.style--three .header-main.sticky #menu-button span:before {
+.header.style--three .header-main.sticky #menu-button span:after,
+.header.style--three .header-main.sticky #menu-button span:before {
     background-color: #4D56FF
 }
 
@@ -3718,7 +4209,8 @@ textarea.form-control {
     background-color: #fff
 }
 
-.header.style--three #menu-button span:after, .header.style--three #menu-button span:before {
+.header.style--three #menu-button span:after,
+.header.style--three #menu-button span:before {
     background-color: #fff
 }
 
@@ -3726,38 +4218,46 @@ textarea.form-control {
     fill: #fff
 }
 
-.header.style--four .header-main ul.nav>li>a.current-menu-parent, .header.style--four .header-main ul.nav>li>a:hover {
+.header.style--four .header-main ul.nav>li>a.current-menu-parent,
+.header.style--four .header-main ul.nav>li>a:hover {
     color: #fff!important
 }
 
-.header.style--four .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--four .header-main ul.nav>li>a:hover~.submenu-button {
+.header.style--four .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--four .header-main ul.nav>li>a:hover~.submenu-button {
     color: #fff!important
 }
 
-.header.style--four .header-main ul.nav>li>a.current-menu-parent:after, .header.style--four .header-main ul.nav>li>a:hover:after {
+.header.style--four .header-main ul.nav>li>a.current-menu-parent:after,
+.header.style--four .header-main ul.nav>li>a:hover:after {
     background-color: #fff
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--four .header-main ul.nav>li>a.current-menu-parent:after, .header.style--four .header-main ul.nav>li>a:hover:after {
+    .header.style--four .header-main ul.nav>li>a.current-menu-parent:after,
+    .header.style--four .header-main ul.nav>li>a:hover:after {
         display: none
     }
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--four .header-main ul.nav>li>a.current-menu-parent, .header.style--four .header-main ul.nav>li>a:hover {
+    .header.style--four .header-main ul.nav>li>a.current-menu-parent,
+    .header.style--four .header-main ul.nav>li>a:hover {
         color: #0364ff!important
     }
-    .header.style--four .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--four .header-main ul.nav>li>a:hover~.submenu-button {
+    .header.style--four .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+    .header.style--four .header-main ul.nav>li>a:hover~.submenu-button {
         color: #0364ff!important
     }
 }
 
-.header.style--four .header-main ul.nav li a.current-menu-children, .header.style--four .header-main ul.nav li a:hover {
+.header.style--four .header-main ul.nav li a.current-menu-children,
+.header.style--four .header-main ul.nav li a:hover {
     color: #0364ff
 }
 
-.header.style--four .header-main ul.nav li a.current-menu-children~.submenu-button, .header.style--four .header-main ul.nav li a:hover~.submenu-button {
+.header.style--four .header-main ul.nav li a.current-menu-children~.submenu-button,
+.header.style--four .header-main ul.nav li a:hover~.submenu-button {
     color: #0364ff
 }
 
@@ -3765,15 +4265,18 @@ textarea.form-control {
     color: #0364ff
 }
 
-.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent, .header.style--four .header-main.sticky ul.nav>li>a:hover {
+.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent,
+.header.style--four .header-main.sticky ul.nav>li>a:hover {
     color: #0364ff!important
 }
 
-.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--four .header-main.sticky ul.nav>li>a:hover~.submenu-button {
+.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--four .header-main.sticky ul.nav>li>a:hover~.submenu-button {
     color: #0364ff!important
 }
 
-.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after, .header.style--four .header-main.sticky ul.nav>li>a:hover~.submenu-button:after {
+.header.style--four .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button:after,
+.header.style--four .header-main.sticky ul.nav>li>a:hover~.submenu-button:after {
     color: #0364ff
 }
 
@@ -3797,7 +4300,8 @@ textarea.form-control {
     background-color: #0364ff
 }
 
-.header.style--four .header-main.sticky #menu-button span:after, .header.style--four .header-main.sticky #menu-button span:before {
+.header.style--four .header-main.sticky #menu-button span:after,
+.header.style--four .header-main.sticky #menu-button span:before {
     background-color: #0364ff
 }
 
@@ -3805,7 +4309,8 @@ textarea.form-control {
     background-color: #fff
 }
 
-.header.style--four #menu-button span:after, .header.style--four #menu-button span:before {
+.header.style--four #menu-button span:after,
+.header.style--four #menu-button span:before {
     background-color: #fff
 }
 
@@ -3830,29 +4335,35 @@ textarea.form-control {
     }
 }
 
-.header.style--five .header-main ul.nav>li>a.current-menu-parent, .header.style--five .header-main ul.nav>li>a:hover {
+.header.style--five .header-main ul.nav>li>a.current-menu-parent,
+.header.style--five .header-main ul.nav>li>a:hover {
     color: #fff!important
 }
 
-.header.style--five .header-main ul.nav>li>a.current-menu-parent:after, .header.style--five .header-main ul.nav>li>a:hover:after {
+.header.style--five .header-main ul.nav>li>a.current-menu-parent:after,
+.header.style--five .header-main ul.nav>li>a:hover:after {
     background-color: #4D56FF
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--five .header-main ul.nav>li>a.current-menu-parent:after, .header.style--five .header-main ul.nav>li>a:hover:after {
+    .header.style--five .header-main ul.nav>li>a.current-menu-parent:after,
+    .header.style--five .header-main ul.nav>li>a:hover:after {
         display: none
     }
 }
 
-.header.style--five .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--five .header-main ul.nav>li>a:hover~.submenu-button {
+.header.style--five .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--five .header-main ul.nav>li>a:hover~.submenu-button {
     color: #fff!important
 }
 
 @media only screen and (max-width:991px) {
-    .header.style--five .header-main ul.nav>li>a.current-menu-parent, .header.style--five .header-main ul.nav>li>a:hover {
+    .header.style--five .header-main ul.nav>li>a.current-menu-parent,
+    .header.style--five .header-main ul.nav>li>a:hover {
         color: #4D56FF!important
     }
-    .header.style--five .header-main ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--five .header-main ul.nav>li>a:hover~.submenu-button {
+    .header.style--five .header-main ul.nav>li>a.current-menu-parent~.submenu-button,
+    .header.style--five .header-main ul.nav>li>a:hover~.submenu-button {
         color: #4D56FF!important
     }
 }
@@ -3870,11 +4381,13 @@ textarea.form-control {
     font-size: 16px
 }
 
-.header.style--five .header-main ul.nav li a.current-menu-children, .header.style--five .header-main ul.nav li a:hover {
+.header.style--five .header-main ul.nav li a.current-menu-children,
+.header.style--five .header-main ul.nav li a:hover {
     color: #4D56FF
 }
 
-.header.style--five .header-main ul.nav li a.current-menu-children~.submenu-button, .header.style--five .header-main ul.nav li a:hover~.submenu-button {
+.header.style--five .header-main ul.nav li a.current-menu-children~.submenu-button,
+.header.style--five .header-main ul.nav li a:hover~.submenu-button {
     color: #4D56FF
 }
 
@@ -3893,11 +4406,13 @@ textarea.form-control {
     }
 }
 
-.header.style--five .header-main.sticky ul.nav>li>a.current-menu-parent, .header.style--five .header-main.sticky ul.nav>li>a:hover {
+.header.style--five .header-main.sticky ul.nav>li>a.current-menu-parent,
+.header.style--five .header-main.sticky ul.nav>li>a:hover {
     color: #4D56FF!important
 }
 
-.header.style--five .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button, .header.style--five .header-main.sticky ul.nav>li>a:hover~.submenu-button {
+.header.style--five .header-main.sticky ul.nav>li>a.current-menu-parent~.submenu-button,
+.header.style--five .header-main.sticky ul.nav>li>a:hover~.submenu-button {
     color: #4D56FF!important
 }
 
@@ -3905,7 +4420,8 @@ textarea.form-control {
     background-color: #4D56FF
 }
 
-.header.style--five .header-main.sticky #menu-button span:after, .header.style--five .header-main.sticky #menu-button span:before {
+.header.style--five .header-main.sticky #menu-button span:after,
+.header.style--five .header-main.sticky #menu-button span:before {
     background-color: #4D56FF
 }
 
@@ -3943,7 +4459,8 @@ textarea.form-control {
     background-color: #fff
 }
 
-.header.style--five #menu-button span:after, .header.style--five #menu-button span:before {
+.header.style--five #menu-button span:after,
+.header.style--five #menu-button span:before {
     background-color: #fff
 }
 
@@ -3964,7 +4481,7 @@ textarea.form-control {
 }
 
 .footer-main {
-    padding: 80px 0 20px
+    padding: 50px 0 20px
 }
 
 @media only screen and (max-width:991px) {
@@ -4045,7 +4562,8 @@ textarea.form-control {
     line-height: 1.416
 }
 
-.single-post-item .post-content .post-meta, .single-post-item .post-content .post-meta-bottom {
+.single-post-item .post-content .post-meta,
+.single-post-item .post-content .post-meta-bottom {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4054,17 +4572,20 @@ textarea.form-control {
     align-items: center
 }
 
-.single-post-item .post-content .post-meta li:not(:last-child), .single-post-item .post-content .post-meta-bottom li:not(:last-child) {
+.single-post-item .post-content .post-meta li:not(:last-child),
+.single-post-item .post-content .post-meta-bottom li:not(:last-child) {
     margin-right: 25px
 }
 
 @media only screen and (max-width:1199px) {
-    .single-post-item .post-content .post-meta li:not(:last-child), .single-post-item .post-content .post-meta-bottom li:not(:last-child) {
+    .single-post-item .post-content .post-meta li:not(:last-child),
+    .single-post-item .post-content .post-meta-bottom li:not(:last-child) {
         margin-right: 14px
     }
 }
 
-.single-post-item .post-content .post-meta li a, .single-post-item .post-content .post-meta-bottom li a {
+.single-post-item .post-content .post-meta li a,
+.single-post-item .post-content .post-meta-bottom li a {
     text-transform: uppercase
 }
 
@@ -4273,44 +4794,89 @@ textarea.form-control {
     margin-right: 7px
 }
 
-.post-details .entry-categories ul li:first-child, .post-details .entry-tags ul li:first-child {
+.post-details .entry-categories ul li:first-child,
+.post-details .entry-tags ul li:first-child {
     font-size: 16px;
     font-weight: 700;
     margin-right: 7px
 }
 
-.post-details .entry-categories ul li a, .post-details .entry-tags ul li a {
+.post-details .entry-categories ul li a,
+.post-details .entry-tags ul li a {
     font-size: 14px;
     line-height: 1.57
 }
 
-.post-details .entry-categories ul li a:not(:last-child):after, .post-details .entry-tags ul li a:not(:last-child):after {
+.post-details .entry-categories ul li a:not(:last-child):after,
+.post-details .entry-tags ul li a:not(:last-child):after {
     content: ','
 }
 
-.comment-content .login-register-wrapper .tab-btn li, .comment-content .woocommerce-checkout .form-row.notes label, .comment-content h1, .comment-content h2, .comment-content h3, .comment-content h4, .comment-content h5, .comment-content h6, .entry-content .login-register-wrapper .tab-btn li, .entry-content .woocommerce-checkout .form-row.notes label, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .login-register-wrapper .tab-btn .comment-content li, .login-register-wrapper .tab-btn .entry-content li, .login-register-wrapper .tab-btn .page--content li, .page--content .login-register-wrapper .tab-btn li, .page--content .woocommerce-checkout .form-row.notes label, .page--content h1, .page--content h2, .page--content h3, .page--content h4, .page--content h5, .page--content h6, .woocommerce-checkout .form-row.notes .comment-content label, .woocommerce-checkout .form-row.notes .entry-content label, .woocommerce-checkout .form-row.notes .page--content label {
+.comment-content .login-register-wrapper .tab-btn li,
+.comment-content .woocommerce-checkout .form-row.notes label,
+.comment-content h1,
+.comment-content h2,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6,
+.entry-content .login-register-wrapper .tab-btn li,
+.entry-content .woocommerce-checkout .form-row.notes label,
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.login-register-wrapper .tab-btn .comment-content li,
+.login-register-wrapper .tab-btn .entry-content li,
+.login-register-wrapper .tab-btn .page--content li,
+.page--content .login-register-wrapper .tab-btn li,
+.page--content .woocommerce-checkout .form-row.notes label,
+.page--content h1,
+.page--content h2,
+.page--content h3,
+.page--content h4,
+.page--content h5,
+.page--content h6,
+.woocommerce-checkout .form-row.notes .comment-content label,
+.woocommerce-checkout .form-row.notes .entry-content label,
+.woocommerce-checkout .form-row.notes .page--content label {
     line-height: 1.5;
     margin-bottom: 20px
 }
 
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
     padding-top: 20px;
     margin-bottom: 18px
 }
 
-.comment-content p, .entry-content p, .page--content p {
+.comment-content p,
+.entry-content p,
+.page--content p {
     margin-bottom: 30px
 }
 
-.comment-content table, .entry-content table, .page--content table {
+.comment-content table,
+.entry-content table,
+.page--content table {
     margin-bottom: 30px
 }
 
-.comment-content select, .entry-content select, .page--content select {
+.comment-content select,
+.entry-content select,
+.page--content select {
     margin-bottom: 30px
 }
 
-.comment-content>:last-child, .entry-content>:last-child, .page--content>:last-child {
+.comment-content>:last-child,
+.entry-content>:last-child,
+.page--content>:last-child {
     margin-bottom: 0
 }
 
@@ -4480,7 +5046,12 @@ textarea.form-control {
     margin-bottom: 42px
 }
 
-.comment-content .comment-respond .comment-form select, .comment-respond .comment-form .comment-content select, .comment-respond .comment-form .entry-content select, .comment-respond .comment-form .page--content select, .entry-content .comment-respond .comment-form select, .page--content .comment-respond .comment-form select {
+.comment-content .comment-respond .comment-form select,
+.comment-respond .comment-form .comment-content select,
+.comment-respond .comment-form .entry-content select,
+.comment-respond .comment-form .page--content select,
+.entry-content .comment-respond .comment-form select,
+.page--content .comment-respond .comment-form select {
     margin-bottom: 35px
 }
 
@@ -4494,7 +5065,8 @@ textarea.form-control {
     margin-top: 4px
 }
 
-.comment-respond p.color-container, .comment-respond p.custom-checkbox {
+.comment-respond p.color-container,
+.comment-respond p.custom-checkbox {
     display: block;
     white-space: normal
 }
@@ -4772,7 +5344,8 @@ textarea.form-control {
     margin: 0 auto 42px
 }
 
-.banner.style--two .banner-btn-group .btn-green:hover, .banner.style--two .banner-btn-group .btn-orange:hover {
+.banner.style--two .banner-btn-group .btn-green:hover,
+.banner.style--two .banner-btn-group .btn-orange:hover {
     border-color: #fff
 }
 
@@ -4962,24 +5535,28 @@ textarea.form-control {
     margin-right: 3px
 }
 
-.pricing-table thead td, .pricing-table thead th {
+.pricing-table thead td,
+.pricing-table thead th {
     padding: 41px 15px 35px
 }
 
 @media only screen and (max-width:991px) {
-    .pricing-table thead td, .pricing-table thead th {
+    .pricing-table thead td,
+    .pricing-table thead th {
         padding: 30px 15px
     }
 }
 
-.pricing-table .price-head .plan, .pricing-table .price-head h3 {
+.pricing-table .price-head .plan,
+.pricing-table .price-head h3 {
     margin-bottom: 5px;
     font-size: 24px;
     display: block
 }
 
 @media only screen and (max-width:991px) {
-    .pricing-table .price-head .plan, .pricing-table .price-head h3 {
+    .pricing-table .price-head .plan,
+    .pricing-table .price-head h3 {
         font-size: 17px;
         margin-bottom: 14px
     }
@@ -4989,12 +5566,14 @@ textarea.form-control {
     line-height: calc(57 / 48)
 }
 
-.pricing-table tfoot td, .pricing-table tfoot th {
+.pricing-table tfoot td,
+.pricing-table tfoot th {
     padding-top: 25px;
     padding-bottom: 25px
 }
 
-.pricing-table td, .pricing-table th {
+.pricing-table td,
+.pricing-table th {
     white-space: nowrap
 }
 
@@ -5009,7 +5588,8 @@ textarea.form-control {
     display: block
 }
 
-.price span, .price sup {
+.price span,
+.price sup {
     font-size: 18px
 }
 
@@ -5145,7 +5725,8 @@ textarea.form-control {
     margin-right: 10px
 }
 
-.single-price .price span, .single-price .price sup {
+.single-price .price span,
+.single-price .price sup {
     font-size: 12px
 }
 
@@ -5203,7 +5784,8 @@ textarea.form-control {
     text-align: right
 }
 
-.single-price .pricing-area .discount p, .single-price .pricing-area .discount span {
+.single-price .pricing-area .discount p,
+.single-price .pricing-area .discount span {
     font-size: 13px;
     margin-bottom: 0
 }
@@ -5885,34 +6467,40 @@ textarea.form-control {
     --bs-table-accent-bg: #F7F7F7
 }
 
-.private-server-table td, .private-server-table th {
+.private-server-table td,
+.private-server-table th {
     border: none;
     vertical-align: middle
 }
 
-.private-server-table td:first-child, .private-server-table th:first-child {
+.private-server-table td:first-child,
+.private-server-table th:first-child {
     border-radius: 5px 0 0 5px
 }
 
-.private-server-table td:last-child, .private-server-table th:last-child {
+.private-server-table td:last-child,
+.private-server-table th:last-child {
     border-radius: 0 5px 5px 0
 }
 
-.private-server-table td .btn, .private-server-table th .btn {
+.private-server-table td .btn,
+.private-server-table th .btn {
     padding: 3px;
     padding-left: 24px;
     opacity: 0;
     visibility: hidden
 }
 
-.private-server-table td .btn svg, .private-server-table th .btn svg {
+.private-server-table td .btn svg,
+.private-server-table th .btn svg {
     width: 28px;
     height: 28px;
     padding: 8px;
     margin-left: 11px
 }
 
-.private-server-table td .btn.active, .private-server-table th .btn.active {
+.private-server-table td .btn.active,
+.private-server-table th .btn.active {
     opacity: 1;
     visibility: visible
 }
@@ -6208,7 +6796,8 @@ textarea.form-control {
     margin-bottom: 27px
 }
 
-.single-testimonial .quote-text:after, .single-testimonial .quote-text:before {
+.single-testimonial .quote-text:after,
+.single-testimonial .quote-text:before {
     content: '"';
     margin-left: -12px;
     font-size: 20px;

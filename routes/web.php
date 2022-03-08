@@ -78,6 +78,9 @@ Route::group(['middleware'=>'auth','is_verify_email'], function(){
         return view('user.dashboard.index');
     })->name('user.dashboard');
 
+    Route::get("/payment/manual", [\App\Http\Controllers\User\PaymentController::class, 'manualPayment'])->name('payment.manual');
+    Route::post("/payment/manual-confirmation", [\App\Http\Controllers\User\PaymentController::class, 'manualPaymentConfirmation'])->name('payment.manual.confirmation');
+
     Route::post('/payments/connectips', [\App\Http\Controllers\User\PaymentController::class, 'connectIps'])->name('payment.connectips');
     // IME Payment
     Route::post('/payment/ime-pay', [\App\Http\Controllers\User\PaymentController::class, 'imePayPayment'])->name('payment.imepay');

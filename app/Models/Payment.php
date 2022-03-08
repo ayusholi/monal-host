@@ -16,6 +16,7 @@ class Payment extends Model
     static $TRANSACTION_METHOD = [
         'CONNECT_IPS' => 'Connect IPS',
         'IME_PAY' => 'Ime Pay',
+        'MANUAL' => 'Manual'
     ];
 
     static $STATUS = [
@@ -45,6 +46,10 @@ class Payment extends Model
         'transaction_date',
         'remarks',
         'transaction_reference',
+        'screenshot_file',
+        'account_name',
+        'account_id',
+        'manual',
         'status'
     ];
 

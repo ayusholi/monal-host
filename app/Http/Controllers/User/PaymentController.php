@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\User;
 
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Region;
 use GuzzleHttp\Client;
 use App\Models\Payment;
 use App\Models\Service;
 use App\Models\UserService;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Service\ImePayService;
 use App\Models\OperatingSystem;
 use App\Service\ConnectIpsService;
 use App\Http\Controllers\Controller;
-use App\Models\Region;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
@@ -89,7 +90,7 @@ class PaymentController extends Controller
             'TOKEN' => $hash_token
         ];
 
-        return view('service.connect_ips_confirmation', compact($form_data));
+        return view('service.connect_ips_confirmation', compact('form_data', 'service', 'amount'));
     }
 
     public function imePayPayment(Request $request)
@@ -198,7 +199,81 @@ class PaymentController extends Controller
             ]);
         }
         return redirect()->route('home');
+    }
 
+    public function manualPayment(Request $request)
+    {
+        $attributes = $this->validate($request, [
+            'amount' => 'required|numeric',
+            'service_id' => 'required|exists:services,id',
+        ]);
+
+        $service = Service::findOrFail($request->service_id);
+        $amount = $request->amount;
+
+        return view('service.manual_confirmation', compact('attributes', 'service', 'amount'));
+    }
+
+    public function manualPaymentConfirmation(Request $request)
+    {
+        $attributes = $this->validate($request, [
+            'amount' => 'required|numeric',
+            'service_id' => 'required|exists:services,id',
+            'account_id' => "required|min:10|max:250",
+            "account_name" => "required|min:2|max:250",
+            "payment_type" => "required|in:esewa,khalti,prabhu_pay,bank_transfer",
+            "payment_file" => "required|max:100000"
+        ]);
+
+        $user = Auth::user();
+
+        $amount = $request->amount;
+        $transaction_method = "connect_ips";
+
+        $service = Service::findOrFail($request->service_id);
+        $operating_system = OperatingSystem::findOrFail(1);
+        $region = Region::findOrFail(1);
+
+        $user_service = UserService::create([
+            'user_id' => $user->id,
+            'service_id' => $service->id,
+            'operating_system_id' => $operating_system->id,
+            'region_id' => $region->id,
+            'status' => UserService::$STATUS['PROCESSING']
+        ]);
+
+        $transaction_id = Str::random(10);
+
+        // dd($request->hasFile('payment_file'));
+        if($request->hasFile('payment_file')) {
+            $file = $request->file('payment_file');
+            $file_name =  Str::random(20) . "." . $file->getClientOriginalExtension();
+            $path = "/customer/payments";
+            $file_path_name = $path . $file_name;
+            $file->storeAs('public/' . $path, $file_name);
+        }
+
+        Payment::create([
+            'transaction_method' => $attributes['payment_type'],
+            'user_id' => $user->id,
+            'payment_amount' => $amount,
+            'user_service_id' => $user_service->id,
+            'tax_percent' => 0,
+            'tax_amount' => 0,
+            'total_amount' => $amount,
+            'remarks' => "",
+            'transaction_reference' => $transaction_id,
+            'transaction_currency' => "NPR",
+            'transaction_date' => Carbon::now(),
+            'transaction_id' => $transaction_id,
+            'status' => Payment::$STATUS['PENDING'],
+            'manual' => 1,
+            'screenshot_file' => isset($file_path_name) ? $file_path_name : "",
+            'account_name' => $attributes['account_name'],
+            'account_id' => $attributes['account_id'],
+        ]);
+
+        return redirect()->route('user.dashboard');
     }
 
 }

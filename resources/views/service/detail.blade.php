@@ -120,44 +120,12 @@
             </div>
         </div>
     </header>
-    <div class="page-title-wrap ovx-hidden" data-bg-img="{{ asset('assets/img/bg/page-title-bg.png') }}">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <div class="page-title text-center">
-                        <h2>{{ $service->name }}</h2>
-                        <ul class="nav justify-content-center">
-                            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                            <li class="active">{{ $service->name }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="pt-120 pb-80">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h2>Meet Monalhost</h2>
-                        <p>Save up to 60% compared to other cloud provider designer developers bloggers <br /> designers developers, bloggers and online businesses.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="meet-hostpack-img text-center"> <img src="{{ asset('assets/img/media/meet-hostpack.png') }}" data-rjs="2" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="pricing-plan pt-120 pb-120">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-120">
                 <div class="col-lg-8">
                     <div class="section-title text-center text-white">
-                        <h2>Hosting Plans</h2>
+                        <h2>{{ $service->name }}</h2>
                         <p>With nearly 20 years of hosting experience, we focus on successful sites for web <br /> designers developers, bloggers and online businesses.</p>
                     </div>
                 </div>
@@ -227,7 +195,12 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p>Or Pay Manually</p>
-                                                <a href="#" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
+                                                <form action="{{ route('payment.manual') }}" method="GET" id="manualPaymentForm" style="display: inline;">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
+                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
+                                                </form>
+                                                <a href="#" onclick="submitManualPayment(event)" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
                                             </div>
                                         </div>
                                     </td>

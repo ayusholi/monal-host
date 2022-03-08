@@ -27,6 +27,10 @@ class CreatePaymentsTable extends Migration
             $table->string('transaction_currency');
             $table->string('remarks')->nullable();
             $table->string('transaction_reference')->nullable();
+            $table->string('screenshot_file')->nullable();
+            $table->string('account_name')->nullable();
+            $table->string('account_id')->nullable();
+            $table->tinyInteger('manual')->default(0);
             $table->string('status')->nullable();
             $table->timestamp('transaction_date');
             $table->timestamps();

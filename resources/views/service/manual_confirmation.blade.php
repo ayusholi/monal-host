@@ -113,7 +113,13 @@
                             </div>
                         </div>
                         <div class="header-right d-sm-flex d-none">
-                            <div class="header-btns"> <a href="price.html" class="btn header-btn">Free Trial</a></div>
+                            @auth
+                                <div class="header-btns"> <a href="{{ route('user.dashboard') }}" class="btn header-btn">Dashboard</a></div>
+                            @endauth
+
+                            @guest
+                                <div class="header-btns"> <a href="{{ route('auth.login') }}" class="btn header-btn">Login</a></div>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -122,40 +128,56 @@
     </header>
     <div class="page-title-wrap ovx-hidden" data-bg-img="{{ asset('assets/img/bg/page-title-bg.png') }}">
         <section class="pb-120 ov-hidden" data-bg-img="assets/img/bg/one_click_bg.png">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="single-price style--two first-item">
-                    <h2>Please Confirm Your Payment</h2>
-                    <div class="price-body">
-                        <ul class="price-feature-list">
-                            <li>Service Name: {{ $service->name }}</li>
-                            <li>RAM: {{ $service->ram }} {{ $service->ram_unit }}</li>
-                            <li>Storage: {{ $service->storage }} {{ $service->storage_unit }} {{ $service->storage_type }}</li>
-                            <li>CPU Cores: {{ $service->cpu_cores }} {{ $service->cpu_cores }}</li>
-                            <li>Service Interval: {{ $service->interval }} {{ $service->interval_type }}</li>
-                            <li>Amount: Rs. {{ $amount }}</li>
-                        </ul>
-                        <form action="{{ env("CONNECT_IPS_GATEWAY_URL") }}" method="POST" id="connectips-form" ref="connectIpsForm">
-                            <input type="hidden" name="MERCHANTID" id="MERCHANTID" value="{{ $form_data['MERCHANTID'] }}"/>
-                            <input type="hidden" name="APPID" id="APPID" value="{{ $form_data['APPID'] }}"/>
-                            <input type="hidden" name="APPNAME" id="APPNAME" value="{{ $form_data['APPNAME'] }}"/>
-                            <input type="hidden" name="TXNID" id="TXNID" value="{{ $form_data['TXNID'] }}"/>
-                            <input type="hidden" name="TXNDATE" id="TXNDATE" value="{{ $form_data['TXNDATE'] }}"/>
-                            <input type="hidden" name="TXNCRNCY" id="TXNCRNCY" value="{{ $form_data['TXNCRNCY'] }}"/>
-                            <input type="hidden" name="TXNAMT" id="TXNAMT" value="{{ $form_data['TXNAMT'] }}"/>
-                            <input type="hidden" name="REFERENCEID" id="REFERENCEID" value="{{ $form_data['REFERENCEID'] }}"/>
-                            <input type="hidden" name="REMARKS" id="REMARKS" value="{{ $form_data['REMARKS'] }}"/>
-                            <input type="hidden" name="PARTICULARS" id="PARTICULARS" value="{{ $form_data['PARTICULARS'] }}"/>
-                            <input type="hidden" name="TOKEN" id="TOKEN" value="{{ $form_data['TOKEN'] }}"/>
-                            <button type="submit" class="btn btn-style3">Confirm</a>
-                        </form>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-6">
+                        <div class="single-price style--two first-item">
+                            <h2>Please Confirm Your Payment</h2>
+                            <div class="price-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="price-feature-list">
+                                            <li>Service Name: {{ $service->name }}</li>
+                                            <li>RAM: {{ $service->ram }} {{ $service->ram_unit }}</li>
+                                            <li>Storage: {{ $service->storage }} {{ $service->storage_unit }} {{ $service->storage_type }}</li>
+                                            <li>CPU Cores: {{ $service->cpu_cores }} {{ $service->cpu_cores }}</li>
+                                            <li>Service Interval: {{ $service->interval }} {{ $service->interval_type }}</li>
+                                            <li>Amount: Rs. {{ $amount }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form action="{{ route('payment.manual.confirmation') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <label for="accountId">Payment Type</label>
+                                            <input type="text" class="form-control" id="accountId" name="account_id" placeholder="Account ID" required>
+                                            <label for="accountName">Account Name</label>
+                                            <input type="text" class="form-control" id="accountName" name="account_name" placeholder="Account Name" required>
+                                            <label for="paymentType">Payment Type</label>
+                                            <select name="payment_type" id="paymentType" class="form-control">
+                                                <option value="esewa">Esewa</option>
+                                                <option value="khalti">Khalti</option>
+                                                <option value="prabhu_pay">Prabhu Pay</option>
+                                                <option value="bank_transfer">Bank Transfer</option>
+                                            </select>
+                                            <input type="hidden" name="service_id" value="{{ $attributes['service_id'] }}">
+                                            <input type="hidden" name="amount" value="{{ $attributes['amount'] }}">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="payment_file">Payment Image</label>
+                                                    <input type="file" id="payment_file" class="form-control" name="payment_file" accept="image/png, image/gif, image/jpeg, .pdf" required>
+                                                </div>
+                                                <div class="col-md-6"></div>
+                                            </div>
+                                            <button type="submit" class="btn btn-style3">Confirm</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
     </div>
     <footer class="footer" data-bg-img="{{ asset('assets/img/bg/footer-bg.png') }}">
         <div class="footer-main">

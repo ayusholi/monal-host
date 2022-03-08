@@ -64,7 +64,7 @@
                 <div class="row align-items-center">
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
-                            <li> <a href="tel:8884014678"> <img src="{{ asset('img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a></li>
+                            <li> <a href="tel:+977-9843386239"> <img src="{{ asset('img/icon/phone.svg') }}" alt="" class="svg">  +977-9843386239 </a></li>
                             <li> <a href="mailto:support@monalhost.com"> <img src="{{ asset('img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a></li>
                         </ul>
                     </div>
