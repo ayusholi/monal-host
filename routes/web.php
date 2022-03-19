@@ -72,6 +72,9 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
     Route::get('/{social}/callback',[\App\Http\Controllers\Auth\UserController::class, 'handleProviderCallback'])->name('socialite.callback')->where('social', 'google');
 });
 
+Route::get("/integration/payment/redirect/connect-ips-success", [\App\Http\Controllers\User\PaymentController::class, 'connectIpsSuccess']);
+Route::get("/integration/payment/redirect/connect-ips-failed", [\App\Http\Controllers\User\PaymentController::class, 'connectIpsFailed']);
+
 Route::group(['middleware'=>'auth','is_verify_email'], function(){
 
     Route::get('/user/dashboard', function(){

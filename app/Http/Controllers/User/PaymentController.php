@@ -93,6 +93,54 @@ class PaymentController extends Controller
         return view('service.connect_ips_confirmation', compact('form_data', 'service', 'amount'));
     }
 
+    /**
+     * Connect IPS Success
+     */
+    public function connectIpsSuccess(Request $request)
+    {
+        $transaction_id = $request->TXNID;
+        $payment = Payment::where('transaction_id', $transaction_id)->first();
+        if(!$payment) abort(404);
+        $total_amount = $payment->amount * 100;
+        $string = "MERCHANTID=" . env('CONNECT_IPS_MERCHANT_ID') . ",APPID=" . env('CONNECT_IPS_APP_ID') . ",REFERENCEID=$transaction_id,TXNAMT=$total_amount";
+        $token = ConnectIpsService::generateHash($string);
+
+        $body = [
+            'merchantId' => env('CONNECT_IPS_MERCHANT_ID'),
+            'appId' => env('CONNECT_IPS_APP_ID'),
+            'referenceId' => $transaction_id,
+            'txnAmt' => $total_amount,
+            'token' => $token,
+        ];
+
+        $response = Http::withBasicAuth(env('CONNECT_IPS_APP_ID'), env('CONNECT_IPS_AUTH_PASSWORD'))->post(env('CONNECT_IPS_VALIDATION_URL'), $body);
+        $response = $response->body();
+        $response = json_decode($response);
+
+        if ($response && $response->status == "SUCCESS") {
+            if($payment->status == Payment::$STATUS['PENDING']) {
+                $payment->update([
+                    'status' => Payment::$STATUS['SUCCESSFUL']
+                ]);
+            }
+            return redirect()->route('user.dashboard');
+        } else {
+            return redirect()->route('home');
+        }
+    }
+
+    public function connectIpsFailed(Request $request)
+    {
+        $transaction_id = $request->TXNID;
+        $payment = Payment::where('transaction_id', $transaction_id)->first();
+        if($payment) {
+            $payment->update([
+                'status' => Payment::$STATUS['CANCELLED']
+            ]);
+        }
+        return redirect()->route('user.dashboard');
+    }
+
     public function imePayPayment(Request $request)
     {
         $request->validate([
@@ -174,7 +222,6 @@ class PaymentController extends Controller
                     $payment->update([
                         'status' => Payment::$STATUS['SUCCESSFUL']
                     ]);
-
                 }
             }
             return redirect()->route('user.dashboard');
