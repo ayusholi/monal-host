@@ -89,7 +89,7 @@
         <button class="btn btn-primary btn-block">Register</button>
         <hr>
         <p class="text-muted">Already have an account?</p>
-        <a href="login.html" class="btn btn-outline-light">Sign In</a>
+        <a href="{{ route('auth.login') }}" class="btn btn-outline-light">Sign In</a>
     </form>
     <!-- ./ form -->
 

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UserLoginRequest;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\UserRegisterRequest;
+use App\Mail\ActivateAccountMail;
 
 class UserController extends Controller
 {
@@ -60,7 +61,7 @@ class UserController extends Controller
             'token' => $token,
             'user_id' => $user->id,
         ]);
-        Mail::to($user->email)->send(new AccountCreatedMail($user, $token));
+        Mail::to($user->email)->send(new ActivateAccountMail($user, $token));
 
 
         return redirect()->route('auth.login')->with('success','Verify your account.Link send to your email');
