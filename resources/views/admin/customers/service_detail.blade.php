@@ -40,7 +40,7 @@
                     <h6 class="card-title mb-0 mt-2">Contact Number: {{ $customer->contact_number ? $customer->contact_number : 'Number Missing' }}</h6>
                 </div>
                 <div class="card-header">
-                    <h6>Payment Method: {{ ucfirst($user_service->payment->transaction_method) }}</h6>
+                    <h6>Payment Method: {{ $user_service->payment ? ucfirst($user_service->payment->transaction_method) : "failed" }}</h6>
                 </div>
                 <div class="card-header">
                     @if($user_service->status == "cancelled")
