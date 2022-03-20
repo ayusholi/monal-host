@@ -24,6 +24,9 @@ Route::get("/contact-us", [\App\Http\Controllers\HomeController::class, 'contact
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/login',  [AdminController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AdminController::class, 'login'])->name('login');
+});
+
+Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
     Route::get("/settings", [\App\Http\Controllers\Admin\SettingsController::class, 'edit'])->name('settings');
@@ -42,13 +45,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceCredential'])->name('service.credential');
     Route::post('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'postUserServiceCredential'])->name('update.service.credential');
     Route::get("/user-services/processing", [\App\Http\Controllers\Admin\CustomerController::class, 'getProcessingServices'])->name('services.processing');
-});
 
-Route::group(['middleware'=>'auth:admin'], function(){
-
-    Route::get('/admin/dashboard', function(){
+    Route::get('/dashboard', function(){
         return view('admin.dashboard.index');
-    })->name('admin.dashboard');
+    })->name('dashboard');
 });
 
 Route::get('account/verify/{token}', [UserController::class, 'verifyAccount'])->name('email.verify');
@@ -76,7 +76,7 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
 Route::get("/integration/payment/redirect/connect-ips-success", [\App\Http\Controllers\User\PaymentController::class, 'connectIpsSuccess']);
 Route::get("/integration/payment/redirect/connect-ips-failed", [\App\Http\Controllers\User\PaymentController::class, 'connectIpsFailed']);
 
-Route::group(['middleware'=>'auth','is_verify_email'], function(){
+Route::group(['middleware'=>'auth'], function(){
 
     Route::get('/user/dashboard', function(){
         return view('user.dashboard.index');
