@@ -60,7 +60,7 @@ class UserController extends Controller
             'token' => $token,
             'user_id' => $user->id,
         ]);
-        Mail::to($user->email)->send(new AccountCreatedMail($user));
+        Mail::to($user->email)->send(new AccountCreatedMail($user, $token));
 
 
         return redirect()->route('auth.login')->with('success','Verify your account.Link send to your email');

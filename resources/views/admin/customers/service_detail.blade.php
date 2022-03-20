@@ -27,28 +27,21 @@
                 <div class="card-header">
                 <h6 class="card-title mb-0 mt-2">Email: {{ $customer->email }}</h6>
                 </div>
-                @if($customer->email_verified_at==null)
+                @if($customer->email_verified_at == null)
                 <div class="card-header">
                     <h6 class="card-title mb-0 mt-2">Email Verified: Not Verified</h6>
                     </div>
                 @else
                 <div class="card-header">
                     <h6 class="card-title mb-0 mt-2">Email Verified: Verified</h6>
-                    </div>
-                @endif
-                <div class="card-header">
-                <h6 class="card-title mb-0 mt-2">Contact Number: {{ $customer->contact_number ? $customer->contact_number : 'Number Missing' }}</h6>
-                </div>
-                @if($customer->provider && $customer->provider_id =!null)
-                <div class="card-header">
-                <h6 class="card-title mb-0 mt-2">Login with: Google  Account</h6>
-                </div>
-                @else
-                <div class="card-header">
-                <h6 class="card-title mb-0 mt-2">Login with: User Account</h6>
                 </div>
                 @endif
-
+                <div class="card-header">
+                    <h6 class="card-title mb-0 mt-2">Contact Number: {{ $customer->contact_number ? $customer->contact_number : 'Number Missing' }}</h6>
+                </div>
+                <div class="card-header">
+                    <h6>Payment Method: {{ ucfirst($user_service->payment->transaction_method) }}</h6>
+                </div>
                 <div class="card-header">
                     @if($user_service->status == "cancelled")
                     <p>Service Cancelled</p>

@@ -49,8 +49,10 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('/admin/dashboard', function(){
         return view('admin.dashboard.index');
     })->name('admin.dashboard');
-
 });
+
+Route::get('account/verify/{token}', [UserController::class, 'verifyAccount'])->name('email.verify');
+
 
 /* user auth routes */
 Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
@@ -58,7 +60,6 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
     Route::post('/store', [UserController::class, 'store'])->name('store');
     Route::get('/login',  [UserController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [UserController::class, 'login'])->name('post.login');
-    Route::get('account/verify/{token}', [UserController::class, 'verifyAccount'])->name('verify');
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
     // forgot password
