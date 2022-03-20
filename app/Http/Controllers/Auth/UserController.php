@@ -55,11 +55,11 @@ class UserController extends Controller
 
         $token = Str::random(80);
 
-        // $verifyUser = UserVerified::create([
-        //     'email' => $request->email,
-        //     'token' => $token,
-        //     'user_id' => $user->id,
-        // ]);
+        $verifyUser = UserVerified::create([
+            'email' => $request->email,
+            'token' => $token,
+            'user_id' => $user->id,
+        ]);
         Mail::to($user->email)->send(new AccountCreatedMail($user));
 
 
