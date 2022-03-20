@@ -26,7 +26,7 @@ class ServicesTableSeeder extends Seeder
                 'cpu_cores' => 2,
                 'interval' => '6',
                 'interval_type' => 'Month',
-                'base_price' => 2000
+                'base_price' => 15
             ],
             [
                 'name' => 'Startup Plan',
