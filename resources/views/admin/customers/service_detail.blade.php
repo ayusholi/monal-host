@@ -40,8 +40,27 @@
                     <h6 class="card-title mb-0 mt-2">Contact Number: {{ $customer->contact_number ? $customer->contact_number : 'Number Missing' }}</h6>
                 </div>
                 <div class="card-header">
-                    <h6>Payment Method: {{ $user_service->payment ? ucfirst($user_service->payment->transaction_method) : "failed" }}</h6>
+                    <h6 class="card-title mb-0 mt-2">Payment Method: {{ $user_service->payment ? ucfirst($user_service->payment->transaction_method) : "failed" }}</h6>
                 </div>
+                <div class="card-header">
+                    <h6 class="card-title mb-0 mt-2">Transaction ID: {{ $user_service->payment ? ucfirst($user_service->payment->transaction_id) : "failed" }}</h6>
+                </div>
+                <div class="card-header">
+                    <h6 class="card-title mb-0 mt-2">Manual: {{ $user_service->payment ? ($user_service->payment->manual == 1 ? "Manual" : "No") : "failed"}}</h6>
+                </div>
+                <div class="card-header">
+                    <h6 class="card-title mb-0 mt-2">Transaction Date {{ $user_service->payment ? ucfirst($user_service->payment->transaction_date) : "failed" }}</h6>
+                </div>
+                @if($user_service->payment->manual == 1)
+                    <div class="card-header">
+                        <h6 class="card-title mb-0 mt-2">Account Name: {{ $user_service->payment ? ucfirst($user_service->payment->account_name) : "failed" }}</h6>
+                    </div>
+                    <div class="card-header">
+                        <h6 class="card-title mb-0 mt-2">Account ID: {{ $user_service->payment ? ucfirst($user_service->payment->account_id) : "failed" }}</h6>
+                    </div>
+                    <p>Payment Screenshot</p>
+                    <img src="{{ asset("storage" . $user_service->payment->screenshot_file) }}" alt="FILE" height="400" width="auto">
+                @endif
                 <div class="card-header">
                     @if($user_service->status == "cancelled")
                     <p>Service Cancelled</p>

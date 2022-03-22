@@ -140,18 +140,28 @@
                                             <li>Service Name: {{ $service->name }}</li>
                                             <li>RAM: {{ $service->ram }} {{ $service->ram_unit }}</li>
                                             <li>Storage: {{ $service->storage }} {{ $service->storage_unit }} {{ $service->storage_type }}</li>
-                                            <li>CPU Cores: {{ $service->cpu_cores }} {{ $service->cpu_cores }}</li>
+                                            <li>CPU Cores: {{ $service->cpu_cores }} Cores</li>
                                             <li>Service Interval: {{ $service->interval }} {{ $service->interval_type }}</li>
                                             <li>Amount: Rs. {{ $amount }}</li>
                                         </ul>
                                     </div>
+                                    @if($errors->any())
+                                        {!! implode('', $errors->all('<div>:message</div>')) !!}
+                                    @endif
                                     <div class="col-md-6">
                                         <form action="{{ route('payment.manual.confirmation') }}" method="POST" enctype="multipart/form-data">
                                             {{ csrf_field() }}
-                                            <label for="accountId">Payment Type</label>
+                                            <label for="accountId">Account ID</label>
                                             <input type="text" class="form-control" id="accountId" name="account_id" placeholder="Account ID" required>
+                                            @error('account_id')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+
                                             <label for="accountName">Account Name</label>
                                             <input type="text" class="form-control" id="accountName" name="account_name" placeholder="Account Name" required>
+                                            @error('account_id')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
                                             <label for="paymentType">Payment Type</label>
                                             <select name="payment_type" id="paymentType" class="form-control">
                                                 <option value="esewa">Esewa</option>
@@ -159,12 +169,18 @@
                                                 <option value="prabhu_pay">Prabhu Pay</option>
                                                 <option value="bank_transfer">Bank Transfer</option>
                                             </select>
+                                            @error('account_id')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
                                             <input type="hidden" name="service_id" value="{{ $attributes['service_id'] }}">
                                             <input type="hidden" name="amount" value="{{ $attributes['amount'] }}">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="payment_file">Payment Image</label>
                                                     <input type="file" id="payment_file" class="form-control" name="payment_file" accept="image/png, image/gif, image/jpeg, .pdf" required>
+                                                    @error('account_id')
+                                                    <div class="error">{{ $message }}</div>
+                                                @enderror
                                                 </div>
                                                 <div class="col-md-6"></div>
                                             </div>

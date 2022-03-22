@@ -13,6 +13,13 @@ class UserController extends Controller
     public function getServices()
     {
         $user = Auth::user();
+        $services = UserService::where('user_id', $user->id)->has('payment')->get();
+        return view('auth.user.my_services', compact('services'));
+    }
+
+    public function getActiveServices()
+    {
+        $user = Auth::user();
         $services = UserService::where('user_id', $user->id)->whereHas("payment", function($query) {
             $query->where('status', Payment::$STATUS['SUCCESSFUL']);
         })->get();

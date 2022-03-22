@@ -33,6 +33,6 @@ class ActivateAccountMail extends Mailable
     {
         $user = $this->user;
         $token = $this->token;
-        return $this->view('emails.account_created')->with(["user" => $user, 'token' => $token]);
+        return $this->view('emails.activate_account')->with(["user" => $user, 'token' => $token]);
     }
 }

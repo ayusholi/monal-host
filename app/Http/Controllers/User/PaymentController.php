@@ -269,7 +269,7 @@ class PaymentController extends Controller
             'account_id' => "required|min:10|max:250",
             "account_name" => "required|min:2|max:250",
             "payment_type" => "required|in:esewa,khalti,prabhu_pay,bank_transfer",
-            "payment_file" => "required|max:100000"
+            "payment_file" => "required"
         ]);
 
         $user = Auth::user();
@@ -296,7 +296,7 @@ class PaymentController extends Controller
             $file = $request->file('payment_file');
             $file_name =  Str::random(20) . "." . $file->getClientOriginalExtension();
             $path = "/customer/payments";
-            $file_path_name = $path . $file_name;
+            $file_path_name = $path . "/" . $file_name;
             $file->storeAs('public/' . $path, $file_name);
         }
 
