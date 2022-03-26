@@ -11,17 +11,18 @@ class CredentialsMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $credentials, $service;
+    private $credentials, $service, $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($service, $credentials)
+    public function __construct($service, $user, $credentials)
     {
         $this->credentials = $credentials;
         $this->service = $service;
+        $this->user = $user;
     }
 
     /**
@@ -31,7 +32,7 @@ class CredentialsMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.send_credentials')->with(["user" => $this->user, "service" => $this->service]);
+        return $this->view('emails.send_credentials')->with(["user" => $this->user, "service" => $this->service, "credentials" => $this->credentials]);
 
     }
 }
