@@ -124,7 +124,7 @@
             <div class="row justify-content-center pt-120">
                 <div class="col-lg-8">
                     <div class="section-title text-center text-white">
-                        <h2>{{ $service->name }}</h2>
+                        <h2>{{ $service_detail->name }}</h2>
                         <p>With nearly 20 years of hosting experience, we focus on successful sites for web <br /> designers developers, bloggers and online businesses.</p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                                 <tr>
                                     <th></th>
                                     <th>
-                                        <div class="price-head"> <span class="plan">{{ $service->name }}</span> <span class="price"> <sup>Rs</sup> {{ $service->base_price }} <span>/{{ $service->interval_type }}</span> </span>
+                                        <div class="price-head"> <span class="plan">{{ $service_detail->name }}</span> <span class="price"> <sup>Rs</sup> {{ $service_detail->base_price }} <span>/{{ $service_detail->interval_type }}</span> </span>
                                         </div>
                                     </th>
                                 </tr>
@@ -145,15 +145,15 @@
                             <tbody>
                                 <tr>
                                     <th>RAM</th>
-                                    <td>{{ $service->ram }} {{ $service->ram_unit }}</td>
+                                    <td>{{ $service_detail->ram }} {{ $service_detail->ram_unit }}</td>
                                 </tr>
                                 <tr>
                                     <th>CPU Cores</th>
-                                    <td>{{ $service->cpu_cores }}</td>
+                                    <td>{{ $service_detail->cpu_cores }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{{ $service->storage_type }} Storage</th>
-                                    <td>{{ $service->storage }} {{ $service->storage_unit }}</td>
+                                    <th>{{ $service_detail->storage_type }} Storage</th>
+                                    <td>{{ $service_detail->storage }} {{ $service_detail->storage_unit }}</td>
                                 </tr>
                                 <tr>
                                     <th>Spam Protection</th>
@@ -181,14 +181,14 @@
                                                 <p>Pay With</p>
                                                 <form action="{{ route('payment.connectips') }}" method="POST" id="connectipsForm" style="display: inline;">
                                                     {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
+                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
                                                 </form>
                                                 <a onclick="submitConnectIps(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
                                                 <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform" style="display: inline;">
                                                     {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
+                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
                                                 </form>
                                                 <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
                                             </div>
@@ -196,8 +196,8 @@
                                                 <p>Or Pay Manually</p>
                                                 <form action="{{ route('payment.manual') }}" method="GET" id="manualPaymentForm" style="display: inline;">
                                                     {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service->id }}" name="service_id">
+                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
                                                 </form>
                                                 <a href="#" onclick="submitManualPayment(event)" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
                                             </div>

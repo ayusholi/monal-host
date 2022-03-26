@@ -17,9 +17,9 @@ class HomeController extends Controller
 
     public function serviceDetail($slug)
     {
-        $service = Service::where('slug', $slug)->firstOrFail();
         $services = Service::take(5)->get();
-        return view('service.detail', compact('service', 'services'));
+        $service_detail = Service::where('slug', $slug)->firstOrFail();
+        return view('service.detail', compact('service_detail', 'services'));
     }
 
     public function contactUs()
