@@ -88,7 +88,7 @@ class CustomerController extends Controller
             }
         }
         $user_service->update($data);
-        Mail::to($customer)->send(new CredentialsMail($$user_service->service, $credentials));
+        Mail::to($customer)->send(new CredentialsMail($user_service->service, $credentials));
         return redirect()->route('admin.service.detail', ['customer_id' => $customer->id, 'user_service_id' => $user_service->id]);
     }
 }
