@@ -55,51 +55,33 @@
             </div>
         </div>
         <div class="header-main love-sticky">
-            <div class="container">
+            <div class="hp-container">
                 <div class="row align-items-center position-relative">
                     <div class="col-12 d-flex align-items-center justify-content-between position-static">
                         <div class="logo">
-                            <a href="index.html"> <img src="{{ asset('assets/img/logo.svg') }}" class="main-logo svg" alt=""> <img src="{{ asset('assets/img/sticky-logo.svg') }}" class="sticky-logo svg" alt=""> </a>
+                            <a href="index.html">
+                                <h2 class="text-white">Monalhost</h2>
+                            </a>
                         </div>
                         <div class="nav-wrapper ms-auto ms-lg-0">
                             <div class="nav-wrap-inner">
                                 <ul class="nav">
-                                    <li> <a href="#">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home V1</a></li>
-                                            <li><a href="home-1.html">Home V2</a></li>
-                                            <li><a href="home-2.html">Home V3</a></li>
-                                            <li><a href="home-3.html">Home V4</a></li>
-                                        </ul>
-                                    </li>
+                                    <li> <a href="{{ route('home') }}" >Home</a></li>
                                     <li> <a href="#">Pages</a>
                                         <ul class="sub-menu">
                                             <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
                                             <li><a href="faq.html">FAQ</a></li>
                                             <li><a href="terms.html">Terms of Service</a></li>
                                             <li><a href="privacy.html">Privacy Policy</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="404.html">404</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="http://billing.ywhmcs.com/?systpl=hostpack">WHMCS</a></li>
-                                    <li> <a href="#">Hosting</a>
+                                    <li> <a href="#">Services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shared-hosting.html">Shared Hosting</a></li>
-                                            <li><a href="dedicated-hosting.html">dedicated hosting</a></li>
-                                            <li><a href="reseller-hosting.html">reseller hosting</a></li>
-                                            <li><a href="private-hosting.html">private hosting</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#" class="current-menu-parent">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="service.html">Service One</a></li>
-                                            <li><a href="service2.html">Service Two</a></li>
-                                            <li><a href="service3.html">Service Three</a></li>
-                                            <li><a href="service-details.html" class="current-menu-children">Service Details</a></li>
+                                            @foreach ($services as $service)
+                                                <li><a href="{{ route('service.detail', ['slug' => $service->slug]) }}">{{ $service->name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>
@@ -113,7 +95,24 @@
                             </div>
                         </div>
                         <div class="header-right d-sm-flex d-none">
-                            <div class="header-btns"> <a href="price.html" class="btn header-btn">Free Trial</a></div>
+                            {{-- <div class="header-btns"> <a href="price.html" class="btn header-btn btn-style3">Try 7-Day Free</a></div> --}}
+                            <div class="search-toggle"> <button class="search-toggle-btn p-0"> <img src="{{ asset('img/icon/search.svg') }}" alt="" class="svg"> </button>
+                                <div class="full-page-search"> <button class="search-close-btn"><i class="fa fa-times"></i></button>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-8">
+                                                <div class="search-form p-5">
+                                                    <form action="#">
+                                                        <div class="input-wrapper"> <input type="text" placeholder="Enter Your Keyword" name="s" required=""> <span class="input-icon"> <i class="fa fa-search"></i> </span></div>
+                                                        <div class="btn-wrap"> <button type="submit" class="btn btn-style3">Search Now</button></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-trigger ml-3 d-lg-none d-xl-block"> <img src="{{ asset('img/icon/humberger.svg') }}" alt="" class="svg"></div>
                         </div>
                     </div>
                 </div>
@@ -293,21 +292,12 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-sm-6">
                         <div class="widget widget_about text-white">
-                            <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/img/logo.svg') }}" class="svg" alt=""> </a>
                             <div class="menu-container">
-                                <p>We are Monalhost 29 years of experience on this field with most talanted peoples and leaders.</p>
                                 <ul class="contact-list">
-                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">888-401-4678</a></li>
+                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:+977-9843386239">+977-9843386239</a></li>
                                 </ul>
-                                <div class="accept-cards"> <img src="{{ asset('assets/img/media/cards.png') }}" data-rjs="2" alt=""></div>
-                                <div class="socials">
-                                    <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a>
-                                    <a href="https://www.twitter.com/"> <i class="fab fa-twitter"></i> </a>
-                                    <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> </a>
-                                    <a href="https://www.pinterest.com/"> <i class="fab fa-pinterest"></i> </a>
-                                    <a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a>
-                                </div>
-                                <p class="copyright">© 2002-2021 Hostpack inc. all rights reserved</p>
+                                <div class="accept-cards"> <img src="{{ asset('assets/img/payments/ConnectIPSfull.png') }}" alt="" style="height: 100px; width: 150px;"><img src="{{ asset('assets/img/payments/IMEPay.jpg') }}" alt="" style="height: 100px; width: 120px;"></div>
+                                <div class="socials"> <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a> <a href="https://www.twitter.com/"> <i class="fab fa-twitter"></i> </a> <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> </a> <a href="https://www.pinterest.com/"> <i class="fab fa-pinterest"></i> </a> <a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a></div>
                             </div>
                         </div>
                     </div>
@@ -318,14 +308,8 @@
                                 <ul class="menu">
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="login.html">Login</a></li>
-                                    <li><a href="price.html">Price <span>try me</span></a></li>
+                                    <li><a href="price.html">Price <span class="style2">try me</span></a></li>
                                     <li><a href="service.html">Service</a></li>
-                                </ul>
-                                <ul class="menu mt-5">
-                                    <li class="title">Hosting</li>
-                                    <li><a href="shared-hosting.html">Shared Hosting</a></li>
-                                    <li><a href="dedicated-hosting.html">Dedicated Hosting </a></li>
-                                    <li><a href="reseller-hosting.html">Reseller Hosting</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -337,32 +321,8 @@
                                 <ul class="menu">
                                     <li><a href="terms-service.html">Terms of Service</a></li>
                                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">FAQ <span class="update">Update</span></a></li>
+                                    <li><a href="faq.html">FAQ <span class="style2">Update</span></a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                                <ul class="menu mt-5">
-                                    <li class="title">Support</li>
-                                    <li><a href="contact.html">Support Center</a></li>
-                                    <li><a href="faq.html">Status Updates</a></li>
-                                    <li><a href="contact.html">Knowledgebase</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-sm-6">
-                        <div class="widget widget_recent_entries text-white ps-xl-4 ps-0">
-                            <h3 class="widget-title">Latest News</h3>
-                            <div class="menu-container">
-                                <ul>
-                                    <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                        <h4 class="post-title"> <a href="blog-details.html">An artistic Technology turning real here</a></h4>
-                                    </li>
-                                    <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                        <h4 class="post-title"> <a href="blog-details.html">better time for buying a web hosting is today</a></h4>
-                                    </li>
-                                    <li> <a href="blog-details.html" class="posted-on">November 29, 2021</a>
-                                        <h4 class="post-title"> <a href="blog-details.html">better time for buying a web hosting is today</a></h4>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -372,15 +332,8 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="footer-bottom-content text-white text-center text-lg-start justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-                            <p>Offers valid for a limited time only hostpack reflect multi annual discounts. Other terms and conditions may apply. <a href="terms-service.html">Click Here</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="certificate text-center text-lg-end"> <img src="{{ asset('assets/img/media/certificate.png') }}" data-rjs="2" alt=""></div>
-                    </div>
+                <div class="align-items-center">
+                    <p class="copyright text-white">© {{ date('Y') }} Monal Host all rights reserved</p>
                 </div>
             </div>
         </div>

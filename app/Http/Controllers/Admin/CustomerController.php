@@ -7,7 +7,9 @@ use App\Models\User;
 use App\Models\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\CredentialsMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
 {
@@ -77,6 +79,7 @@ class CustomerController extends Controller
             'credentials' => $credentials
         ];
         if($user_service->status == "on_process") {
+            $data['status'] = UserService::$STATUS['SUCCESSFUL'];
             $data['start_from'] = Carbon::now()->toDateTimeString();
             if($user_service->service->interval_type == ("month" || "Month")) {
                 $data['expires_at'] = Carbon::now()->addMonths($user_service->service->interval)->toDateTimeString();
@@ -85,6 +88,7 @@ class CustomerController extends Controller
             }
         }
         $user_service->update($data);
+        Mail::to($customer)->send(new CredentialsMail($$user_service->service, $credentials));
         return redirect()->route('admin.service.detail', ['customer_id' => $customer->id, 'user_service_id' => $user_service->id]);
     }
 }
