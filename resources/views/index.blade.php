@@ -21,7 +21,7 @@
 <section class="pb-90 price-section">
     <div class="container">
         <div class="row gx-lg-0 justify-content-center" id="services">
-            @foreach($services as $service)
+            @foreach($vps_services as $service)
             {{-- {{dd($service)}} --}}
                 <div class="col-lg-4 col-md-6">
                     <div class="single-price style--two first-item">
@@ -40,10 +40,45 @@
                         </div>
                         <div class="price-body">
                             <ul class="price-feature-list">
-                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> {{ $service->cpu_cores }} Cores</li>
-                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> {{ $service->ram }}{{ $service->ram_unit }}</li>
-                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> {{ $service->storage }}{{ $service->storage_unit }} {{ $service->storage_type }}</li>
-                                <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>CPU:</span> {{ $service->vpsService->cpu_cores }} Cores</li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>RAM:</span> {{ $service->vpsService->ram }}{{ $service->vpsService->ram_unit }}</li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>Disk:</span> {{ $service->vpsService->storage }}{{ $service->vpsService->storage_unit }} {{ $service->vpsService->storage_type }}</li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
+                            </ul><a href="{{ route('service.detail', ['slug' => $service->slug] ) }}" class="btn btn-style3">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<section class="pb-90">
+    <div class="container">
+        <div class="row gx-lg-0 justify-content-center" id="services">
+            @foreach($email_services as $service)
+            {{-- {{dd($service)}} --}}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-price style--two first-item">
+                        <div class="price-head">
+                            <h2>{{ $service->name }}</h2>
+                            <p>We take pride providing secure Platform customers.</p>
+                        </div>
+                        <div class="pricing-area">
+                            <div class="price-content">
+                                <p>Start on</p>
+                                <h2 class="price-amount"> <sup>Rs.</sup> {{ intval($service->base_price) }}</h2>
+                            </div>
+                            <div class="discount">
+                                <p>On Sale</p> <span>Save 49%</span>
+                            </div>
+                        </div>
+                        <div class="price-body">
+                            <ul class="price-feature-list">
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>Rate Limit</span></li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>Anti Spam</span></li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>Blacklist Email</span></li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>Disk:</span> {{ $service->emailService->storage }}{{ $service->emailService->storage_unit }}</li>
+                                <li> <img src="{{ asset('assets/img/icon/check-round.svg') }}" alt="" class="svg"> <span>INTERVAL:</span> {{ $service->interval }} {{ $service->interval_type }}</li>
                             </ul><a href="{{ route('service.detail', ['slug' => $service->slug] ) }}" class="btn btn-style3">Buy Now</a>
                         </div>
                     </div>
@@ -136,455 +171,6 @@
         </div>
     </div>
 </section>
-{{-- <section class="pt-120 pb-120 ovx-hidden">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="section-title text-center">
-                    <h2>How do our shared web hosting <br /> plans stack up?</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="hosting-price">
-                    <nav>
-                        <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-basic"> <span class="dot"></span> <span>Basic Plan</span> </button> <button data-bs-toggle="tab" data-bs-target="#nav-starter"> <span class="dot"></span> <span>Starter Plan</span> </button> <button data-bs-toggle="tab" data-bs-target="#nav-enterprise"> <span class="dot"></span> <span>Enterprise Plan</span> </button> <button data-bs-toggle="tab" data-bs-target="#nav-business"> <span class="dot"></span> <span>Business Plan</span> </button> <button data-bs-toggle="tab" data-bs-target="#nav-pro"> <span class="dot"></span> <span>Pro Plan</span> </button></div>
-                    </nav>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="nav-basic">
-                            <div class="provider-tab">
-                                <nav>
-                                    <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-godaddy">GoDaddy</button> <button data-bs-toggle="tab" data-bs-target="#nav-bluehost">BlueHost</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostgator">HostGator</button> <button data-bs-toggle="tab" data-bs-target="#nav-namecheap">NameCheap</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostinger">HostinGer</button></div>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="nav-godaddy">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-bluehost">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostgator">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-namecheap">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostinger">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-starter">
-                            <div class="provider-tab">
-                                <nav>
-                                    <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-godaddy1">GoDaddy</button> <button data-bs-toggle="tab" data-bs-target="#nav-bluehost1">BlueHost</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostgator1">HostGator</button> <button data-bs-toggle="tab" data-bs-target="#nav-namecheap1">NameCheap</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostinger1">HostinGer</button></div>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="nav-godaddy1">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-bluehost1">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostgator1">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-namecheap1">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostinger1">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-enterprise">
-                            <div class="provider-tab">
-                                <nav>
-                                    <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-godaddy2">GoDaddy</button> <button data-bs-toggle="tab" data-bs-target="#nav-bluehost2">BlueHost</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostgator2">HostGator</button> <button data-bs-toggle="tab" data-bs-target="#nav-namecheap2">NameCheap</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostinger2">HostinGer</button></div>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="nav-godaddy2">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-bluehost2">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostgator2">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-namecheap2">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostinger2">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-business">
-                            <div class="provider-tab">
-                                <nav>
-                                    <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-godaddy3">GoDaddy</button> <button data-bs-toggle="tab" data-bs-target="#nav-bluehost3">BlueHost</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostgator3">HostGator</button> <button data-bs-toggle="tab" data-bs-target="#nav-namecheap3">NameCheap</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostinger3">HostinGer</button></div>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="nav-godaddy3">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-bluehost3">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostgator3">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-namecheap3">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostinger3">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-pro">
-                            <div class="provider-tab">
-                                <nav>
-                                    <div class="nav"> <button class="active" data-bs-toggle="tab" data-bs-target="#nav-godaddy4">GoDaddy</button> <button data-bs-toggle="tab" data-bs-target="#nav-bluehost4">BlueHost</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostgator4">HostGator</button> <button data-bs-toggle="tab" data-bs-target="#nav-namecheap4">NameCheap</button> <button data-bs-toggle="tab" data-bs-target="#nav-hostinger4">HostinGer</button></div>
-                                </nav>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="nav-godaddy4">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-bluehost4">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostgator4">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-namecheap4">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-hostinger4">
-                                        <div class="hz-price-box">
-                                            <div class="hz-price-box-inner d-flex justify-content-between">
-                                                <ul>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>CPU:</span> 2 Cores</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>RAM:</span> 4GB</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>Disk:</span> (128GB + 256GB) SSD</li>
-                                                    <li> <img src="assets/img/icon/check-round.svg" alt="" class="svg"> <span>UPLINK:</span> 1Gbps - 20TB</li>
-                                                </ul>
-                                                <div class="hz-price-box-right d-flex align-items-center">
-                                                    <div class="price">$12.69</div> <a href="price.html" class="btn btn-style3">Buy Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="price-bottom-content text-center">
-                    <p> 30-Day Money Back Guarantee For New Purchases​ <br /> For all hosting plan <a href="contact.html"><img src="assets/img/icon/chat.svg" alt="" class="svg"> Live Chat</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
 <section class="pt-120 ovx-hidden home3-section-bg gm-pb-style--two">
     <div class="container">
         <div class="row justify-content-center">

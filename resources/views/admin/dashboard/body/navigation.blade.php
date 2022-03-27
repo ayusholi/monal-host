@@ -132,10 +132,26 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('admin.services.index') }}">List Services </a>
+                            <a href="{{ route('admin.vps-services.index') }}">List VPS Services </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.services.create') }}">Create Service </a>
+                            <a href="{{ route('admin.vps-services.create') }}">Create VPS Service </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="square"></i>
+                        </span>
+                        <span>Services</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('admin.email-services.index') }}">List Email Services </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.email-services.create') }}">Create Email Service </a>
                         </li>
                     </ul>
                 </li>

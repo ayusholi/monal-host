@@ -59,7 +59,7 @@
                 <div class="row align-items-center position-relative">
                     <div class="col-12 d-flex align-items-center justify-content-between position-static">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <h2 class="text-white">Monalhost</h2>
                             </a>
                         </div>
@@ -137,40 +137,65 @@
                                 <tr>
                                     <th></th>
                                     <th>
-                                        <div class="price-head"> <span class="plan">{{ $service_detail->name }}</span> <span class="price"> <sup>Rs</sup> {{ $service_detail->base_price }} <span>/{{ $service_detail->interval_type }}</span> </span>
+                                        <div class="price-head"> <span class="plan">{{ $service_detail->name }}</span> <span class="price"> <sup>Rs</sup> {{ round($service_detail->base_price) }} <span>/{{ $service_detail->interval_type }}</span> </span>
                                         </div>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @if($service_detail->service_type == "vps")
                                 <tr>
                                     <th>RAM</th>
-                                    <td>{{ $service_detail->ram }} {{ $service_detail->ram_unit }}</td>
+                                    <td>{{ $service_detail->vpsService->ram }} {{ $service_detail->vpsService->ram_unit }}</td>
                                 </tr>
                                 <tr>
                                     <th>CPU Cores</th>
-                                    <td>{{ $service_detail->cpu_cores }}</td>
+                                    <td>{{ $service_detail->vpsService->cpu_cores }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{{ $service_detail->storage_type }} Storage</th>
-                                    <td>{{ $service_detail->storage }} {{ $service_detail->storage_unit }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Spam Protection</th>
-                                    <td><img src="{{ asset('assets/img/icon/check.svg') }}" alt="" class="svg"></td>
-                                </tr>
-                                <tr>
-                                    <th>Included Domain</th>
-                                    <td><img src="{{ asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
+                                    <th>{{ $service_detail->vpsService->storage_type }} Storage</th>
+                                    <td>{{ $service_detail->vpsService->storage }} {{ $service_detail->vpsService->storage_unit }}</td>
                                 </tr>
                                 <tr>
                                     <th>Bandwidth</th>
                                     <td>128bg</td>
                                 </tr>
                                 <tr>
+                                    <th>Spam Protection</th>
+                                    <td><img src="{{ asset('assets/img/icon/check.svg') }}" alt="" class="svg"></td>
+                                </tr>
+                                <tr>
                                     <th>Site Backup</th>
                                     <td><img src="{{ asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
                                 </tr>
+                                @else
+                                <tr>
+                                    <th>{{ $service_detail->emailService->storage_type }} Storage</th>
+                                    <td>{{ $service_detail->emailService->storage }} {{ $service_detail->emailService->storage_unit }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Spam Protection</th>
+                                    <td><img src="{{ $service_detail->emailService->anti_spam == 1 ? asset('assets/img/icon/check.svg') : asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
+                                </tr>
+                                <tr>
+                                    <th>Rate Limit</th>
+                                    <td><img src="{{ $service_detail->emailService->rate_limit == 1 ? asset('assets/img/icon/check.svg') : asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
+                                </tr>
+                                <tr>
+                                    <th>Blacklist Email</th>
+                                    <td><img src="{{ $service_detail->emailService->blacklist_email == 1 ? asset('assets/img/icon/check.svg') : asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
+                                </tr>
+                                @endif
+                                <tr>
+                                    <th>Included Domain</th>
+                                    <td><img src="{{ asset('assets/img/icon/cross.svg') }}" alt="" class="svg"></td>
+                                </tr>
+                                @if($service_detail->service_type == "email")
+                                <tr>
+                                    <th>Features</th>
+                                    <td>{{ $service_detail->emailService->feature }}</td>
+                                </tr>
+                                @endif
                             </tbody>
                             <tfoot>
                                 <tr>

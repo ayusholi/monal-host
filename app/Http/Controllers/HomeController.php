@@ -10,9 +10,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $services = Service::all()->take(3);
+        $vps_services = Service::where('service_type', 'vps')->take(3)->get();
+        $email_services = Service::where('service_type', 'email')->take(3)->get();
         $faqs = Faq::all()->take(5);
-        return view('index', compact('services', 'faqs'));
+        return view('index', compact('vps_services', 'email_services', 'faqs'));
     }
 
     public function serviceDetail($slug)
