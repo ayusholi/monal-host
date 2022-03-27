@@ -119,7 +119,7 @@ class UserController extends Controller
         );
 
         if ($user) {
-            return redirect()->route('user.dashboard');
+            return redirect()->intended();
         }
 
         return back()->withErrors(['msg' => 'Invalid Credentials!']);

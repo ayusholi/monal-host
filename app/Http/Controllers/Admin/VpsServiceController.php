@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\VpsService;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class VpsServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('admin.services.index', compact('services'));
+        return view('admin.services.vps.index', compact('services'));
     }
 
     /**
@@ -26,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        return view('admin.services.vps.create');
     }
 
     /**
@@ -37,7 +38,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $attributes = $this->validate($request, [
             'name' => 'required',
             'slug' => 'required',
             'ram' => 'required|integer',
@@ -51,9 +52,28 @@ class ServiceController extends Controller
             'base_price' => 'required|integer'
         ]);
 
-        Service::create($request->all());
+        $service_data = [
+            'name' => $attributes['name'],
+            'slug' => $attributes['slug'],
+            'service_type' => "vps",
+            'interval' => $attributes['interval'],
+            'interval_type' => $attributes['interval_type'],
+            'base_price' => $attributes['base_price'],
+        ];
 
-        return redirect()->route('admin.services.index');
+        $service = Service::create($service_data);
+        $vps_service = [
+            'ram' => $attributes['ram'],
+            'ram_unit' => $attributes['ram_unit'],
+            'storage' => $attributes['storage'],
+            'storage_unit' => $attributes['storage_unit'],
+            'storage_type' => $attributes['storage_type'],
+            'cpu_cores' => $attributes['cpu_cores'],
+            'service_id' => $service->id
+        ];
+        VpsService::create($vps_service);
+
+        return redirect()->route('admin.vps-services.index');
     }
 
     /**
@@ -65,7 +85,8 @@ class ServiceController extends Controller
     public function show($id)
     {
         $service = Service::findOrFail($id);
-        return view('admin.services.detail', compact('service'));
+        if(!$service->vpsService) abort(404);
+        return view('admin.services.vps.detail', compact('service'));
     }
 
     /**
@@ -77,7 +98,8 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $service = Service::findOrFail($id);
-        return view('admin.services.edit', compact('service'));
+        if(!$service->vpsService) abort(404);
+        return view('admin.services.vps.edit', compact('service'));
     }
 
     /**
@@ -90,7 +112,8 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $service = Service::findOrFail($id);
-        $this->validate($request, [
+        if(!$service->vpsService) abort(404);
+        $attributes = $this->validate($request, [
             'name' => 'required',
             'slug' => 'required',
             'ram' => 'required|integer',
@@ -104,8 +127,27 @@ class ServiceController extends Controller
             'base_price' => 'required|integer'
         ]);
 
-        $service->update($request->all());
-        return redirect()->route('admin.services.index');
+        $service_data = [
+            'name' => $attributes['name'],
+            'slug' => $attributes['slug'],
+            'service_type' => "vps",
+            'interval' => $attributes['interval'],
+            'interval_type' => $attributes['interval_type'],
+            'base_price' => $attributes['base_price'],
+        ];
+
+        $service->update($service_data);
+        $vps_service = [
+            'ram' => $attributes['ram'],
+            'ram_unit' => $attributes['ram_unit'],
+            'storage' => $attributes['storage'],
+            'storage_unit' => $attributes['storage_unit'],
+            'storage_type' => $attributes['storage_type'],
+            'cpu_cores' => $attributes['cpu_cores'],
+            'service_id' => $service->id
+        ];
+        $service->vpsService()->update($vps_service);
+        return redirect()->route('admin.vps-services.index');
     }
 
     /**
@@ -117,8 +159,10 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
+        if(!$service->vpsService) abort(404);
+        $service->vpsService()->delete();
         $service->delete();
 
-        return redirect()->route('admin.services.index');
+        return redirect()->route('admin.vps-services.index');
     }
 }

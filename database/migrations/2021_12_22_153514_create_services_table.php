@@ -17,12 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->integer('ram');
-            $table->string('ram_unit');
-            $table->integer('storage');
-            $table->string('storage_unit');
-            $table->string('storage_type');
-            $table->integer('cpu_cores');
+            $table->string('service_type');
             $table->tinyInteger('interval');
             $table->string('interval_type');
             $table->decimal('base_price', 8, 2);

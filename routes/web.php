@@ -35,7 +35,8 @@ Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.']
     Route::resource("regions", \App\Http\Controllers\Admin\RegionController::class);
     Route::resource("operating-systems", \App\Http\Controllers\Admin\OperatingSystemController::class);
     Route::resource("storages", \App\Http\Controllers\Admin\StorageController::class);
-    Route::resource("services", \App\Http\Controllers\Admin\ServiceController::class);
+    Route::resource("vps-services", \App\Http\Controllers\Admin\VpsServiceController::class);
+    Route::resource("email-services", \App\Http\Controllers\Admin\EmailServiceController::class);
     Route::resource("faqs", \App\Http\Controllers\Admin\FaqController::class);
 
     Route::get('/customers', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomers'])->name('customers.list');

@@ -39,8 +39,8 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $service->name }}</td>
-                                <td>{{ $service->ram . ' ' . $service->ram_type }}</td>
-                                <td>{{ $service->cpu_cores }}</td>
+                                <td>{{ $service->vpsService->ram . ' ' . $service->vpsService->ram_type }}</td>
+                                <td>{{ $service->vpsService->cpu_cores }}</td>
                                 <td>{{ $service->interval . ' ' . $service->interval_type }}</td>
                                 <td>{{ $service->base_price }}</td>
                                 <td></td>

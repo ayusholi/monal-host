@@ -6,6 +6,7 @@ use App\Models\UserService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Service extends Model
 {
@@ -18,17 +19,29 @@ class Service extends Model
      */
     protected $fillable = [
         'name',
-        'ram',
         'slug',
-        'ram_unit',
-        'storage',
-        'storage_unit',
-        'storage_type',
-        'cpu_cores',
         'interval',
         'interval_type',
-        'base_price'
+        'base_price',
+        'service_type'
     ];
+
+    /**
+     * Get the VPS Service
+     */
+    public function vpsService(): HasOne
+    {
+        return $this->hasOne(VpsService::class, 'service_id', 'id');
+    }
+
+    /**
+     * Get the EmailService
+     */
+    public function emailService(): HasOne
+    {
+        return $this->hasOne(EmailService::class, 'service_id', 'id');
+    }
+
     /**
      * Get all of the userServices for the Service
      *
