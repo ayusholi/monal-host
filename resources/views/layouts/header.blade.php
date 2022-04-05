@@ -88,10 +88,7 @@
                 <div class="row align-items-center position-relative">
                     <div class="col-12 d-flex align-items-center justify-content-between position-static">
                         <div class="logo">
-                            <a href="index.html">
-                                <!-- <img src="{{ asset('img/logo.svg') }}" class="main-logo svg" alt=""> <img src="{{ asset('img/sticky-logo.svg') }}" class="sticky-logo svg" alt=""> -->
-                                <h2 class="text-white">Monalhost</h2>
-                            </a>
+                            <a href="{{ route('home') }}"> <h1 class="text-white">Monalhost</h1> </a>
                         </div>
                         <div class="nav-wrapper ms-auto ms-lg-0">
                             <div class="nav-wrap-inner">
@@ -99,12 +96,12 @@
                                     <li> <a href="{{ route('home') }}" >Home</a></li>
                                     <li> <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="{{ route('about.us') }}">About</a></li>
                                             <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="terms.html">Terms of Service</a></li>
-                                            <li><a href="privacy.html">Privacy Policy</a></li>
+                                            <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                                            <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
+                                            <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="#">Services</a>

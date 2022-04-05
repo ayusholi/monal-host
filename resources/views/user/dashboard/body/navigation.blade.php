@@ -23,7 +23,7 @@
         <div class="navigation-menu-tab">
             <ul>
                 <li>
-                    <a href="#" data-menu-target="#dashboards">
+                    <a href="#" data-menu-target="#dashboards" class="{{ (str_contains(url()->current(), 'dashboard') || str_contains(url()->current(), 'support')) ? 'active' : ''}}">
                         <span class="menu-tab-icon">
                             <i data-feather="pie-chart"></i>
                         </span>
@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-menu-target="#services">
+                    <a href="#" data-menu-target="#services" class="{{ (str_contains(url()->current(), 'my-services') || str_contains(url()->current(), 'new-services')) ? 'active' : ''}}">
                         <span class="menu-tab-icon">
                             <i data-feather="globe"></i>
                         </span>
@@ -47,7 +47,7 @@
             <ul id="dashboards">
                 <li class="navigation-divider">Dashboards</li>
                 <li>
-                    <a  class="active"
+                    <a class="{{ str_contains(url()->current(), 'dashboard') ? 'active' : ''}}"
                         href="ecommerce-dashboard.html">
                         <span class="nav-link-icon" data-feather="shopping-cart"></span>
                         <span>Analytics</span>
@@ -61,28 +61,33 @@
                     </a>
                 </li>
                 <li>
-                    <a  href="helpdesk-dashboard.html">
+                    <a href="{{ route('new.services') }}">
                         <span class="nav-link-icon" data-feather="life-buoy"></span>
                         <span>New Services</span>
                     </a>
                 </li>
                 <li class="navigation-divider">Other</li>
                 <li>
-                    <a  href="orders.html">
+                    <a href="{{ route('support.index') }}" class="{{ str_contains(url()->current(), 'support') ? 'active' : ''}}">
                         <span class="nav-link-icon" data-feather="box"></span>
                         <span>Support</span>
                     </a>
                 </li>
             </ul>
             <ul id="services">
-                <a  href="#" class="{{Request::is('/my-services') ? 'active' : ''}}">
+                <a  href="#">
                 <li class="navigation-divider" >Services</li>
                 </a>
                 <li>
-                    <a  href="{{ route('my.services') }}" class="{{Request::is('/my-services') ? 'active' : ''}}">
+                    <a  href="{{ route('my.services') }}" class="{{ str_contains(url()->current(), 'my-services') ? 'active' : ''}}">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
                         <span>My Services</span>
-                        <span class="badge badge-danger">5</span>
+                    </a>
+                </li>
+                <li>
+                    <a  href="{{ route('new.services') }}" class="{{ str_contains(url()->current(), 'new-services') ? 'active' : ''}}">
+                        <span class="nav-link-icon" data-feather="message-circle"></span>
+                        <span>New Services</span>
                     </a>
                 </li>
             </ul>

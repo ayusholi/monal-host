@@ -23,8 +23,7 @@
 <body class="form-membership" style="background: url(https://baston.laborasyon.com/assets/media/image/image1.jpg)">
 <!-- Preloader -->
 <div class="preloader">
-    <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
-    <img class="dark-logo" src="https://baston.laborasyon.com/assets/media/image/logo/dark-logo.png" alt="logo dark">
+    <h1 class="text-white">Monalhost</h1>
     <div class="preloader-icon"></div>
 </div>
 <!-- ./ Preloader -->
@@ -33,7 +32,7 @@
 
     <!-- logo -->
     <div id="logo">
-        <img class="logo" src="https://baston.laborasyon.com/assets/media/image/logo/logo.png" alt="logo">
+        <h1 class="text-white">Monalhost</h1>
     </div>
     <!-- ./ logo -->
 

@@ -16,7 +16,7 @@ class VpsServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('service_type', 'vps')->get();
         return view('admin.services.vps.index', compact('services'));
     }
 

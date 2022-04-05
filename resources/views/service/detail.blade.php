@@ -69,12 +69,12 @@
                                     <li> <a href="{{ route('home') }}" >Home</a></li>
                                     <li> <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="{{ route('about.us') }}">About</a></li>
                                             <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="terms.html">Terms of Service</a></li>
-                                            <li><a href="privacy.html">Privacy Policy</a></li>
+                                            <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                                            <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
+                                            <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="#">Services</a>
@@ -331,7 +331,7 @@
                             <h3 class="widget-title">Pages</h3>
                             <div class="menu-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="price.html">Price <span class="style2">try me</span></a></li>
                                     <li><a href="service.html">Service</a></li>
@@ -344,9 +344,9 @@
                             <h3 class="widget-title">Security</h3>
                             <div class="menu-container">
                                 <ul class="menu">
-                                    <li><a href="terms-service.html">Terms of Service</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">FAQ <span class="style2">Update</span></a></li>
+                                    <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
+                                    <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQ </a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </div>

@@ -46,9 +46,11 @@
                                     <a href="{{ route('admin.storages.edit', ['storage' => $storage]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" data-toggle="tooltip" title="Delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
+                                    <form action="{{ route('admin.storages.destroy', ['storage' => $storage]) }}" method="POST" style="display: inline-block;">
+                                        {{ csrf_field() }}
+                                        @method('DELETE')
+                                        <button class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

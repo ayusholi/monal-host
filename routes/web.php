@@ -26,6 +26,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::post('/login', [AdminController::class, 'login'])->name('login');
 });
 
+Route::get("about-us", [\App\Http\Controllers\CmsController::class, 'aboutUs'])->name('about.us');
+Route::get("term-of-service", [\App\Http\Controllers\CmsController::class, 'termsOfService'])->name('terms.of.service');
+Route::get("privacy-policy", [\App\Http\Controllers\CmsController::class, 'privacyPolicy'])->name('privacy.policy');
+
+Route::get('faqs', [\App\Http\Controllers\CmsController::class, 'faqs'])->name('faqs');
+
 Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
@@ -38,6 +44,7 @@ Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.']
     Route::resource("vps-services", \App\Http\Controllers\Admin\VpsServiceController::class);
     Route::resource("email-services", \App\Http\Controllers\Admin\EmailServiceController::class);
     Route::resource("faqs", \App\Http\Controllers\Admin\FaqController::class);
+    Route::resource("cms", \App\Http\Controllers\Admin\CmsController::class);
 
     Route::get('/customers', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomers'])->name('customers.list');
     Route::get('/customers/detail/{customer_id}', [\App\Http\Controllers\Admin\CustomerController::class, 'getCustomerDetail'])->name('customer.detail');
@@ -46,6 +53,8 @@ Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.']
     Route::get('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'getUserServiceCredential'])->name('service.credential');
     Route::post('/customers/detail/{customer_id}/service/detail/{user_service_id}/credentials', [\App\Http\Controllers\Admin\CustomerController::class, 'postUserServiceCredential'])->name('update.service.credential');
     Route::get("/user-services/processing", [\App\Http\Controllers\Admin\CustomerController::class, 'getProcessingServices'])->name('services.processing');
+
+    Route::get('/supports', [\App\Http\Controllers\Admin\SupportController::class, 'index'])->name('support.list');
 
     Route::get('/dashboard', function(){
         return view('admin.dashboard.index');
@@ -94,6 +103,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/my-services', [\App\Http\Controllers\User\UserController::class, 'getServices'])->name('my.services');
     Route::get('/my-services/detail/{id}', [\App\Http\Controllers\User\UserController::class, 'getServiceDetail'])->name('my.service.detail');
 
+    Route::get('/new-services', [\App\Http\Controllers\User\UserController::class, 'newServices'])->name('new.services');
 
     // setting
     Route::get('/user/setting',[\App\Http\Controllers\User\SettingController::class,'userSetting'])->name('user.setting');
@@ -101,6 +111,9 @@ Route::group(['middleware'=>'auth'], function(){
 
     // change password
     Route::post('/change/password',[\App\Http\Controllers\User\SettingController::class,'changePassword'])->name('user.changepassword');
+
+    Route::get("/support", [\App\Http\Controllers\User\SupportController::class, 'index'])->name('support.index');
+    Route::post("/support", [\App\Http\Controllers\User\SupportController::class, 'create'])->name('support.submit');
 });
 
 

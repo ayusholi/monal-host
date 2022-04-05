@@ -128,7 +128,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="square"></i>
                         </span>
-                        <span>Services</span>
+                        <span>Vps Services</span>
                     </a>
                     <ul>
                         <li>
@@ -144,7 +144,7 @@
                         <span class="nav-link-icon">
                             <i data-feather="square"></i>
                         </span>
-                        <span>Services</span>
+                        <span>Email Services</span>
                     </a>
                     <ul>
                         <li>
@@ -219,6 +219,22 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.faqs.create') }}">Create Faq</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-link-icon">
+                            <i data-feather="square"></i>
+                        </span>
+                        <span>CMS</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('admin.cms.index') }}">List Cms</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.cms.create') }}">Create Cms</a>
                         </li>
                     </ul>
                 </li>

@@ -25,6 +25,7 @@ class HomeController extends Controller
 
     public function contactUs()
     {
-        return view('pages.contact_us');
+        $services = Service::take(5)->get();
+        return view('pages.contact_us', compact('services'));
     }
 }

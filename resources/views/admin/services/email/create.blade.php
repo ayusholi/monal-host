@@ -9,7 +9,7 @@
             <div class="page-title">
                 <h3>Services</h3>
                 <div>
-                    <a href="{{ route('admin.services.index') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.email-services.index') }}" class="btn btn-primary">
                         List Services
                     </a>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="container my-3">
                         <div class="row">
                             <div class="col-md-12">
-                                <form method="POST" action="{{ route('admin.services.store') }}">
+                                <form method="POST" action="{{ route('admin.email-services.store') }}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="name">Name</label>

@@ -16,7 +16,7 @@ class EmailServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('service_type', 'email')->get();
         return view('admin.services.email.index', compact('services'));
     }
 

@@ -7,10 +7,10 @@
 
         <div class="page-header">
             <div class="page-title">
-                <h3>Regions</h3>
+            <h3>CMS</h3>
                 <div>
-                    <a href="{{ route('admin.regions.create') }}" class="btn btn-primary">
-                        Create Region
+                    <a href="{{ route('admin.cms.create') }}" class="btn btn-primary">
+                        Create CMS
                     </a>
                 </div>
             </div>
@@ -18,33 +18,29 @@
 
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title mb-0">All Regions</h6>
+                <h6 class="card-title mb-0">All CMS</h6>
             </div>
             <div class="table-responsive">
                 <table id="recent-orders" class="table table-lg">
                     <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Total Services</th>
+                        <th>Key</th>
+                        <th>Title</th>
                         <th class="text-right">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @forelse ($regions as $region)
+                        @forelse ($cmses as $cms)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $region->name }}</td>
-                                <td>{{ $region->latitude }}</td>
-                                <td>{{ $region->longitude }}</td>
-                                <td></td>
+                                <td>{{ $cms->key }}</td>
+                                <td>{{ $cms->title }}</td>
                                 <td class="text-right">
-                                    <a href="{{ route('admin.regions.edit', ['region' => $region]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
+                                    <a href="{{ route('admin.cms.edit', ['cm' => $cms]) }}" class="btn btn-outline-primary btn-sm btn-floating text-primary" data-toggle="tooltip" title="Edit">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <form action="{{ route('admin.regions.destroy', ['region' => $region]) }}" method="POST" style="display: inline-block;">
+                                    <form action="{{ route('admin.cms.destroy', ['cm' => $cms]) }}" method="POST" style="display: inline-block;">
                                         {{ csrf_field() }}
                                         @method('DELETE')
                                         <button class="btn btn-outline-danger btn-sm btn-floating ml-2 text-warning" type="submit"><i class="fa-solid fa-trash"></i></button>
@@ -62,14 +58,5 @@
     </div>
     <!-- ./ Content -->
 
-@endsection
-
-@section('custom-script')
-<script>
-    function deleteRegion()
-    {
-
-    }
-</script>
 @endsection
 

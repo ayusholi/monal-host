@@ -59,47 +59,27 @@
                 <div class="row align-items-center position-relative">
                     <div class="col-12 d-flex align-items-center justify-content-between position-static">
                         <div class="logo">
-                            <a href="index.html"> <img src="{{ asset('assets/img/logo.svg') }}" class="main-logo svg" alt=""> <img src="{{ asset('assets/img/sticky-logo.svg') }}" class="sticky-logo svg" alt=""> </a>
+                            <a href="{{ route('home') }}"> <h1 class="text-white">Monalhost</h1> </a>
                         </div>
                         <div class="nav-wrapper ms-auto ms-lg-0">
                             <div class="nav-wrap-inner">
                                 <ul class="nav">
-                                    <li> <a href="#">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home V1</a></li>
-                                            <li><a href="home-1.html">Home V2</a></li>
-                                            <li><a href="home-2.html">Home V3</a></li>
-                                            <li><a href="home-3.html">Home V4</a></li>
-                                        </ul>
-                                    </li>
+                                    <li> <a href="{{ route('home') }}" >Home</a></li>
                                     <li> <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{ route('about.us') }}">About</a></li>
+                                            <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="terms.html">Terms of Service</a></li>
-                                            <li><a href="privacy.html">Privacy Policy</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="404.html">404</a></li>
+                                            <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                                            <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
+                                            <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="http://billing.ywhmcs.com/?systpl=hostpack">WHMCS</a></li>
-                                    <li> <a href="#">Hosting</a>
+                                    <li> <a href="#">Services</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shared-hosting.html">Shared Hosting</a></li>
-                                            <li><a href="dedicated-hosting.html">dedicated hosting</a></li>
-                                            <li><a href="reseller-hosting.html">reseller hosting</a></li>
-                                            <li><a href="private-hosting.html">private hosting</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#" class="current-menu-parent">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="service.html">Service One</a></li>
-                                            <li><a href="service2.html">Service Two</a></li>
-                                            <li><a href="service3.html">Service Three</a></li>
-                                            <li><a href="service-details.html" class="current-menu-children">Service Details</a></li>
+                                            @foreach ($services as $service)
+                                                <li><a href="{{ route('service.detail', ['slug' => $service->slug]) }}">{{ $service->name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>
@@ -224,7 +204,7 @@
                             <h3 class="widget-title">Pages</h3>
                             <div class="menu-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="price.html">Price <span>try me</span></a></li>
                                     <li><a href="service.html">Service</a></li>
@@ -243,15 +223,15 @@
                             <h3 class="widget-title">Security</h3>
                             <div class="menu-container">
                                 <ul class="menu">
-                                    <li><a href="terms-service.html">Terms of Service</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">FAQ <span class="update">Update</span></a></li>
+                                    <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
+                                    <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQ <span class="update">Update</span></a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                                 <ul class="menu mt-5">
                                     <li class="title">Support</li>
                                     <li><a href="contact.html">Support Center</a></li>
-                                    <li><a href="faq.html">Status Updates</a></li>
+                                    <li><a href="{{ route('faqs') }}">Status Updates</a></li>
                                     <li><a href="contact.html">Knowledgebase</a></li>
                                 </ul>
                             </div>
@@ -283,7 +263,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <div class="footer-bottom-content text-white text-center text-lg-start justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-                            <p>Offers valid for a limited time only hostpack reflect multi annual discounts. Other terms and conditions may apply. <a href="terms-service.html">Click Here</a></p>
+                            <p>Offers valid for a limited time only hostpack reflect multi annual discounts. Other terms and conditions may apply. <a href="{{ route('terms.of.service') }}">Click Here</a></p>
                         </div>
                     </div>
                     <div class="col-lg-5">

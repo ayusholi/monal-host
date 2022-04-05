@@ -9,7 +9,7 @@
             <div class="page-title">
                 <h3>Services</h3>
                 <div>
-                    <a href="{{ route('admin.services.index') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.emial-services.index') }}" class="btn btn-primary">
                         List Services
                     </a>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <form method="POST" action="{{ route('admin.services.update', ['service' => $service]) }}">
+                                <form method="POST" action="{{ route('admin.email-services.update', ['service' => $service]) }}">
                                     @method('PUT')
                                     {{ csrf_field() }}
                                     <div class="form-group">

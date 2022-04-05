@@ -48,7 +48,7 @@ class UserController extends Controller
     {
         // DB::beginTransaction();
         // try {
-            $hashPassword = Hash::make($request->password);
+        $hashPassword = Hash::make($request->password);
 
         $user = User::create(
             array_merge($request->all(), ['password' => $hashPassword])
