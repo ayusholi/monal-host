@@ -174,7 +174,7 @@
                             <h3 class="widget-title">Pages</h3>
                             <div class="menu-container">
                                 <ul class="menu">
-                                    <li><a href="{{ route('about-us') }}">About Us</a></li>
+                                    <li><a href="{{ route('about.us') }}">About Us</a></li>
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="price.html">Price <span class="style2">try me</span></a></li>
                                     <li><a href="service.html">Service</a></li>
