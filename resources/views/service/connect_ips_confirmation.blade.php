@@ -30,10 +30,10 @@
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
                             <li>
-                                <a href="tel:8884014678"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a>
+                                <a href="tel:+977-9843386239"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> +977-9843386239 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@monalhost.com </a>
+                                <a href="mailto:support@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a>
                             </li>
                         </ul>
                     </div>
@@ -47,7 +47,7 @@
                                 <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
                             @endguest
                             <li>
-                                <a href="contact.html"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Support </a>
+                                <a href="{{ route('contact.us') }}"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Contact Us </a>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +69,7 @@
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('about.us') }}">About</a></li>
                                             <li><a href="{{ route('contact.us') }}">Contact</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="{{ route('blogs') }}">Blog</a></li>
                                             <li><a href="{{ route('faqs') }}">FAQ</a></li>
                                             <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
                                             <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
@@ -83,17 +83,12 @@
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="price.html">Pricing Plan 1</a></li>
-                                            <li><a href="price2.html">Pricing Plan 2</a></li>
-                                            <li><a href="price3.html">Pricing Plan 3</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-right d-sm-flex d-none">
-                            <div class="header-btns"> <a href="price.html" class="btn header-btn">Free Trial</a></div>
+                            {{-- <div class="header-btns"> <a href="price.html" class="btn header-btn">Free Trial</a></div> --}}
                         </div>
                     </div>
                 </div>
@@ -147,7 +142,7 @@
                             <div class="menu-container">
                                 <p>We are Monalhost 29 years of experience on this field with most talanted peoples and leaders.</p>
                                 <ul class="contact-list">
-                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">888-401-4678</a></li>
+                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">+977-9843386239</a></li>
                                 </ul>
                                 <div class="accept-cards"> <img src="{{ asset('assets/img/media/cards.png') }}" data-rjs="2" alt=""></div>
                                 <div class="socials">

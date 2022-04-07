@@ -98,7 +98,7 @@
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('about.us') }}">About</a></li>
                                             <li><a href="{{ route('contact.us') }}">Contact</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="{{ route('blogs') }}">Blog</a></li>
                                             <li><a href="{{ route('faqs') }}">FAQ</a></li>
                                             <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
                                             <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
@@ -112,17 +112,11 @@
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="price.html">Pricing Plan 1</a></li>
-                                            <li><a href="price2.html">Pricing Plan 2</a></li>
-                                            <li><a href="price3.html">Pricing Plan 3</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-right d-sm-flex d-none">
-                            {{-- <div class="header-btns"> <a href="price.html" class="btn header-btn btn-style3">Try 7-Day Free</a></div> --}}
                             <div class="search-toggle"> <button class="search-toggle-btn p-0"> <img src="{{ asset('img/icon/search.svg') }}" alt="" class="svg"> </button>
                                 <div class="full-page-search"> <button class="search-close-btn"><i class="fa fa-times"></i></button>
                                     <div class="container">

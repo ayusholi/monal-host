@@ -30,10 +30,10 @@
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
                             <li>
-                                <a href="tel:8884014678"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a>
+                                <a href="tel:+977-9843386239"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> +977-9843386239 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@monalhost.com </a>
+                                <a href="mailto:support@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a>
                             </li>
                         </ul>
                     </div>
@@ -143,7 +143,7 @@
                             <div class="menu-container">
                                 <p>We are Monalhost 29 years of experience on this field with most talanted peoples and leaders.</p>
                                 <ul class="contact-list">
-                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">888-401-4678</a></li>
+                                    <li> <i class="fas fa-phone-square-alt"></i> <a href="tel:02094857568">+977-9843386239</a></li>
                                 </ul>
                                 <div class="accept-cards"> <img src="{{ asset('assets/img/media/cards.png') }}" data-rjs="2" alt=""></div>
                                 <div class="socials">

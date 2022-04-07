@@ -185,64 +185,29 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="data_center_location-map style--four"> <img src="assets/img/media/map.png" data-rjs="2" alt="map_image">
-                    <div class="l_info l_info"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>indonesia</h5>
-                        </div>
-                    </div>
                     <div class="l_info l_info2"> <span class="circle-ball"></span>
                         <div class="info-box text-center">
-                            <h5>Australia</h5>
+                            <h5>European Union (Germany)</h5>
                         </div>
                     </div>
                     <div class="l_info l_info3"> <span class="circle-ball"></span>
                         <div class="info-box text-center">
-                            <h5>England</h5>
+                            <h5>United States (Central)</h5>
                         </div>
                     </div>
                     <div class="l_info l_info4 active"> <span class="circle-ball"></span>
                         <div class="info-box text-center">
-                            <h5>Norway</h5>
+                            <h5>United States (East)</h5>
                         </div>
                     </div>
                     <div class="l_info l_info5"> <span class="circle-ball"></span>
                         <div class="info-box text-center">
-                            <h5>Russia</h5>
+                            <h5>United States (West)</h5>
                         </div>
                     </div>
                     <div class="l_info l_info6"> <span class="circle-ball"></span>
                         <div class="info-box text-center">
-                            <h5>Australia</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info7"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Japan</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info8"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Italy</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info9"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Spain</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info10"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Brazil</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info11"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Quatar</h5>
-                        </div>
-                    </div>
-                    <div class="l_info l_info12"> <span class="circle-ball"></span>
-                        <div class="info-box text-center">
-                            <h5>Australia</h5>
+                            <h5>Asia (Singapore)</h5>
                         </div>
                     </div>
                 </div>
@@ -351,45 +316,4 @@
         </div>
     </div>
 </section>
-{{-- <section class="pt-120 pb-90">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="faq-title-content">
-                    <div class="section-title style--three">
-                        <h5 class="mb-n1">Blog</h5>
-                        <h2>Get News Feeds</h2>
-                        <p>News block from the Hostpack Web Hosting Template include dozen of testimonial block and over other Components.</p> <a href="blog.html" class="btn btn-style3">View all post</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="row justify-content-center mx-xl-0">
-                    <div class="col-sm-6">
-                        <div class="single-post-item style--two"> <a href="blog-details.html" class="post-thumbnail"> <img src="assets/img/post/post4.png" data-rjs="2" alt=""> </a>
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                    <li class="posted-on"><a href="blog-details.html">25 May, 2021</a></li>
-                                    <li class="posted-by"><a href="blog-details.html">Abraum Jonah</a></li>
-                                </ul>
-                                <h3 class="post-title"> <a href="blog-details.html">Hosting services that will settle your online life</a></h3> <a href="blog-details.html" class="btn-inline"> <img src="assets/img/icon/post-arrow.svg" alt="" class="svg"> Read More </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="single-post-item style--two"> <a href="blog-details.html" class="post-thumbnail"> <img src="assets/img/post/post5.png" data-rjs="2" alt=""> </a>
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                    <li class="posted-on"><a href="blog-details.html">29 May, 2021</a></li>
-                                    <li class="posted-by"><a href="blog-details.html">Abraum Jonah</a></li>
-                                </ul>
-                                <h3 class="post-title"> <a href="blog-details.html">Better time of buying at web hosting ready today.</a></h3> <a href="blog-details.html" class="btn-inline"> <img src="assets/img/icon/post-arrow.svg" alt="" class="svg"> Read More </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
 @endsection

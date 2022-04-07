@@ -30,10 +30,10 @@
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
                             <li>
-                                <a href="tel:8884014678"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a>
+                                <a href="tel:+977-9843386239"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> +977-9843386239 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@monalhost.com </a>
+                                <a href="mailto:support@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a>
                             </li>
                         </ul>
                     </div>
@@ -332,9 +332,9 @@
                             <div class="menu-container">
                                 <ul class="menu">
                                     <li><a href="{{ route('about.us') }}">About Us</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="price.html">Price <span class="style2">try me</span></a></li>
-                                    <li><a href="service.html">Service</a></li>
+                                    <li><a href="{{ route('auth.login') }}">Login</a></li>
+                                    <li><a href="{{ route('blogs') }}">Blogs</a></li>
+                                    <li><a href="{{ route('services') }}">Service</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -346,8 +346,8 @@
                                 <ul class="menu">
                                     <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
                                     <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
-                                    <li><a href="{{ route('faqs') }}">FAQ </a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                                    <li><a href="{{ route('contact.us') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

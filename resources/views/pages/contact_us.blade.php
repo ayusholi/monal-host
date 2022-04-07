@@ -30,10 +30,10 @@
                     <div class="col-sm-7">
                         <ul class="info-list justify-content-center justify-content-sm-start">
                             <li>
-                                <a href="tel:8884014678"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> 888-401-4678 </a>
+                                <a href="tel:+977-9843386239"> <img src="{{ asset('assets/img/icon/phone.svg') }}" alt="" class="svg"> +977-9843386239 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> info@monalhost.com </a>
+                                <a href="mailto:support@monalhost.com"> <img src="{{ asset('assets/img/icon/mail.svg') }}" alt="" class="svg"> support@monalhost.com </a>
                             </li>
                         </ul>
                     </div>
@@ -47,7 +47,7 @@
                                 <li> <a href="{{ route('auth.login') }}"> <img src="{{ asset('assets/img/icon/login.svg') }}" alt="" class="svg"> Login </a></li>
                             @endguest
                             <li>
-                                <a href="contact.html"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Support </a>
+                                <a href="{{ route('contact.us') }}"> <img src="{{ asset('assets/img/icon/support.svg') }}" alt="" class="svg"> Contact Us </a>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +71,7 @@
                                         <ul class="sub-menu">
                                             <li><a href="{{ route('about.us') }}">About</a></li>
                                             <li><a href="{{ route('contact.us') }}">Contact</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="{{ route('blogs') }}">Blog</a></li>
                                             <li><a href="{{ route('faqs') }}">FAQ</a></li>
                                             <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
                                             <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
@@ -85,17 +85,11 @@
                                         </ul>
                                     </li>
                                     <li> <a href="#">Pricing</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="price.html">Pricing Plan 1</a></li>
-                                            <li><a href="price2.html">Pricing Plan 2</a></li>
-                                            <li><a href="price3.html">Pricing Plan 3</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-right d-sm-flex d-none">
-                            {{-- <div class="header-btns"> <a href="price.html" class="btn header-btn btn-style3">Try 7-Day Free</a></div> --}}
                             <div class="search-toggle"> <button class="search-toggle-btn p-0"> <img src="{{ asset('img/icon/search.svg') }}" alt="" class="svg"> </button>
                                 <div class="full-page-search"> <button class="search-close-btn"><i class="fa fa-times"></i></button>
                                     <div class="container">
@@ -150,70 +144,33 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="data_center_location-map style--four"> <img src="assets/img/media/map.png" data-rjs="2"
-                            alt="map_image">
-                        <div class="l_info l_info"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>indonesia</h5>
-                            </div>
-                        </div>
+                    <div class="data_center_location-map style--four"> <img src="assets/img/media/map.png" data-rjs="2" alt="map_image">
                         <div class="l_info l_info2"> <span class="circle-ball"></span>
                             <div class="info-box text-center">
-                                <h5>Australia</h5>
+                                <h5>European Union (Germany)</h5>
                             </div>
                         </div>
                         <div class="l_info l_info3"> <span class="circle-ball"></span>
                             <div class="info-box text-center">
-                                <h5>England</h5>
+                                <h5>United States (Central)</h5>
                             </div>
                         </div>
                         <div class="l_info l_info4 active"> <span class="circle-ball"></span>
                             <div class="info-box text-center">
-                                <h5>Norway</h5>
+                                <h5>United States (East)</h5>
                             </div>
                         </div>
                         <div class="l_info l_info5"> <span class="circle-ball"></span>
                             <div class="info-box text-center">
-                                <h5>Russia</h5>
+                                <h5>United States (West)</h5>
                             </div>
                         </div>
                         <div class="l_info l_info6"> <span class="circle-ball"></span>
                             <div class="info-box text-center">
-                                <h5>Australia</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info7"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Japan</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info8"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Italy</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info9"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Spain</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info10"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Brazil</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info11"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Quatar</h5>
-                            </div>
-                        </div>
-                        <div class="l_info l_info12"> <span class="circle-ball"></span>
-                            <div class="info-box text-center">
-                                <h5>Australia</h5>
+                                <h5>Asia (Singapore)</h5>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -246,22 +203,19 @@
                         <div class="contact-form-wrap">
                             <h3>We'd love to hear from you</h3>
                             <p>Since tissue paper is widely commodity quite very less organized company.</p>
-                            <form action="https://www.themelooks.biz/demo/hostpack/html/preview/sendmail.php"
-                                class="contact-form">
+                            <form action="{{ route('post.contact.us') }}" class="contact-form" method="POST">
+                                {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="form-group"> <input type="text" name="name" class="form-control"
-                                                placeholder="Your Name" required></div>
+                                        <div class="form-group"> <input type="text" name="name" class="form-control" placeholder="Your Name" required>{{ old('name') }}</div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group"> <input type="email" name="email" class="form-control"
-                                                placeholder="Your Email ID" required></div>
+                                        <div class="form-group"> <input type="email" name="email" class="form-control" placeholder="Your Email ID" required>{{ old('email') }}</div>
                                     </div>
-                                    <div class="col-12"><textarea class="form-control" name="message"
-                                            placeholder="Question" required></textarea></div>
+                                    <div class="col-12"><textarea class="form-control" name="message" placeholder="Message" required>{{ old('message') }}</textarea></div>
                                     <div class="col-12 mt-2">
                                         <div class="d-flex align-items-center flex-wrap"> <button type="submit"
-                                                class="btn hover-style-two"> <span>get a qoute</span> <img
+                                                class="btn hover-style-two"> <span>Contact Us</span> <img
                                                     src="assets/img/icon/btn-arrow.svg" alt="" class="svg"> </button>
                                             <div class="form-response"></div>
                                         </div>
@@ -296,9 +250,9 @@
                             <div class="menu-container">
                                 <ul class="menu">
                                     <li><a href="{{ route('about.us') }}">About Us</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="price.html">Price <span class="style2">try me</span></a></li>
-                                    <li><a href="service.html">Service</a></li>
+                                    <li><a href="{{ route('auth.login') }}">Login</a></li>
+                                    <li><a href="{{ route('blogs') }}">Blogs</a></li>
+                                    <li><a href="{{ route('services') }}">Service</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -310,8 +264,8 @@
                                 <ul class="menu">
                                     <li><a href="{{ route('terms.of.service') }}">Terms of Service</a></li>
                                     <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
-                                    <li><a href="{{ route('faqs') }}">FAQ <span class="style2">Update</span></a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{ route('faqs') }}">FAQ</a></li>
+                                    <li><a href="{{ route('contact.us') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

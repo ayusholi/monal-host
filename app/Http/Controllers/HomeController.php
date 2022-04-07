@@ -16,6 +16,12 @@ class HomeController extends Controller
         return view('index', compact('vps_services', 'email_services', 'faqs'));
     }
 
+    public function fetchServices()
+    {
+        $services = Service::get();
+        return view('service.index', compact('services'));
+    }
+
     public function serviceDetail($slug)
     {
         $services = Service::take(5)->get();
@@ -27,5 +33,16 @@ class HomeController extends Controller
     {
         $services = Service::take(5)->get();
         return view('pages.contact_us', compact('services'));
+    }
+
+    public function submitContactUs(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        ]);
+
+        dd($request->all());
     }
 }

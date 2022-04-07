@@ -168,7 +168,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="chat.html" title="Chat" class="nav-link">
+                    <a href="#" title="Chat" class="nav-link">
                         <span class="badge badge-danger nav-link-notify">4</span>
                         <i data-feather="message-circle"></i>
                     </a>
@@ -315,7 +315,7 @@
                             <h5 class="mb-0">Bony Gidden</h5>
                         </div>
                         <div class="list-group list-group-flush">
-                            <a href="profile.html" class="list-group-item">Profile</a>
+                            <a href="#" class="list-group-item">Profile</a>
                             <a href="#" class="list-group-item" data-sidebar-target="#settings">Settings</a>
                             <a href="{{ route('admin.logout') }}" class="list-group-item text-danger">Sign Out!</a>
                         </div>

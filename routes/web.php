@@ -18,7 +18,10 @@ use App\Http\Controllers\Auth\AdminController;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get("/service/{slug}", [\App\Http\Controllers\HomeController::class, 'serviceDetail'])->name('service.detail');
+Route::get("/services/", [\App\Http\Controllers\HomeController::class, 'fetchServices'])->name('services');
+
 Route::get("/contact-us", [\App\Http\Controllers\HomeController::class, 'contactUs'])->name('contact.us');
+Route::post("/contact-us", [\App\Http\Controllers\HomeController::class, 'submitContactUs'])->name('post.contact.us');
 
 /* admin auth routes */
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
@@ -31,6 +34,7 @@ Route::get("term-of-service", [\App\Http\Controllers\CmsController::class, 'term
 Route::get("privacy-policy", [\App\Http\Controllers\CmsController::class, 'privacyPolicy'])->name('privacy.policy');
 
 Route::get('faqs', [\App\Http\Controllers\CmsController::class, 'faqs'])->name('faqs');
+Route::get('blogs', [\App\Http\Controllers\BlogsController::class, 'index'])->name('blogs');
 
 Route::group(['middleware'=>'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
@@ -73,7 +77,7 @@ Route::group(['prefix'=>'auth','as'=>'auth.'], function(){
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
     // forgot password
-    Route::get('/forgotpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'forgotPassword'])->name('forgotpassword');
+    Route::get('/forgotpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'forgotPassword'])->name('forgot.password');
     Route::post('/submitforgotpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'submitForgotPassword'])->name('submitforgotpassword');
     Route::get('/forgotpasswordlink/{token}',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'forgotPasswordLink'])->name('forgotpasswordlink');
     Route::post('resetpassword',[\App\Http\Controllers\Auth\ForgotPasswordController::class,'resetPassword'])->name('resetpassword');
