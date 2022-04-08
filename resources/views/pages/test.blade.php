@@ -1,0 +1,1 @@
+<script type='text/javascript' src='https://www.neplifund.com/custom/buttonGenerator.js'></script><script type='text/javascript'>neplifundButton.init('Support Me on Neplifund','#F26B38','https://www.neplifund.com/samana');neplifundButton.draw();</script>
