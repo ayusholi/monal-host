@@ -66,9 +66,9 @@ class Payment extends Model
     /**
      * Get the User Service
      */
-    public function userService(): HasOne
+    public function userService(): BelongsTo
     {
-        return $this->hasOne(UserService::class, 'user_service_id');
+        return $this->belongsTo(UserService::class, 'user_service_id');
     }
 
     /**

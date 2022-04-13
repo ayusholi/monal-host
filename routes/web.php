@@ -111,6 +111,8 @@ Route::group(['middleware'=>'auth'], function(){
 
     // setting
     Route::get('/user/setting',[\App\Http\Controllers\User\SettingController::class,'userSetting'])->name('user.setting');
+
+    Route::get("/payments", [\App\Http\Controllers\User\UserController::class, 'allPayments'])->name('all.payments');
     Route::post('/update/user/{id}',[\App\Http\Controllers\User\SettingController::class,'updateSetting'])->name('user.update');
 
     // change password

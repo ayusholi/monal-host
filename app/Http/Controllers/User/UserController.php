@@ -39,4 +39,11 @@ class UserController extends Controller
         $services = Service::all();
         return view('auth.user.all_new_services', compact('services'));
     }
+
+    public function allPayments()
+    {
+        $user = Auth::user();
+        $payments = Payment::where('user_id', $user->id)->get();
+        return view('auth.user.all_payments', compact('payments'));
+    }
 }

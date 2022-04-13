@@ -38,6 +38,14 @@
                         <span>Services</span>
                     </a>
                 </li>
+                <li>
+                    <a href="#" data-menu-target="#payments" class="{{ (str_contains(url()->current(), 'payments')) ? 'active' : ''}}">
+                        <span class="menu-tab-icon">
+                            <i data-feather="globe"></i>
+                        </span>
+                        <span>Payments</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- ./ Menu tab -->
@@ -88,6 +96,17 @@
                     <a  href="{{ route('new.services') }}" class="{{ str_contains(url()->current(), 'new-services') ? 'active' : ''}}">
                         <span class="nav-link-icon" data-feather="message-circle"></span>
                         <span>New Services</span>
+                    </a>
+                </li>
+            </ul>
+            <ul id="payments">
+                <a  href="#">
+                <li class="navigation-divider" >My Payments</li>
+                </a>
+                <li>
+                    <a  href="{{ route('all.payments') }}" class="{{ str_contains(url()->current(), 'payments') ? 'active' : ''}}">
+                        <span class="nav-link-icon" data-feather="message-circle"></span>
+                        <span>My Payments</span>
                     </a>
                 </li>
             </ul>
