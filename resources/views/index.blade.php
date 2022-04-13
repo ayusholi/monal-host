@@ -22,7 +22,6 @@
     <div class="container">
         <div class="row gx-lg-0 justify-content-center" id="services">
             @foreach($vps_services as $service)
-            {{-- {{dd($service)}} --}}
                 <div class="col-lg-4 col-md-6">
                     <div class="single-price style--two first-item">
                         <div class="price-head">

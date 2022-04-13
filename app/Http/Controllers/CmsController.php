@@ -13,7 +13,7 @@ class CmsController extends Controller
     {
         $services = Service::take(5)->get();
         $cms = Cms::where('key', 'about_us')->firstOrFail();
-        return view('pages.test', compact('cms'));
+        return view('pages.cms', compact('cms'));
     }
 
     public function termsOfService()

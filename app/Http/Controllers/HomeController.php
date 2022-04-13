@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Region;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -25,8 +26,10 @@ class HomeController extends Controller
     public function serviceDetail($slug)
     {
         $services = Service::take(5)->get();
+        $regions = Region::get();
         $service_detail = Service::where('slug', $slug)->firstOrFail();
-        return view('service.detail', compact('service_detail', 'services'));
+        $first_region = Region::first();
+        return view('service.detail', compact('service_detail', 'services', 'regions', 'first_region'));
     }
 
     public function contactUs()

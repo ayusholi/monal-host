@@ -16,16 +16,16 @@ class RegionSeeder extends Seeder
     {
         $regions = [
             [
-                'name' => 'Europe',
+                'name' => 'Asia',
                 'latitude' => '25.2323232323232323',
                 'longitude' => '25.2323232323232323',
                 'price' => 0.00,
             ],
             [
-                'name' => 'Asia',
+                'name' => 'Europe',
                 'latitude' => '25.2323232323232323',
                 'longitude' => '25.2323232323232323',
-                'price' => 0.00,
+                'price' => 5.00,
             ],
         ];
 

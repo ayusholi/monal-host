@@ -12,3 +12,8 @@ function submitManualPayment(event) {
     event.preventDefault();
     $("#manualPaymentForm").submit();
 }
+
+function setRegion(regionId) {
+    $(".regionIds").val(regionId);
+    return false;
+}

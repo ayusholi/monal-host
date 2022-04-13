@@ -28,14 +28,16 @@ class PaymentController extends Controller
         $request->validate([
             'amount' => 'required|numeric',
             'service_id' => 'required|exists:services,id',
+            'region_id' => 'required|exists:regions,id'
         ]);
         $user = Auth::user();
-        $amount = $request->amount;
         $transaction_method = "connect_ips";
 
         $service = Service::findOrFail($request->service_id);
         $operating_system = OperatingSystem::findOrFail(1);
-        $region = Region::findOrFail(1);
+        $region = Region::findOrFail($request->region_id);
+
+        $amount = $request->amount + $region->price;
 
         $user_service = UserService::create([
             'user_id' => $user->id,
@@ -76,6 +78,8 @@ class PaymentController extends Controller
             'status' => Payment::$STATUS['PENDING'],
         ]);
 
+        $services = Service::all();
+
         $form_data = [
             'MERCHANTID' => $merchant_id,
             'APPID' => $app_id,
@@ -90,7 +94,7 @@ class PaymentController extends Controller
             'TOKEN' => $hash_token
         ];
 
-        return view('service.connect_ips_confirmation', compact('form_data', 'service', 'amount'));
+        return view('service.connect_ips_confirmation', compact('form_data', 'service', 'amount', 'services'));
     }
 
     /**
@@ -146,13 +150,14 @@ class PaymentController extends Controller
         $request->validate([
             'amount' => 'required|numeric',
             'service_id' => 'required|exists:services,id',
+            'region_id' => 'required|exists:regions,id'
         ]);
         $user = Auth::user();
-        $amount = $request->amount;
 
         $service = Service::findOrFail($request->service_id);
         $operating_system = OperatingSystem::findOrFail(1);
-        $region = Region::findOrFail(1);
+        $region = Region::findOrFail($request->region_id);
+        $amount = $request->amount + $region->price;
 
         $user_service = UserService::create([
             'user_id' => $user->id,
@@ -186,6 +191,7 @@ class PaymentController extends Controller
                 'status' => Payment::$STATUS['PENDING'],
             ]);
             $checkout_url = env('IME_PAY_CHECKOUT_URL');
+            $services = Service::all();
             $data = [
                 "url" => env('IME_PAY_CHECKOUT_URL'),
                 "merchant_code" => env('IME_PAY_MERCHANT_CODE'),
@@ -199,6 +205,7 @@ class PaymentController extends Controller
                 "amount" => $amount,
                 "request_method" => "POST",
                 "checkout_url" => $checkout_url,
+                "services" => $services
             ];
 
             return view('service.imepay_confirmation')->with($data);
@@ -258,7 +265,9 @@ class PaymentController extends Controller
         $service = Service::findOrFail($request->service_id);
         $amount = $request->amount;
 
-        return view('service.manual_confirmation', compact('attributes', 'service', 'amount'));
+        $services = Service::all();
+
+        return view('service.manual_confirmation', compact('attributes', 'service', 'amount', 'services'));
     }
 
     public function manualPaymentConfirmation(Request $request)
@@ -269,17 +278,16 @@ class PaymentController extends Controller
             'account_id' => "required|min:10|max:250",
             "account_name" => "required|min:2|max:250",
             "payment_type" => "required|in:esewa,khalti,prabhu_pay,bank_transfer",
-            "payment_file" => "required"
+            "payment_file" => "required",
+            'region_id' => 'required|exists:regions,id'
         ]);
 
         $user = Auth::user();
 
-        $amount = $request->amount;
-        $transaction_method = "connect_ips";
-
         $service = Service::findOrFail($request->service_id);
         $operating_system = OperatingSystem::findOrFail(1);
-        $region = Region::findOrFail(1);
+        $region = Region::findOrFail($request->region_id);
+        $amount = $request->amount + $region->price;
 
         $user_service = UserService::create([
             'user_id' => $user->id,

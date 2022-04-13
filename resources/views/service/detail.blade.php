@@ -197,34 +197,55 @@
                                 </tr>
                                 @endif
                             </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="pricing-table">
                             <tfoot>
                                 <tr>
                                     <th></th>
                                     <td>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <p>Pay With</p>
-                                                <form action="{{ route('payment.connectips') }}" method="POST" id="connectipsForm" style="display: inline;">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
-                                                </form>
-                                                <a onclick="submitConnectIps(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
-                                                <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform" style="display: inline;">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
-                                                </form>
-                                                <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
+                                            <div class="col-md-3 col-lg-3">
+                                                <div class="container">
+                                                    <h4 style="margin-bottom: 10px;">Select a region</h4>
+                                                    <div class="hosting-specification-nav nav flex-column">
+                                                        @foreach($regions as $region)
+                                                            <button class="{{ $loop->first ? 'active' : '' }}" id="regionSetButton" data-bs-toggle="pill" data-bs-target="#v-pills-software" onclick="setRegion({{ $region->id }})">{{ $region->name }} | Rs. {{ $region->price }}</button>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>Or Pay Manually</p>
-                                                <form action="{{ route('payment.manual') }}" method="GET" id="manualPaymentForm" style="display: inline;">
-                                                    {{ csrf_field() }}
-                                                    <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
-                                                    <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
-                                                </form>
-                                                <a href="#" onclick="submitManualPayment(event)" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
+                                            <div class="col-md-9 col-lg-9">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <p>Pay With</p>
+                                                        <form action="{{ route('payment.connectips') }}" method="POST" id="connectipsForm" style="display: inline;">
+                                                            {{ csrf_field() }}
+                                                            <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                            <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
+                                                            <input type="hidden" value="{{ $first_region->id }}" name="region_id" class="regionIds">
+                                                        </form>
+                                                        <a onclick="submitConnectIps(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ConnectIps.png') }}" alt="Connect IPS logo" height="200" width="200"></a>
+                                                        <form action="{{ route('payment.imepay') }}" method="POST" id="imepayform" style="display: inline;">
+                                                            {{ csrf_field() }}
+                                                            <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                            <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
+                                                            <input type="hidden" value="{{ $first_region->id }}" name="region_id" class="regionIds">
+                                                        </form>
+                                                        <a onclick="submitImePay(event)" style="cursor: pointer;"><img src="{{ asset('assets/img/payments/ime-pay.svg') }}" alt="IME Pay Logo" height="200" width="200"></a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>Or Pay Manually</p>
+                                                        <form action="{{ route('payment.manual') }}" method="GET" id="manualPaymentForm" style="display: inline;">
+                                                            {{ csrf_field() }}
+                                                            <input type="hidden" value="{{ $service_detail->base_price }}" name="amount">
+                                                            <input type="hidden" value="{{ $service_detail->id }}" name="service_id">
+                                                            <input type="hidden" value="{{ $first_region->id }}" name="region_id" class="regionIds">
+                                                        </form>
+                                                        <a href="#" onclick="submitManualPayment(event)" class="btn hover-style-two"> <span>Buy Now</span> <img src="{{ asset('assets/img/icon/btn-arrow.svg') }}" alt="" class="svg"> </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

@@ -62,7 +62,7 @@
                 <input type="checkbox" class="custom-control-input" checked="" id="customCheck1" name="remember_me">
                 <label class="custom-control-label" for="customCheck1">Remember me</label>
             </div>
-            <a class="small" href="{{route('auth.forgotpassword')}}">Forgot Password</a>
+            <a class="small" href="{{route('auth.forgot.password')}}">Forgot Password</a>
         </div>
         <button class="btn btn-primary btn-block">Sign in</button>
         <hr>

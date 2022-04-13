@@ -6323,12 +6323,12 @@ textarea.form-control {
 }
 
 .hosting-specification-nav button {
-    font-size: 21px;
-    padding: 20px;
+    font-size: 16px;
+    padding: 8px;
     width: 100%;
     max-width: 285px;
     text-align: left;
-    position: relative
+    position: relative;
 }
 
 @media only screen and (max-width:991px) {
@@ -6350,7 +6350,7 @@ textarea.form-control {
 }
 
 .hosting-specification-nav button:not(:last-child) {
-    margin-bottom: 20px
+    margin-bottom: 7px;
 }
 
 .hosting-specification-nav button.active {
